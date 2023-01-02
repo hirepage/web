@@ -1,0 +1,416 @@
+<script>
+  import InfoFooter from '@/components/InfoFooter'
+  import InfoHeader from '@/components/InfoHeader'
+  import PricingSection from '@/components/PricingSection'
+  import BottomCta from '@/components/BottomCta'
+  import ConcernCards from '@/components/ConcernCards'
+
+  export default {
+    components: { PricingSection, BottomCta, InfoHeader, InfoFooter, ConcernCards },
+    mounted () {
+      if (this.$route.hash === '#success') {
+        this.$toast.success('Thanks for signing up!')
+        this.$router.replace('/')
+      } else if (this.$route.hash === '#error') {
+        this.$toast.error('Error signing up, please try again')
+        this.$router.replace('/')
+      }
+    }
+  }
+</script>
+
+<template>
+  <div>
+    <div ref="topColor" class="top-color">
+      <info-header fixed hide-border/>
+      <b-container class="top-container">
+        <b-row align-v="center" align-h="start">
+          <b-col md="6" xl="6" class="main-text-wrapper">
+            <h1 class="main-title">
+              Talk to all of your clients from Slack
+            </h1>
+            <div class="landing-text mt-3 pb-3">
+              ChatPass enables your Slack workspace to communicate with your client’s email or Microsoft Teams account.
+            </div>
+            <b-btn
+              size="lg"
+              to="/waitlist"
+              variant="primary"
+              pill
+              class="main-btn mt-3">
+              Join Beta Test
+            </b-btn>
+<!--            <b-btn-->
+<!--              variant="default"-->
+<!--              pill-->
+<!--              class="main-btn mt-3 main-btn-right"-->
+<!--              href="https://calendly.com/otechie/demo"-->
+<!--              target="_blank">-->
+<!--              Book a Demo-->
+<!--            </b-btn>-->
+          </b-col>
+          <b-col class="text-right">
+            <b-img
+              src="/CrossPlatformChat.png"
+              class="slack-chat"
+              fluid
+              alt="Cross Platform Chat Graphic"/>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+    <div class="blue-section2">
+      <b-img src="wave.svg" style="transform: rotate(180deg); width: 100%; margin-top: -2px;"/>
+      <b-container id="features" class="features-section">
+        <b-row align-h="center">
+          <b-col lg="11">
+            <div class="value-row">
+              <h1 class="main-title mb-5 pb-3">
+                Let them choose how to communicate
+              </h1>
+              <b-row id="cross-platform-chat" align-h="center">
+                <b-col lg="4" class="py-4">
+                  <b-row>
+                    <b-col cols="auto">
+                      <font-awesome-icon
+                        class="feature-icon"
+                        :icon="['fab', 'slack']"
+                        size="lg"
+                        fixed-width/>
+                    </b-col>
+                    <b-col>
+                      <h2 class="value-title">
+                        Slack Connect
+                      </h2>
+                      <p class="value-desc">
+                        Your clients can use a link in the email messages to add themselves to your channel with Slack
+                        Connect.
+                      </p>
+                    </b-col>
+                  </b-row>
+                </b-col>
+
+                <b-col
+                  lg="4"
+                  class="py-4">
+                  <b-row>
+                    <b-col cols="auto">
+                      <font-awesome-icon
+                        class="feature-icon"
+                        :icon="['fas', 'envelope']"
+                        size="lg"
+                        fixed-width/>
+                    </b-col>
+                    <b-col>
+                      <h2 class="value-title">
+                        Reply by Email
+                      </h2>
+                      <p class="value-desc">
+                        Email your clients from a Slack channel and receive their responses. Works securely with
+                        messages
+                        and files.
+                      </p>
+                    </b-col>
+                  </b-row>
+                </b-col>
+
+                <b-col lg="4" class="py-4">
+                  <b-row>
+                    <b-col cols="auto">
+                      <b-img
+                        class="feature-icon ms-teams-icon"
+                        src="/microsoft_teams_icon_137398.svg"/>
+                    </b-col>
+                    <b-col>
+                      <h2 class="value-title">
+                        MS Teams Bridge
+                      </h2>
+                      <p class="value-desc">
+                        Clients can chose to add a bot to their Teams account that sends and receives messages to your
+                        channel
+                      </p>
+                    </b-col>
+                  </b-row>
+                </b-col>
+              </b-row>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+    <concern-cards/>
+    <pricing-section/>
+    <bottom-cta/>
+    <info-footer/>
+  </div>
+</template>
+
+<style scoped>
+
+
+  .color-btn {
+    border: 1px solid white !important;
+    background: linear-gradient(#D6249F, #FD5949);
+  }
+
+  .features-section {
+    padding-top: 12px;
+  }
+
+  .top-color {
+    /*background-color: #437ecc;*/
+    /*background: radial-gradient(circle at bottom left, #549DFF, #437ecc, #437ecc);*/
+    /*color: white;*/
+  }
+
+  .blue-section2 {
+    background-color: #437ecc;
+    background: radial-gradient(circle at top left, #549DFF, #437ecc, #437ecc);
+    color: white;
+  }
+
+  .top-container {
+    padding-top: 88px;
+    padding-bottom: 78px;
+  }
+
+  .main-title {
+    font-weight: bold;
+    font-size: 36px;
+  }
+
+  .landing-text {
+    font-size: 20px;
+    opacity: 0.7;
+  }
+
+  .main-btn {
+    padding: 12px 40px;
+    font-size: 12px !important;
+    margin: auto;
+    width: 100%;
+  }
+
+  .mobile-screenshot-img {
+    border-radius: 28px;
+    max-width: 100%;
+  }
+
+  .mobile-wrapper {
+    margin-bottom: -32px;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    padding: 8px;
+    border-radius: 36px;
+    background: #f6f9fc;
+    user-select: none;
+    box-shadow: 0 50px 100px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%), inset 0 -2px 6px 0 rgb(10 37 64 / 35%);
+    max-width: 300px;
+  }
+
+  .widget-screenshot {
+    border-radius: 8px;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  }
+
+  .feature-icon {
+    margin-bottom: 12px;
+    font-size: 36px;
+    opacity: 0.7;
+  }
+
+  .ms-teams-icon {
+    width: 45px;
+  }
+
+  .value-row {
+    margin: 80px 0;
+  }
+
+  .value-title {
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .value-desc {
+    opacity: 0.7;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .value-btn {
+    border-radius: 24px;
+    padding: 8px 28px;
+    font-size: 11px !important;
+    margin: auto;
+  }
+
+  .chat-screenshot {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+    margin: auto;
+    margin-top: 100px;
+  }
+
+  .slack-screenshot {
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  }
+
+  .mobile-screenshot-img {
+    border-radius: 8px;
+    max-width: 100%;
+  }
+
+  .mobile-wrapper {
+    margin-bottom: -32px;
+    z-index: 10;
+    padding: 8px;
+    border-radius: 18px;
+    background: #f6f9fc;
+    user-select: none;
+    box-shadow: 0 15px 20px -10px rgb(50 50 93 / 25%), 0 15px 30px -15px rgb(0 0 0 / 30%), inset 0 -2px 6px 0 rgb(10 37 64 / 35%);
+    max-width: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 32%;
+  }
+
+  .stripe-img {
+    border-radius: 8px;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  }
+
+  .mobile-screenshot-img-invoicing {
+    border-radius: 8px;
+    max-width: 100%;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
+  }
+
+  .main-text-wrapper {
+    /*text-align: center;*/
+    margin-bottom: 3rem;
+  }
+
+  .widget-arrow {
+    font-size: 32px;
+    position: fixed;
+    right: 100px;
+    bottom: 32px;
+  }
+
+  .slack-chat {
+    width: 450px;
+  }
+
+  @media (min-width: 768px) {
+    .bot-img {
+      max-width: 450px;
+    }
+
+    .slack-screenshot {
+      border-radius: 10px;
+    }
+
+    .value-row {
+      margin: 120px 0;
+    }
+
+    .widget-screenshot {
+      border-radius: 12px;
+    }
+
+    .main-btn {
+      margin-top: 0;
+      width: 280px;
+    }
+
+    .main-btn-right {
+      margin-left: 0.5rem !important;
+    }
+
+    .main-title {
+      font-size: 64px;
+    }
+
+    .landing-text {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .feature-icon {
+      font-size: 48px;
+    }
+
+    .ms-teams-icon {
+      width: 60px;
+    }
+
+    .main-btn-right {
+      margin-left: 16px;
+    }
+
+    .slack-screenshot {
+      border-radius: 12px;
+    }
+
+    .top-container {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    .value-title {
+      font-size: 32px;
+    }
+
+    .value-row {
+      margin: 200px 0;
+    }
+
+    .main-text-wrapper {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .mobile-wrapper {
+      width: 226px;
+    }
+
+    .wave-img {
+      display: unset;
+    }
+
+    .trusted-by-wrapper {
+      margin-top: 100px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .value-row {
+      margin: 200px 0;
+    }
+
+    .mobile-wrapper {
+      width: 288px;
+    }
+
+    .top-container {
+      padding-top: 100px;
+      padding-bottom: 60px;
+    }
+
+    .blue-section {
+      padding-bottom: 100px;
+    }
+
+    .screenshot-container {
+      margin-top: 3rem;
+    }
+  }
+</style>

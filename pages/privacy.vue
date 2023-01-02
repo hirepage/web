@@ -1,0 +1,43 @@
+<script>
+  import InfoHeader from '../components/InfoHeader'
+  import BottomCta from '../components/BottomCta'
+  import InfoFooter from '../components/InfoFooter'
+
+  export default {
+    components: {
+      InfoHeader,
+      BottomCta,
+      InfoFooter
+    },
+    head () {
+      return {
+        title: 'Privacy Policy | ChatPass'
+      }
+    },
+    asyncData ({ app }) {
+      return app.$axios.get('https://www.iubenda.com/api/privacy-policy/8252905/no-markup').then(response => {
+        return { html: response.data.content }
+      })
+    }
+  }
+</script>
+
+<template>
+  <div class="info-wrapper">
+    <info-header/>
+    <b-container class="info-body">
+      <b-row
+        align-h="center"
+        class="row-pad">
+        <b-col
+          lg="8"
+          md="10">
+          <!--eslint-disable-next-line-->
+          <div v-html="html"></div>
+        </b-col>
+      </b-row>
+    </b-container>
+    <bottom-cta/>
+    <info-footer/>
+  </div>
+</template>

@@ -1,0 +1,23 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.nuxt
+_warmup
+
+dist
+
+.DS_Store
+
+# Other
+.idea
+sw.*
+OneSignalSDK*
+static/sw.js
+
+/.env
+/.env.production
+/.env.development
+/.nyc_output/

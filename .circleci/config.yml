@@ -1,0 +1,97 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: dylangwight/node-aws-ci:latest
+  environment:
+    NODE_OPTIONS: --max_old_space_size=4096
+
+deploy: &deploy
+  <<: *defaults
+  parameters:
+    stage:
+      type: string
+  steps:
+    - checkout
+    - attach_workspace:
+        at: ~/repo
+#    - run:
+#        name: Create release
+#        command: ./node_modules/.bin/sentry-cli releases new ${CIRCLE_SHA1}
+    - run:
+        name: Build application
+        command: yarn build
+    - run:
+        name: Deploy application
+        command: yarn deploy
+    - run:
+        name: Upload static
+        command: aws s3 sync /home/circleci/repo/.nuxt/dist/client s3://cdn.otechie.com/web/<< parameters.stage >>/_nuxt --delete --acl public-read
+#    - run:
+#        name: Set release commits
+#        command: ./node_modules/.bin/sentry-cli releases set-commits ${CIRCLE_SHA1} --auto
+#    - run:
+#        name: Finalize release
+#        command: ./node_modules/.bin/sentry-cli releases finalize ${CIRCLE_SHA1}
+
+jobs:
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dev-dependencies-{{ checksum "yarn.lock" }}
+      - add_ssh_keys:
+          fingerprints:
+            - "c8:9d:d8:f2:4b:d5:53:2e:a8:6f:9b:b4:41:ff:78:03"
+      - run:
+          name: Install dependencies
+          command: |
+            yarn install --production=false
+      - save_cache:
+          paths:
+            - node_modules
+          key: dev-dependencies-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+      - run:
+          name: Build application
+          command: yarn build
+      - run:
+          name: Test
+          command: yarn test
+  deploy:
+    <<: *deploy
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - test:
+          context: development
+          filters:
+            branches:
+              only:
+                - main
+                - dev
+      - deploy:
+          requires:
+            - test
+          context: production
+          filters:
+            branches:
+              only: main
+          stage: 'production'
+      - deploy:
+          requires:
+            - test
+          context: development
+          filters:
+            branches:
+              only:
+                - dev
+          stage: 'development'

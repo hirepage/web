@@ -1,0 +1,64 @@
+org: hirepage
+app: web
+# serverless.yml
+
+service: web
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: production
+  region: us-east-1
+  memorySize: 2048
+#  environment:
+#    NODE_ENV: ${env:NODE_ENV}
+#    DOMAIN: ${env:DOMAIN}
+#    WEB_URL: ${env:WEB_URL}
+#    APP_URL: ${env:APP_URL}
+#    API_URL: ${env:API_URL}
+#    STRIPE_KEY: ${env:STRIPE_KEY}
+#    GITHUB_ID: ${env:GITHUB_ID}
+#    SLACK_ID: ${env:SLACK_ID}
+#    DISCORD_ID: ${env:DISCORD_ID}
+#    STRIPE_CLIENT_ID: ${env:STRIPE_CLIENT_ID}
+#    SENTRY_DSN_APP: ${env:SENTRY_DSN_APP}
+#    SENTRY_KEY: ${env:SENTRY_KEY}
+#    SENTRY_APP: ${env:SENTRY_APP}
+#    CIRCLE_SHA1: ${env:CIRCLE_SHA1}
+#    MIXPANNEL_TOKEN: ${env:MIXPANNEL_TOKEN}
+#    GA_ID: ${env:GA_ID}
+#    PUSHER_INSTANCE_ID: ${env:PUSHER_INSTANCE_ID}
+#    PUSHER_APP_KEY: ${env:PUSHER_APP_KEY}
+#    GOOGLE_ID: ${env:GOOGLE_ID}
+#    APPLE_ID: ${env:APPLE_ID}
+
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource: "*"
+
+functions:
+  nuxt:
+    handler: index.nuxt
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+    warmup:
+      enabled: true
+      concurrency: 3
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-apigw-binary
+  - serverless-plugin-warmup
+  - serverless-domain-manager
+
+custom:
+  warmup:
+    prewarm: true
+  apigwBinary:
+    types:
+      - '*/*'
+  customDomain:
+    domainName: hire.page
+    createRoute53Record: true
