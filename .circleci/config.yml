@@ -51,8 +51,6 @@ workflows:
   workflow:
     jobs:
       - deploy:
-          requires:
-            - test
           context: production
           filters:
             branches:
