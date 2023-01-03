@@ -25,7 +25,7 @@ export default {
     }
   },
   asyncData({ params, $axios }) {
-    return $axios.$get(`${process.env.WEB_URL}/api/user`).then(user => {
+    return $axios.$get(`/user`).then(user => {
       return { user: user }
     }).catch(err => {
       console.error(err)
