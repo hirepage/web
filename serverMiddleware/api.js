@@ -40,8 +40,17 @@ app.use(async (req, res, next) => {
 
 app.get('/user', (req, res, next) => {
   (async () => {
-    const user = await User.findOne({ email: 'dylan@otechie.com' })
-    console.log('dylan', user)
+    var user = await User.findOne({ email: 'dylan@otechie.com' })
+    if (!user) {
+      user = await User.create({
+        firstName: 'Dylan',
+        lastName: 'Wight',
+        bio: 'Technical Consultant',
+        avatarUrl: 'https://cdn.otechie.com/attachments/0cWnI9rYN/profile.png',
+        email: 'dylan@otechie.com',
+        username: 'dylan'
+      })
+    }
     res.json(user)
   })().catch(next)
 })

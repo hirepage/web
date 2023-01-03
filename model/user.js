@@ -10,10 +10,11 @@ class UserClass {
 
 const schema = mongoose.Schema({
   object: { type: String, default: 'User', required: true },
-  firstName: { type: String, required: true, default: 'New Client' },
+  firstName: { type: String, required: true },
   lastName: { type: String, default: '' },
   avatarUrl: { type: String, required: true },
-  email: { type: String, required: true }
+  email: { type: String, required: true },
+  bio: { type: String, }
 }, { toJSON: { virtuals: true } })
 
 schema.plugin(autopopulate)
