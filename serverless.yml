@@ -11,6 +11,7 @@ provider:
     DOMAIN: ${env:DOMAIN}
     WEB_URL: ${env:WEB_URL}
     API_URL: ${env:API_URL}
+    MONGODB_URI: ${env:MONGODB_URI}
 #    APP_URL: ${env:APP_URL}
 #    STRIPE_KEY: ${env:STRIPE_KEY}
 #    GITHUB_ID: ${env:GITHUB_ID}

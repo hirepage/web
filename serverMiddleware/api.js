@@ -7,16 +7,17 @@ const cookieParser = require('cookie-parser')
 const jwt = require('jsonwebtoken')
 const http = require('http')
 const helmet = require('helmet')
+const User = require('../model/user')
 
 const app = express()
 
 app.use(helmet())
 app.enable('trust proxy')
-// app.use(new RateLimit({
-//   windowMs: 60 * 1000,
-//   max: 1000,
-//   delayMs: 0
-// }))
+app.use(new RateLimit({
+  windowMs: 60 * 1000,
+  max: 1000,
+  delayMs: 0
+}))
 
 app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }))
 app.use(bodyParser.json({ limit: '50mb' }))
@@ -37,8 +38,11 @@ app.use(async (req, res, next) => {
   }
 })
 
-app.get('/user', (req, res) => {
-  res.json({ user: 'data2' })
+app.get('/user', (req, res, next) => {
+  (async () => {
+    const user = await User.findOne({ email: 'dylan@otechie.com' })
+    res.json(user)
+  })().catch(next)
 })
 
 

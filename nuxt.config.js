@@ -56,7 +56,7 @@ module.exports = {
   },
   axios: {
     progress: false,
-    baseURL: process.env.API_URL
+    baseURL: `${process.env.WEB_URL}/api`
   },
   toast: {
     position: 'top-center',

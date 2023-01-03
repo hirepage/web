@@ -1,35 +1,42 @@
 <script>
-  import validator from 'validator'
-  import LoadingButton from '@/components/LoadingButton'
-  import SocialIcons from '@/components/SocialIcons'
+import validator from 'validator'
+import LoadingButton from '@/components/LoadingButton'
+import SocialIcons from '@/components/SocialIcons'
 
-  export default {
-    components: { LoadingButton, SocialIcons },
-    data () {
-      return {
-        email: '',
-        firstName: '',
-        lastName: '',
-        website: ''
-      }
+export default {
+  components: {LoadingButton, SocialIcons},
+  data() {
+    return {
+      email: '',
+      firstName: '',
+      lastName: '',
+      website: ''
+    }
+  },
+  computed: {
+    enabled() {
+      return this.isEmailValid && this.firstName && this.lastName
     },
-    computed: {
-      enabled () {
-        return this.isEmailValid && this.firstName && this.lastName
-      },
-      isEmailValid () {
-        return this.email.length && validator.isEmail(this.email)
-      },
-      formUrl () {
-        return `${process.env.API_URL}/waitlist`
-      }
+    isEmailValid() {
+      return this.email.length && validator.isEmail(this.email)
     },
-    methods: {
-      shareForm () {
-        console.log('shareForm')
-      }
+    formUrl() {
+      return `${process.env.API_URL}/waitlist`
+    }
+  },
+  asyncData({ params, $axios }) {
+    return $axios.$get(`${process.env.WEB_URL}/api/user`).then(user => {
+      return { user: user }
+    }).catch(err => {
+      console.error(err)
+    })
+  },
+  methods: {
+    shareForm() {
+      console.log('shareForm')
     }
   }
+}
 </script>
 
 <template>
@@ -53,15 +60,15 @@
           <div class="logo-wrapper">
             <b-img
               class="logo-img"
-              src="https://pbs.twimg.com/profile_images/1559547593339854848/0N4B3_fU_400x400.jpg"
-              alt="Dylan Wight Profile"
+              :src="user.avatarUrl"
+              :alt="`${user.fullName} Profile Picture`"
               height="96"
               width="96"/>
           </div>
 
           <div class="text-center">
             <h1 class="semi-bold mb-1 mt-3" style="font-size: 22px;">
-              Dylan Wight
+              {{ user.fullName }}
             </h1>
             <p style="opacity: 0.8;">
               Software Developer
@@ -137,68 +144,68 @@
 </template>
 
 <style scoped>
-  .form-label {
-    text-transform: capitalize;
-    font-size: 13px;
-    /*letter-spacing: 2px;*/
-    font-weight: 500;
-  }
+.form-label {
+  text-transform: capitalize;
+  font-size: 13px;
+  /*letter-spacing: 2px;*/
+  font-weight: 500;
+}
 
-  .logo-img {
-    /*border: 4px solid white;*/
-    border-radius: 50%;
-    background-color: white;
-    /*border: 1px solid rgba(0, 0, 0, 0.125);*/
-  }
+.logo-img {
+  /*border: 4px solid white;*/
+  border-radius: 50%;
+  background-color: white;
+  /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+}
 
-  .logo-wrapper {
-    /*position: absolute;*/
-    /*top: -48px;*/
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
+.logo-wrapper {
+  /*position: absolute;*/
+  /*top: -48px;*/
+  left: 0;
+  right: 0;
+  text-align: center;
+}
 
-  .setup-wrapper {
-    /*height: 100vh;*/
-    padding: 0 0 100px 0;
-    /*background-color: rgb(250, 250, 252);*/
-  }
+.setup-wrapper {
+  /*height: 100vh;*/
+  padding: 0 0 100px 0;
+  /*background-color: rgb(250, 250, 252);*/
+}
 
-  .setup-cell {
-    /*background-color: white;*/
-    border-radius: 20px;
-    /*border: 1px solid rgba(0, 0, 0, 0.125);*/
-    padding: 24px;
-    padding-top: 64px;
-    position: relative;
-  }
+.setup-cell {
+  /*background-color: white;*/
+  border-radius: 20px;
+  /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+  padding: 24px;
+  padding-top: 64px;
+  position: relative;
+}
 
+.color-bg {
+  display: none;
+}
+
+.setup-col {
+  background-color: white;
+  position: relative;
+}
+
+.share-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  height: 40px;
+  width: 40px;
+}
+
+@media (min-width: 768px) {
   .color-bg {
-    display: none;
+    display: block;
+    background-image: url(/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
   }
-
-  .setup-col {
-    background-color: white;
-    position: relative;
-  }
-
-  .share-btn {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    height: 40px;
-    width: 40px;
-  }
-
-  @media (min-width: 768px) {
-    .color-bg {
-      display: block;
-      background-image: url(/bg.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      border-left: 1px solid rgba(0, 0, 0, 0.125);
-    }
-  }
+}
 </style>
