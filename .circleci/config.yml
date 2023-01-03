@@ -7,52 +7,54 @@ defaults: &defaults
   environment:
     NODE_OPTIONS: --max_old_space_size=4096
 
-deploy: &deploy
-  <<: *defaults
-  parameters:
-    stage:
-      type: string
-  steps:
-    - checkout
-    - restore_cache:
-        keys:
-          - dev-dependencies-{{ checksum "yarn.lock" }}
-    - run:
-        name: Install dependencies
-        command: |
-          yarn install --production=false
-    - save_cache:
-        paths:
-          - node_modules
-        key: dev-dependencies-{{ checksum "yarn.lock" }}
-    - persist_to_workspace:
-        root: ~/repo
-        paths:
-          - node_modules
-    - run:
-        name: Build application
-        command: yarn build
-    - run:
-        name: Deploy application
-        command: yarn deploy
-    - run:
-        name: Upload static
-        command: aws s3 sync /home/circleci/repo/.nuxt/dist/client s3://cdn.otechie.com/web/<< parameters.stage >>/_nuxt --delete --acl public-read
+jobs:
+  deploy:
+    <<: *defaults
+    parameters:
+      stage:
+        type: string
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dev-dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install dependencies
+          command: |
+            yarn install --production=false
+      - save_cache:
+          paths:
+            - node_modules
+          key: dev-dependencies-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - node_modules
+      - run:
+          name: Build application
+          command: yarn build
+      - run:
+          name: Deploy application
+          command: yarn deploy
+      - run:
+          name: Upload static
+          command: aws s3 sync /home/circleci/repo/.nuxt/dist/client s3://cdn.otechie.com/web/<< parameters.stage >>/_nuxt --delete --acl public-read
+    #    - run:
+    #        name: Set release commits
+    #        command: ./node_modules/.bin/sentry-cli releases set-commits ${CIRCLE_SHA1} --auto
+    #    - run:
+    #        name: Finalize release
+    #        command: ./node_modules/.bin/sentry-cli releases finalize ${CIRCLE_SHA1}
 
 workflows:
   version: 2
   workflow:
     jobs:
       - deploy:
+          requires:
+            - test
           context: production
           filters:
             branches:
               only: main
           stage: 'production'
-      - deploy:
-          context: development
-          filters:
-            branches:
-              only:
-                - dev
-          stage: 'development'
