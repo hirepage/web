@@ -41,6 +41,7 @@ app.use(async (req, res, next) => {
 app.get('/user', (req, res, next) => {
   (async () => {
     const user = await User.findOne({ email: 'dylan@otechie.com' })
+    console.log('dylan', user)
     res.json(user)
   })().catch(next)
 })
