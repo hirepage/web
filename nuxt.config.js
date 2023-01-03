@@ -19,12 +19,12 @@ if (process.env.LOCAL !== 'true') {
 }
 
 const plugins = [
-  { src: '~/plugins/fontAwesome' },
-  { src: '~/plugins/reddit', mode: 'client' }
+  {src: '~/plugins/fontAwesome'},
+  {src: '~/plugins/reddit', mode: 'client'}
 ]
 
 if (process.env.WEB_URL === 'https://chatpass.io') {
-  plugins.push({ src: '~/plugins/inspectlet', mode: 'client' })
+  plugins.push({src: '~/plugins/inspectlet', mode: 'client'})
 }
 
 module.exports = {
@@ -51,7 +51,7 @@ module.exports = {
       release: process.env.CIRCLE_SHA1
     },
     clientIntegrations: {
-      TryCatch: { eventTarget: false }
+      TryCatch: {eventTarget: false}
     }
   },
   axios: {
@@ -86,20 +86,14 @@ module.exports = {
       '/connect/**'
     ]
   },
-  redirect: [
-    { from: '^/join/account$', to: '/register' },
-    { from: '^/pricing$', to: '/#pricing' },
-    { from: '^/consult$', to: '/' },
-    { from: '^/docs/widget$', to: 'https://github.com/otechie/widget' },
-    { from: '^/docs$', to: 'https://github.com/otechie/widget' },
-    { from: '^/features$', to: '/#features' },
-    { from: '^/nuxt$', to: '/' }
+  serverMiddleware: [
+    { path: 'api', handler: '~/serverMiddleware/api' }
   ],
   dev: false,
   build: {
     analyze: false,
     cssSourceMap: false,
-    extend (config, ctx) {
+    extend(config, ctx) {
       if (process.env.NODE_ENV === 'local' && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
