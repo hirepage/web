@@ -29,7 +29,6 @@ if (process.env.WEB_URL === 'https://chatpass.io') {
 
 module.exports = {
   ssr: true,
-  target: 'static',
   head: head(),
   loading: {
     color: '#549DFF'
