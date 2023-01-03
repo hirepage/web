@@ -49,3 +49,10 @@ workflows:
             branches:
               only: main
           stage: 'production'
+      - deploy:
+          context: development
+          filters:
+            branches:
+              only:
+                - dev
+          stage: 'development'
