@@ -19,7 +19,8 @@ if (process.env.LOCAL !== 'true') {
 }
 
 const plugins = [
-  { src: '~/plugins/fontAwesome' }
+  { src: '~/plugins/fontAwesome' },
+  { src: '~/plugins/api' }
 ]
 
 if (process.env.WEB_URL === 'https://chatpass.io') {
