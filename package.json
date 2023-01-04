@@ -22,7 +22,7 @@
     "test": "ava --verbose",
     "precommit": "yarn lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
-    "heroku-postbuild": "yarn build"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.1.1",
