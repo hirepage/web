@@ -85,9 +85,9 @@ module.exports = {
       '/connect/**'
     ]
   },
-  serverMiddleware: [
-    { path: 'api', handler: '~/serverMiddleware/api' }
-  ],
+  // serverMiddleware: [
+  //   { path: 'api', handler: '~/serverMiddleware/api' }
+  // ],
   dev: false,
   build: {
     analyze: false,

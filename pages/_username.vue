@@ -3,6 +3,22 @@ import validator from 'validator'
 import LoadingButton from '@/components/LoadingButton'
 import SocialIcons from '@/components/SocialIcons'
 
+
+const user = {
+  "_id": "63b4a301daa17a3000fa386e",
+  "object": "User",
+  "firstName": "Dylan",
+  "lastName": "Wight",
+  "avatarUrl": "https://cdn.otechie.com/attachments/0cWnI9rYN/profile.png",
+  "email": "dylan@otechie.com",
+  "bio": "Technical Consultant",
+  "updatedAt": "2023-01-03T21:49:53.270Z",
+  "createdAt": "2023-01-03T21:49:53.270Z",
+  "__v": 0,
+  "fullName": "Dylan Wight",
+  "id": "63b4a301daa17a3000fa386e"
+}
+
 export default {
   components: { LoadingButton, SocialIcons },
   data() {
@@ -25,11 +41,7 @@ export default {
     }
   },
   asyncData({ params, $axios }) {
-    return $axios.$get(`/user`).then(user => {
-      return { user: user }
-    }).catch(err => {
-      console.error(err)
-    })
+    return { user: user }
   },
   methods: {
     shareForm() {
