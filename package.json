@@ -1,9 +1,9 @@
 {
-  "name": "otechie",
+  "name": "hirepage",
   "version": "1.0.0",
   "description": "Talk to all of your clients from Slack | ChatPass",
-  "copyright": "© 2022 ChatPass",
-  "homepage": "https://chatpass.io",
+  "copyright": "© 2023 Hirepage",
+  "homepage": "https://hire.page",
   "author": "Otechie <hello@otechie.com>",
   "keywords": [],
   "license": "UNLICENSED",
@@ -21,8 +21,7 @@
     "offline": "sls offline start --skipCacheInvalidation",
     "test": "ava --verbose",
     "precommit": "yarn lint",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
-    "heroku-postbuild": "npm run build"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.1.1",
