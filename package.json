@@ -63,7 +63,8 @@
     "serverless-http": "^2.7.0",
     "validator": "^13.5.2",
     "vue-plyr": "^7.0.0",
-    "vuedraggable": "^2.24.3"
+    "vuedraggable": "^2.24.3",
+    "nuxt": "2.15.8"
   },
   "devDependencies": {
     "@sentry/cli": "2.0.4",
@@ -82,7 +83,6 @@
     "eslint-plugin-vue": "5.2.3",
     "jsdom": "^19.0.0",
     "nock": "13.2.4",
-    "nuxt": "2.15.8",
     "serverless-domain-manager": "3.3.2",
     "serverless-dotenv-plugin": "2.1.1",
     "serverless-plugin-warmup": "4.9.0"
