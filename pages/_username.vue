@@ -1,10 +1,9 @@
 <script>
   import validator from 'validator'
   import LoadingButton from '@/components/LoadingButton'
-  import SocialIcons from '@/components/SocialIcons'
 
   export default {
-    components: { LoadingButton, SocialIcons },
+    components: { LoadingButton },
     data () {
       return {
         email: '',
