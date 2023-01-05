@@ -1,42 +1,42 @@
 <script>
-import validator from 'validator'
-import LoadingButton from '@/components/LoadingButton'
-import SocialIcons from '@/components/SocialIcons'
+  import validator from 'validator'
+  import LoadingButton from '@/components/LoadingButton'
+  import SocialIcons from '@/components/SocialIcons'
 
-export default {
-  components: { LoadingButton, SocialIcons },
-  data() {
-    return {
-      email: '',
-      firstName: '',
-      lastName: '',
-      website: ''
-    }
-  },
-  computed: {
-    enabled() {
-      return this.isEmailValid && this.firstName && this.lastName
+  export default {
+    components: { LoadingButton, SocialIcons },
+    data () {
+      return {
+        email: '',
+        firstName: '',
+        lastName: '',
+        website: ''
+      }
     },
-    isEmailValid() {
-      return this.email.length && validator.isEmail(this.email)
+    computed: {
+      enabled () {
+        return this.isEmailValid && this.firstName && this.lastName
+      },
+      isEmailValid () {
+        return this.email.length && validator.isEmail(this.email)
+      },
+      formUrl () {
+        return `${process.env.API_URL}/waitlist`
+      }
     },
-    formUrl() {
-      return `${process.env.API_URL}/waitlist`
-    }
-  },
-  asyncData({ params, app, error }) {
-    return app.$api.user.getUser(params.username).then(user => {
-      return { user }
-    }).catch(err => {
-      error(err)
-    })
-  },
-  methods: {
-    shareForm() {
-      console.log('shareForm')
+    asyncData ({ params, app, error }) {
+      return app.$api.user.getUser(params.username).then(user => {
+        return { user }
+      }).catch(err => {
+        error(err)
+      })
+    },
+    methods: {
+      shareForm () {
+        console.log('shareForm')
+      }
     }
   }
-}
 </script>
 
 <template>
@@ -73,51 +73,39 @@ export default {
             <p style="opacity: 0.8;">
               Software Developer
             </p>
-            <social-icons class="pt-1"/>
+
+            <div class="form-group social-icons pt-1">
+              <div class="social-icon"
+                   v-for="link in user.links"
+                   :key="link.id">
+                <a
+                  :href="link.url"
+                  target="_blank">
+                  <font-awesome-icon
+                    size="lg"
+                    width="42.5"
+                    height="35"
+                    :icon="[link.iconSet, link.icon]"/>
+                </a>
+              </div>
+            </div>
           </div>
 
           <div class="pt-2 mb-3"/>
 
           <form :action="formUrl" method="POST">
-
-            <b-form-group class="has-feedback">
+            <b-form-group class="has-feedback" v-for="field in user.fields" :key="field.id">
               <label class="form-label">
-                Full name
-              </label>
-              <b-form-input
-                v-model="firstName"
-                name="full_name"
-                type="text"/>
-            </b-form-group>
-
-            <b-form-group class="has-feedback">
-              <label class="form-label">
-                Email
-              </label>
-              <b-form-input
-                v-model="email"
-                name="email"
-                type="email"
-                autocomplete="email"/>
-            </b-form-group>
-
-            <b-form-group class="has-feedback">
-              <label class="form-label">
-                Website
-              </label>
-              <b-form-input
-                v-model="website"
-                name="website"
-                type="url"/>
-            </b-form-group>
-
-            <b-form-group>
-              <label class="form-label">
-                Message
+                {{ field.label }}
               </label>
               <b-form-textarea
+                v-if="field.type === 'textarea'"
+                :no-resize="false"
                 rows="4"
                 :max-rows="8"/>
+              <b-form-input
+                v-else
+                :type="field.type"/>
             </b-form-group>
 
             <div class="text-center pt-3">
@@ -127,8 +115,9 @@ export default {
                 type="submit"
                 variant="primary"
                 style="min-width: 300px;"
-                ref="loginBtn">
-                Submit
+                :style="`background-color: ${user.btnColor} !important;`"
+                class="colored-btn">
+                {{ user.btnText }}
               </loading-button>
             </div>
           </form>
@@ -144,68 +133,81 @@ export default {
 </template>
 
 <style scoped>
-.form-label {
-  text-transform: capitalize;
-  font-size: 13px;
-  /*letter-spacing: 2px;*/
-  font-weight: 500;
-}
-
-.logo-img {
-  /*border: 4px solid white;*/
-  border-radius: 50%;
-  background-color: white;
-  /*border: 1px solid rgba(0, 0, 0, 0.125);*/
-}
-
-.logo-wrapper {
-  /*position: absolute;*/
-  /*top: -48px;*/
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.setup-wrapper {
-  /*height: 100vh;*/
-  padding: 0 0 100px 0;
-  /*background-color: rgb(250, 250, 252);*/
-}
-
-.setup-cell {
-  /*background-color: white;*/
-  border-radius: 20px;
-  /*border: 1px solid rgba(0, 0, 0, 0.125);*/
-  padding: 24px;
-  padding-top: 64px;
-  position: relative;
-}
-
-.color-bg {
-  display: none;
-}
-
-.setup-col {
-  background-color: white;
-  position: relative;
-}
-
-.share-btn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  height: 40px;
-  width: 40px;
-}
-
-@media (min-width: 768px) {
-  .color-bg {
-    display: block;
-    background-image: url(/bg.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-left: 1px solid rgba(0, 0, 0, 0.125);
+  .form-label {
+    text-transform: capitalize;
+    font-size: 13px;
+    /*letter-spacing: 2px;*/
+    font-weight: 500;
   }
-}
+
+  .logo-img {
+    /*border: 4px solid white;*/
+    border-radius: 50%;
+    background-color: white;
+    /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+  }
+
+  .logo-wrapper {
+    /*position: absolute;*/
+    /*top: -48px;*/
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .setup-wrapper {
+    /*height: 100vh;*/
+    padding: 0 0 100px 0;
+    /*background-color: rgb(250, 250, 252);*/
+  }
+
+  .setup-cell {
+    /*background-color: white;*/
+    border-radius: 20px;
+    /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+    padding: 24px;
+    padding-top: 64px;
+    position: relative;
+  }
+
+  .color-bg {
+    display: none;
+  }
+
+  .setup-col {
+    background-color: white;
+    position: relative;
+  }
+
+  .share-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    height: 40px;
+    width: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .color-bg {
+      display: block;
+      background-image: url(/bg.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-left: 1px solid rgba(0, 0, 0, 0.125);
+    }
+  }
+
+  .social-icons {
+    margin: 12px auto 12px auto;
+    max-width: 160px;
+    display: flex;
+    /*margin-top: 24px;*/
+    /*margin-bottom: 24px;*/
+  }
+
+  .social-icon a {
+    color: #3a3a3a;
+    /*opacity: 0.7;*/
+  }
 </style>
