@@ -1,4 +1,5 @@
 import auth from '../api/auth'
+import lead from '../api/lead'
 import user from '../api/user'
 
 import Vue from 'vue'
@@ -9,6 +10,7 @@ Vue.component('loading-button', LoadingButton)
 export default function (ctx, inject) {
   const api = {
     auth,
+    lead,
     user
   }
 

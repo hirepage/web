@@ -1,15 +1,13 @@
 <script>
   import validator from 'validator'
   import LoadingButton from '@/components/LoadingButton'
+  import { forOwn, find } from 'lodash'
 
   export default {
     components: { LoadingButton },
     data () {
       return {
-        email: '',
-        firstName: '',
-        lastName: '',
-        website: ''
+        form: {}
       }
     },
     computed: {
@@ -19,8 +17,13 @@
       isEmailValid () {
         return this.email.length && validator.isEmail(this.email)
       },
-      formUrl () {
-        return `${process.env.API_URL}/waitlist`
+      formData () {
+        return Object.entries(this.form).map(([key, value]) => {
+          return {
+            value: value,
+            field: find(this.user.fields, { id: key })
+          }
+        })
       }
     },
     asyncData ({ params, app, error }) {
@@ -31,6 +34,18 @@
       })
     },
     methods: {
+      submitForm (done) {
+        this.$api.lead.submit({
+          user: this.user.id,
+          form: this.formData
+        }).then(lead => {
+          console.log(lead)
+          this.$toast.success('Message sent')
+        }).catch(err => {
+          console.error(err)
+          this.$toast.error('Error sending message')
+        }).finally(done)
+      },
       shareForm () {
         console.log('shareForm')
       }
@@ -92,34 +107,38 @@
 
           <div class="pt-2 mb-3"/>
 
-          <form :action="formUrl" method="POST">
-            <b-form-group class="has-feedback" v-for="field in user.fields" :key="field.id">
-              <label class="form-label">
-                {{ field.label }}
-              </label>
-              <b-form-textarea
-                v-if="field.type === 'textarea'"
-                :no-resize="false"
-                rows="4"
-                :max-rows="8"/>
-              <b-form-input
-                v-else
-                :type="field.type"/>
-            </b-form-group>
+          <b-form-group
+            v-for="field in user.fields"
+            :key="field.id"
+            class="has-feedback">
+            <label class="form-label">
+              {{ field.label }}
+            </label>
+            <b-form-textarea
+              v-if="field.type === 'textarea'"
+              v-model="form[field.id]"
+              :no-resize="false"
+              rows="4"
+              :max-rows="8"/>
+            <b-form-input
+              v-else
+              v-model="form[field.id]"
+              :type="field.type"/>
+          </b-form-group>
 
-            <div class="text-center pt-3">
-              <loading-button
-                pill
-                size="xl"
-                type="submit"
-                variant="primary"
-                style="min-width: 300px;"
-                :style="`background-color: ${user.btnColor} !important;`"
-                class="colored-btn">
-                {{ user.btnText }}
-              </loading-button>
-            </div>
-          </form>
+          <div class="text-center pt-3">
+            <loading-button
+              pill
+              size="xl"
+              type="submit"
+              variant="primary"
+              style="min-width: 300px;"
+              :style="`background-color: ${user.btnColor} !important;`"
+              class="colored-btn"
+              @click="submitForm">
+              {{ user.btnText }}
+            </loading-button>
+          </div>
         </div>
       </b-col>
     </b-row>
