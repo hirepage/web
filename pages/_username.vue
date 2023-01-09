@@ -110,7 +110,7 @@
               {{ user.fullName }}
             </h1>
             <p style="opacity: 0.8;">
-              Software Developer
+              {{ user.bio }}
             </p>
 
             <div class="form-group social-icons pt-1">
