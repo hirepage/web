@@ -59,7 +59,7 @@ module.exports = {
   },
   toast: {
     position: 'top-right',
-    duration: 3000,
+    duration: 2000,
     theme: 'toasted-primary',
     singleton: false
   },

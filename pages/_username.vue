@@ -24,11 +24,14 @@
       shareUrl () {
         return `${process.env.WEB_URL}/${this.user.username}`
       },
-      formData () {
+      fields () {
         return Object.entries(this.form).map(([key, value]) => {
+          const field = find(this.user.fields, { id: key })
           return {
             value: value,
-            field: find(this.user.fields, { id: key })
+            label: field.label,
+            fieldType: field.type,
+            id: field.id
           }
         })
       }
@@ -52,9 +55,10 @@
     },
     methods: {
       submitForm (done) {
+        console.log('submitForm', this.formData)
         this.$api.lead.submit({
           user: this.user.id,
-          form: this.formData
+          fields: this.fields
         }).then(lead => {
           console.log(lead)
           this.$toast.success('Message sent')
