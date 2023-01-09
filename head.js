@@ -1,21 +1,17 @@
 function head () {
-  const title = 'Talk to all of your clients from Slack'
-  const description = 'Create channels where your clients can reply by email, create a MS Teams bridge, or join with their Slack.'
+  const title = 'Contact page for freelancers, consultants, and agencies | Hirepage'
+  const description = 'Grow your service business with a professional contact form'
   const socialImageUrl = 'https://cdn.otechie.com/attachments/UfbU_qNsK/SocialImage.png'
   return {
-    title: `ChatPass - ${title}`,
+    title: `Hirepage - ${title}`,
     script: [],
     meta: [
       {
         'charset': 'utf-8'
       },
       {
-        name: 'slack-app-id',
-        content: 'AAY68EJKB'
-      },
-      {
         name: 'robots',
-        content: process.env.WEB_URL === 'https:///chatpass.io' ? 'all' : 'noindex'
+        content: process.env.WEB_URL === 'https:///hire.page' ? 'all' : 'noindex'
       },
       {
         name: 'viewport',
@@ -29,7 +25,7 @@ function head () {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'chat widget for consulting, chat widget for freelancing, live chat for consulting, live chat for freelancing, Slack chat widget, Slack live chat'
+        content: 'contact page consulting, contact page freelancing, contact form consulting, contact form freelancing, link in bio freelance, link in bio consultant'
       },
       {
         hid: 'og:title',
@@ -49,7 +45,7 @@ function head () {
       {
         hid: 'og:url',
         name: 'og:url',
-        content: 'https://otechie.com'
+        content: 'https://hire.page'
       },
       {
         hid: 'og:image',
@@ -59,7 +55,7 @@ function head () {
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: 'ChatPass'
+        content: 'Hirepage'
       },
       {
         hid: 'twitter:title',
@@ -74,12 +70,12 @@ function head () {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@otechie'
+        content: '@hirepage_'
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@dylangwight'
+        content: '@dgwight'
       },
       {
         hid: 'twitter:card',
@@ -94,7 +90,7 @@ function head () {
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'ChatPass Logo'
+        content: 'Hirepage Logo'
       }
     ]
   }

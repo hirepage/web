@@ -1,10 +1,12 @@
 <script>
   import validator from 'validator'
-  import LoadingButton from '@/components/LoadingButton'
   import { forOwn, find } from 'lodash'
+  import meta from '@/mixins/meta'
+  import LoadingButton from '@/components/LoadingButton'
 
   export default {
     components: { LoadingButton },
+    mixins: [meta],
     data () {
       return {
         form: {}
