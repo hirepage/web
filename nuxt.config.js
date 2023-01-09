@@ -58,7 +58,7 @@ module.exports = {
     baseURL: `${process.env.WEB_URL}/api`
   },
   toast: {
-    position: 'top-center',
+    position: 'top-right',
     duration: 3000,
     theme: 'toasted-primary',
     singleton: false

@@ -1,6 +1,7 @@
 <script>
   import validator from 'validator'
   import { forOwn, find } from 'lodash'
+  import ClipboardJS from 'clipboard'
   import meta from '@/mixins/meta'
   import LoadingButton from '@/components/LoadingButton'
 
@@ -9,6 +10,7 @@
     mixins: [meta],
     data () {
       return {
+        clipboard: null,
         form: {}
       }
     },
@@ -19,6 +21,9 @@
       isEmailValid () {
         return this.email.length && validator.isEmail(this.email)
       },
+      shareUrl () {
+        return `${process.env.WEB_URL}/${this.user.username}`
+      },
       formData () {
         return Object.entries(this.form).map(([key, value]) => {
           return {
@@ -27,6 +32,16 @@
           }
         })
       }
+    },
+    mounted () {
+      this.clipboard = new ClipboardJS('.share-btn')
+      const self = this
+      this.clipboard.on('success', function (e) {
+        self.$toast.success('Copied link')
+      })
+    },
+    beforeDestroy () {
+      this.clipboard.destroy()
     },
     asyncData ({ params, app, error }) {
       return app.$api.user.getUser(params.username).then(user => {
@@ -64,10 +79,12 @@
       no-gutters>
       <b-col sm="10" md="8" lg="6" xl="5">
         <b-btn
+          id="share-btn"
           class="share-btn"
           variant="default"
           pill
-          @click="shareForm">
+          data-clipboard-action="copy"
+          :data-clipboard-text="shareUrl">
           <font-awesome-icon
             class="concern-icon"
             :icon="['fal', 'arrow-up-from-square']"/>
@@ -229,5 +246,9 @@
   .social-icon a {
     color: #3a3a3a;
     /*opacity: 0.7;*/
+  }
+
+  .share-btn {
+    z-index: 500;
   }
 </style>
