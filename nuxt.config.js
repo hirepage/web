@@ -66,7 +66,7 @@ module.exports = {
   'rfg-icon': {
     static: true,
     staticPath: '/_favicons/',
-    masterPicture: 'https://chatpass.io/ChatPassRound.png',
+    masterPicture: 'https://hire.page/favicon.png',
     rfg: favicon
   },
   sitemap: {
