@@ -87,6 +87,8 @@
           :data-clipboard-text="shareUrl">
           <font-awesome-icon
             class="concern-icon"
+            height="12"
+            width="12"
             :icon="['fal', 'arrow-up-from-square']"/>
         </b-btn>
         <div class="setup-cell">
@@ -108,16 +110,17 @@
             </p>
 
             <div class="form-group social-icons pt-1">
-              <div class="social-icon"
-                   v-for="link in user.links"
-                   :key="link.id">
+              <div
+                v-for="link in user.links"
+                :key="link.id"
+                class="social-icon">
                 <a
                   :href="link.url"
                   target="_blank">
                   <font-awesome-icon
                     size="lg"
                     width="42.5"
-                    height="35"
+                    height="18"
                     :icon="[link.iconSet, link.icon]"/>
                 </a>
               </div>
@@ -136,9 +139,7 @@
             <b-form-textarea
               v-if="field.type === 'textarea'"
               v-model="form[field.id]"
-              :no-resize="false"
-              rows="4"
-              :max-rows="8"/>
+              rows="4"/>
             <b-form-input
               v-else
               v-model="form[field.id]"
