@@ -1,12 +1,9 @@
 <script>
   import InfoFooter from '@/components/InfoFooter'
   import InfoHeader from '@/components/InfoHeader'
-  import PricingSection from '@/components/PricingSection'
-  import BottomCta from '@/components/BottomCta'
-  import ConcernCards from '@/components/ConcernCards'
 
   export default {
-    components: { PricingSection, BottomCta, InfoHeader, InfoFooter, ConcernCards },
+    components: { InfoHeader, InfoFooter },
     mounted () {
       if (this.$route.hash === '#success') {
         this.$toast.success('Thanks for signing up!')
@@ -27,27 +24,29 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Talk to all of your clients from Slack
+              A shareable lead collection page for
+              <span class="rotating-word">
+                <span>freelancers.</span>
+                <span>small businesses.</span>
+                <span>consultants.</span>
+                <span>agencies.</span>
+                <span>contractors.</span>
+              </span>
             </h1>
             <div class="landing-text mt-3 pb-3">
-              ChatPass enables your Slack workspace to communicate with your client’s email or Microsoft Teams account.
+              Join the beta test and setup your free Hirepage in under five minutes.
             </div>
+            <b-input-group size="lg" prepend="hire.page/">
+              <b-form-input size="lg" placeholder="yourname"/>
+            </b-input-group>
             <b-btn
-              size="lg"
+              size="l"
               to="/waitlist"
               variant="primary"
               pill
               class="main-btn mt-3">
-              Join Beta Test
+              Claim your page
             </b-btn>
-<!--            <b-btn-->
-<!--              variant="default"-->
-<!--              pill-->
-<!--              class="main-btn mt-3 main-btn-right"-->
-<!--              href="https://calendly.com/otechie/demo"-->
-<!--              target="_blank">-->
-<!--              Book a Demo-->
-<!--            </b-btn>-->
           </b-col>
           <b-col class="text-right">
             <b-img
@@ -59,88 +58,6 @@
         </b-row>
       </b-container>
     </div>
-    <div class="blue-section2">
-      <b-img src="wave.svg" style="transform: rotate(180deg); width: 100%; margin-top: -2px;"/>
-      <b-container id="features" class="features-section">
-        <b-row align-h="center">
-          <b-col lg="11">
-            <div class="value-row">
-              <h1 class="main-title mb-5 pb-3">
-                Let them choose how to communicate
-              </h1>
-              <b-row id="cross-platform-chat" align-h="center">
-                <b-col lg="4" class="py-4">
-                  <b-row>
-                    <b-col cols="auto">
-                      <font-awesome-icon
-                        class="feature-icon"
-                        :icon="['fab', 'slack']"
-                        size="lg"
-                        fixed-width/>
-                    </b-col>
-                    <b-col>
-                      <h2 class="value-title">
-                        Slack Connect
-                      </h2>
-                      <p class="value-desc">
-                        Your clients can use a link in the email messages to add themselves to your channel with Slack
-                        Connect.
-                      </p>
-                    </b-col>
-                  </b-row>
-                </b-col>
-
-                <b-col
-                  lg="4"
-                  class="py-4">
-                  <b-row>
-                    <b-col cols="auto">
-                      <font-awesome-icon
-                        class="feature-icon"
-                        :icon="['fas', 'envelope']"
-                        size="lg"
-                        fixed-width/>
-                    </b-col>
-                    <b-col>
-                      <h2 class="value-title">
-                        Reply by Email
-                      </h2>
-                      <p class="value-desc">
-                        Email your clients from a Slack channel and receive their responses. Works securely with
-                        messages
-                        and files.
-                      </p>
-                    </b-col>
-                  </b-row>
-                </b-col>
-
-                <b-col lg="4" class="py-4">
-                  <b-row>
-                    <b-col cols="auto">
-                      <b-img
-                        class="feature-icon ms-teams-icon"
-                        src="/microsoft_teams_icon_137398.svg"/>
-                    </b-col>
-                    <b-col>
-                      <h2 class="value-title">
-                        MS Teams Bridge
-                      </h2>
-                      <p class="value-desc">
-                        Clients can chose to add a bot to their Teams account that sends and receives messages to your
-                        channel
-                      </p>
-                    </b-col>
-                  </b-row>
-                </b-col>
-              </b-row>
-            </div>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
-    <concern-cards/>
-    <pricing-section/>
-    <bottom-cta/>
     <info-footer/>
   </div>
 </template>
@@ -177,6 +94,7 @@
   .main-title {
     font-weight: bold;
     font-size: 36px;
+    position: relative;
   }
 
   .landing-text {
@@ -336,6 +254,7 @@
 
     .main-title {
       font-size: 64px;
+      padding-bottom: 70px;
     }
 
     .landing-text {
@@ -412,5 +331,83 @@
     .screenshot-container {
       margin-top: 3rem;
     }
+  }
+
+
+  .input-group-text {
+    background-color: white;
+    border-right: none !important;
+    padding-right: 2px !important;
+  }
+
+  .input-group > .form-control:not(:first-child) {
+    padding-left: 1px;
+    border-left: none !important;
+  }
+
+
+
+
+
+  .rotating-word {
+    display: inline;
+    color: #437ecc;
+  }
+
+  .rotating-word span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    animation: animate 15s linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+
+    2% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+
+    18% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+
+    20% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+  }
+
+  .rotating-word span:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .rotating-word span:nth-child(2) {
+    animation-delay: 3s;
+  }
+
+  .rotating-word span:nth-child(3) {
+    animation-delay: 6s;
+  }
+
+  .rotating-word span:nth-child(4) {
+    animation-delay: 9s;
+  }
+
+  .rotating-word span:nth-child(5) {
+    animation-delay: 12s;
   }
 </style>
