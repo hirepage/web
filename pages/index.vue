@@ -17,6 +17,11 @@
         this.$toast.error('Error signing up, please try again')
         this.$router.replace('/')
       }
+    },
+    methods: {
+      claimUsername () {
+        this.$router.push(this.username? `/register?username=${this.username}` : '/register')
+      }
     }
   }
 </script>
@@ -41,15 +46,23 @@
             <div class="landing-text mt-3 pb-3">
               Setup your free contact form in under five minutes
             </div>
-            <b-input-group size="lg" prepend="hire.page/" class="username-input-group">
-              <b-form-input
+            <b-form @submit.prevent="claimUsername">
+              <b-input-group
                 size="lg"
-                placeholder="yourname"
-                v-model="username"/>
-            </b-input-group>
+                prepend="hire.page/"
+                class="username-input-group"
+                @click="$refs.usernameInput.focus()">
+                <b-form-input
+                  ref="usernameInput"
+                  size="lg"
+                  placeholder="yourname"
+                  v-model="username"/>
+              </b-input-group>
+            </b-form>
             <b-btn
-              size="l"
-              :to="username? `/register?username=${username}` : '/register'"
+              ref="claimBtn"
+              size="lg"
+              @click="claimUsername"
               variant="primary"
               pill
               class="main-btn mt-3">
