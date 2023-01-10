@@ -52,8 +52,15 @@
     <info-sidebar/>
     <b-navbar class="otechie-header" :style="headerStyle">
       <b-container>
-        <b-navbar-brand to="/">
-          <b-img src="/ChatPassText.svg" height="20"/>
+        <b-navbar-brand to="/" style="text-decoration: none; font-weight: 400; font-size: 20px">
+          <b-row no-gutters align-v="center">
+            <b-col>
+              <b-img src="/favicon.png" height="26"/>
+            </b-col>
+            <b-col class="pl-2 pt-1">
+              Hirepage
+            </b-col>
+          </b-row>
         </b-navbar-brand>
         <b-navbar-nav
           class="ml-auto"
@@ -72,29 +79,29 @@
                   d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
               </svg>
             </b-btn>
-            <nuxt-link
-              id="popover-target-1"
-              class="header-link d-none d-md-inline"
-              :to="$route.fullPath">
-              <span>Features<font-awesome-icon
-                icon="chevron-down"
-                width="8"
-                height="12"
-                size="xs"
-                style="font-size: 10px; margin-left: 6px; margin-bottom: 1px;"/></span>
-            </nuxt-link>
-            <features-popover/>
+<!--            <nuxt-link-->
+<!--              id="popover-target-1"-->
+<!--              class="header-link d-none d-md-inline"-->
+<!--              :to="$route.fullPath">-->
+<!--              <span>Features<font-awesome-icon-->
+<!--                icon="chevron-down"-->
+<!--                width="8"-->
+<!--                height="12"-->
+<!--                size="xs"-->
+<!--                style="font-size: 10px; margin-left: 6px; margin-bottom: 1px;"/></span>-->
+<!--            </nuxt-link>-->
+<!--            <features-popover/>-->
 
             <nuxt-link
               class="header-link d-none d-md-inline"
-              to="/#pricing">
-              <span>Pricing</span>
+              to="/login">
+              <span>Log in</span>
             </nuxt-link>
             <span>
               <nuxt-link
                 class="header-link d-none d-md-inline"
-                to="/waitlist">
-                <span>Join Beta Test</span>
+                to="/register">
+                <span>Sign up free</span>
               </nuxt-link>
             </span>
           </div>

@@ -169,7 +169,7 @@
             order-md="0"
             class="mb-4 center-mobile">
             <p>
-              © 2022 ChatPass
+              © 2023 Otechie, Inc
             </p>
           </b-col>
         </b-row>

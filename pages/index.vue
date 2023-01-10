@@ -26,15 +26,15 @@
             <h1 class="main-title">
               A shareable lead collection page for
               <span class="rotating-word">
-                <span>freelancers.</span>
-                <span>small businesses.</span>
-                <span>consultants.</span>
-                <span>agencies.</span>
-                <span>contractors.</span>
+                <span>freelancers</span>
+                <span>small businesses</span>
+                <span>consultants</span>
+                <span>agencies</span>
+                <span>contractors</span>
               </span>
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Join the beta test and setup your free Hirepage in under five minutes.
+              Setup your free contact form in under five minutes
             </div>
             <b-input-group size="lg" prepend="hire.page/">
               <b-form-input size="lg" placeholder="yourname"/>
@@ -45,13 +45,13 @@
               variant="primary"
               pill
               class="main-btn mt-3">
-              Claim your page
+              Claim your Hirepage
             </b-btn>
           </b-col>
           <b-col class="text-right">
             <b-img
-              src="/CrossPlatformChat.png"
-              class="slack-chat"
+              src="/apollo-widget.png"
+              class="slack-chat mr-4"
               fluid
               alt="Cross Platform Chat Graphic"/>
           </b-col>
@@ -78,6 +78,7 @@
     /*background-color: #437ecc;*/
     /*background: radial-gradient(circle at bottom left, #549DFF, #437ecc, #437ecc);*/
     /*color: white;*/
+    min-height: 100vh;
   }
 
   .blue-section2 {
@@ -98,7 +99,7 @@
   }
 
   .landing-text {
-    font-size: 20px;
+    font-size: 16px;
     opacity: 0.7;
   }
 
@@ -223,7 +224,7 @@
   }
 
   .slack-chat {
-    width: 450px;
+    width: 300px;
   }
 
   @media (min-width: 768px) {
@@ -254,11 +255,11 @@
 
     .main-title {
       font-size: 64px;
-      padding-bottom: 70px;
+      padding-bottom: 77px;
     }
 
     .landing-text {
-      font-size: 24px;
+      font-size: 20px;
     }
   }
 
@@ -293,7 +294,7 @@
     }
 
     .main-text-wrapper {
-      margin-top: 2rem;
+      margin-top: 1rem;
       margin-bottom: 1rem;
     }
 
@@ -351,7 +352,7 @@
 
   .rotating-word {
     display: inline;
-    color: #437ecc;
+    color: #549DFF;
   }
 
   .rotating-word span {
