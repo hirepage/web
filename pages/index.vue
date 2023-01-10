@@ -4,6 +4,11 @@
 
   export default {
     components: { InfoHeader, InfoFooter },
+    data () {
+      return {
+        username: ''
+      }
+    },
     mounted () {
       if (this.$route.hash === '#success') {
         this.$toast.success('Thanks for signing up!')
@@ -36,12 +41,15 @@
             <div class="landing-text mt-3 pb-3">
               Setup your free contact form in under five minutes
             </div>
-            <b-input-group size="lg" prepend="hire.page/">
-              <b-form-input size="lg" placeholder="yourname"/>
+            <b-input-group size="lg" prepend="hire.page/" class="username-input-group">
+              <b-form-input
+                size="lg"
+                placeholder="yourname"
+                v-model="username"/>
             </b-input-group>
             <b-btn
               size="l"
-              to="/waitlist"
+              :to="username? `/register?username=${username}` : '/register'"
               variant="primary"
               pill
               class="main-btn mt-3">
@@ -63,6 +71,11 @@
 </template>
 
 <style scoped>
+
+
+  .username-input-group:focus-within .input-group-text {
+    border-color: #80bdff !important;
+  }
 
 
   .color-btn {
@@ -345,9 +358,6 @@
     padding-left: 1px;
     border-left: none !important;
   }
-
-
-
 
 
   .rotating-word {
