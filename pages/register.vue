@@ -4,7 +4,7 @@
 
   export default {
     layout: 'auth',
-    // middleware: 'notAuthenticated',
+    middleware: 'notAuthenticated',
     metaInfo () {
       return {
         title: 'Register | Hirepage'
@@ -68,7 +68,6 @@
         }
         this.usernameValid = true
         this.$api.user.checkUsername(this.username).then(data => {
-          console.log('checkUsername', data)
           this.usernameValid = data.available
           this.takenUsername = data.available ? null : data.username
         })

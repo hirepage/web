@@ -13,7 +13,11 @@ export default app => ({
   },
   register (data) {
     return app.$axios.$post('/user/register', data).then(auth => {
-      console.log('setAuth', auth)
+      app.$api.auth.setAuth(auth)
+    })
+  },
+  login (data) {
+    return app.$axios.$post('/user/login', data).then(auth => {
       app.$api.auth.setAuth(auth)
     })
   }
