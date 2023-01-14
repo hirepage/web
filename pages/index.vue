@@ -25,7 +25,7 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              A shareable lead collection page for
+              A shareable contact form for
               <span class="rotating-word">
                 <span>freelancers</span>
                 <span>small businesses</span>
@@ -35,7 +35,7 @@
               </span>
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Setup your free contact form in under five minutes
+              Join the beta and setup your free page in under five minutes
             </div>
             <b-form @submit.prevent="claimUsername">
               <b-input-group
@@ -45,7 +45,7 @@
                 @click="$refs.usernameInput.focus()">
                 <b-form-input
                   ref="usernameInput"
-                  size="lg"
+                  maxlength="64"
                   placeholder="yourname"
                   v-model="username"/>
               </b-input-group>
@@ -75,10 +75,6 @@
 </template>
 
 <style scoped>
-
-  .username-input-group:focus-within .input-group-text {
-    border-color: #80bdff !important;
-  }
 
   .top-color {
     min-height: 100vh;
@@ -152,19 +148,6 @@
     }
   }
 
-
-  .input-group-text {
-    background-color: white;
-    border-right: none !important;
-    padding-right: 2px !important;
-  }
-
-  .input-group > .form-control:not(:first-child) {
-    padding-left: 1px;
-    border-left: none !important;
-  }
-
-
   .rotating-word {
     display: inline;
     color: #549DFF;
@@ -226,4 +209,22 @@
   .rotating-word span:nth-child(5) {
     animation-delay: 12s;
   }
+
+
+
+  .username-input-group:focus-within .input-group-text {
+    border-color: #80bdff !important;
+  }
+
+  .input-group-text {
+    background-color: white;
+    border-right: none !important;
+    padding-right: 2px !important;
+  }
+
+  .input-group > .form-control:not(:first-child) {
+    padding-left: 1px;
+    border-left: none !important;
+  }
+
 </style>

@@ -6,8 +6,15 @@ export default app => ({
     }).catch(console.error)
   },
   getUser (username) {
-    return app.$axios.$get(`/user/${username}`).then(user => {
-      return user
+    return app.$axios.$get(`/user/${username}`)
+  },
+  checkUsername (username) {
+    return app.$axios.$get(`/user/username/${username}`)
+  },
+  register (data) {
+    return app.$axios.$post('/user/register', data).then(auth => {
+      console.log('setAuth', auth)
+      app.$api.auth.setAuth(auth)
     })
   }
 })
