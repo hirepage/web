@@ -2,10 +2,9 @@
   export default {
     methods: {
       logout () {
-        this.$analytics.track('Logout')
         this.$api.auth.logout()
         this.$bvModal.hide('logoutModal')
-        this.$router.push('/')
+        this.$router.push('/login')
       },
       cancel () {
         this.$bvModal.hide('logoutModal')
