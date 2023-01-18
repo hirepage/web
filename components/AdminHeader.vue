@@ -15,7 +15,9 @@
   <b-navbar toggleable="lg" sticky class="admin-header">
     <logout-modal/>
     <b-container>
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+      <b-navbar-brand to="/admin">
+        <b-img src="/favicon.png" height="28"/>
+      </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

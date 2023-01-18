@@ -31,7 +31,6 @@
         <b-col cols="6">
           <div class="preview-wrapper">
             <iframe src="/dylan" class="preview-iframe">
-
             </iframe>
           </div>
         </b-col>
@@ -57,7 +56,7 @@
 
   .setting-tab {
     min-height: calc(100vh - 66px);
-    max-width: 650px;
+    padding-top: 24px;
   }
 
   .menu-wrapper {
