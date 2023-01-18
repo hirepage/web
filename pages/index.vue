@@ -11,7 +11,7 @@
     },
     methods: {
       claimUsername () {
-        this.$router.push(this.username? `/register?username=${this.username}` : '/register')
+        this.$router.push(this.username ? `/register?username=${this.username}` : '/register')
       }
     }
   }
@@ -25,17 +25,11 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              A shareable contact form for
-              <span class="rotating-word">
-                <span>freelancers</span>
-                <span>small businesses</span>
-                <span>consultants</span>
-                <span>agencies</span>
-                <span>contractors</span>
-              </span>
+              Make it easy for new clients to get in touch
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Join the beta and setup your free page in under five minutes
+              Hirepage is a contact page that freelancers can link to from their bios, website, or blogs.
+              Claim your link and create your free page in less than five minutes.
             </div>
             <b-form @submit.prevent="claimUsername">
               <b-input-group
@@ -57,7 +51,7 @@
               variant="primary"
               pill
               class="main-btn mt-3">
-              Claim your Hirepage
+              Claim your link
             </b-btn>
           </b-col>
           <b-col class="text-right">
@@ -119,8 +113,7 @@
     }
 
     .main-title {
-      font-size: 64px;
-      padding-bottom: 77px;
+      font-size: 54px;
     }
 
     .landing-text {
@@ -209,7 +202,6 @@
   .rotating-word span:nth-child(5) {
     animation-delay: 12s;
   }
-
 
 
   .username-input-group:focus-within .input-group-text {
