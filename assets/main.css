@@ -600,7 +600,7 @@ p {
   letter-spacing: normal !important;
   text-decoration: none !important;
   text-align: left;
-  padding: 12px 0;
+  padding: 0;
 }
 
 .btn-primary, .btn-primary:visited {
@@ -702,19 +702,6 @@ h6 {
 
 .navbar {
   margin-bottom: 0;
-}
-
-.navbar-brand {
-  padding-top: 22px !important;
-  padding-bottom: 22px !important;
-  height: 66px !important;
-  margin-left: 0 !important;
-}
-
-@media (min-width: 767px) {
-  .navbar-brand {
-    padding-left: 16px;
-  }
 }
 
 .navbar-right {

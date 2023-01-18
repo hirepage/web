@@ -149,4 +149,17 @@
     user-select: none;
     padding-bottom: 10px;
   }
+
+  .navbar-brand {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    height: 66px !important;
+    margin-left: 0 !important;
+  }
+
+  @media (min-width: 767px) {
+    .navbar-brand {
+      padding-left: 16px;
+    }
+  }
 </style>

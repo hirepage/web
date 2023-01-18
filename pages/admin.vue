@@ -1,6 +1,7 @@
 <script>
   export default {
     middleware: 'authenticated',
+    layout: 'admin',
     computed: {
       user () {
         return this.$store.state.user
