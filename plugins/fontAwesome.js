@@ -16,7 +16,9 @@ import {
   faStripeS,
   faApple,
   faSlack,
-  faYoutube
+  faYoutube,
+  faFacebook,
+  faInstagram
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faLock,
@@ -49,6 +51,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faInstagram,
+  faFacebook,
   faCamera,
   faRobot,
   faVideo,

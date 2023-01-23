@@ -25,5 +25,10 @@ export default app => ({
     return app.$axios.$post('/user/login', data).then(auth => {
       app.$api.auth.setAuth(auth)
     })
+  },
+  addLink (data) {
+    return app.$axios.$post('/user/link', data).then(user => {
+      app.store.commit('SET_USER', user)
+    })
   }
 })

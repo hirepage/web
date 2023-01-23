@@ -1,12 +1,14 @@
 <script>
   import AvatarImageInput from '@/components/AvatarImageInput'
   import ColorInput from '@/components/ColorInput'
+  import SocialLinks from '@/components/SocialLinks'
 
   export default {
     layout: 'admin',
     components: {
       AvatarImageInput,
-      ColorInput
+      ColorInput,
+      SocialLinks
     },
     data () {
       return {
@@ -84,11 +86,6 @@
       </b-row>
     </b-card>
 
-<!--    <h2 class="mt-5">-->
-<!--      Links-->
-<!--    </h2>-->
-<!--    <b-card>-->
-<!--    -->
-<!--    </b-card>-->
+    <social-links class="mt-5"/>
   </div>
 </template>
