@@ -44,10 +44,12 @@ import {
   faPencilAlt,
   faUndo,
   faVideo,
-  faRobot
+  faRobot,
+  faCamera
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  faCamera,
   faRobot,
   faVideo,
   faMinus,

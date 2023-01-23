@@ -5,6 +5,11 @@ export default app => ({
       return user
     }).catch(console.error)
   },
+  update (data) {
+    return app.$axios.$put('/user', data).then(user => {
+      app.store.commit('SET_USER', user)
+    })
+  },
   getUser (username) {
     return app.$axios.$get(`/user/${username}`)
   },

@@ -9,8 +9,8 @@
       // UpdatesButton
     },
     computed: {
-      workspace () {
-        return this.$store.state.workspace
+      previewUrl () {
+        return  this.$store.state.user ? `/${this.$store.state.user.username}` : null
       }
     },
     created () {
@@ -26,12 +26,11 @@
     <b-container>
       <b-row>
         <b-col cols="6">
-          <nuxt class="setting-tab"/>
+          <nuxt v-if="$store.state.user" class="setting-tab"/>
         </b-col>
         <b-col cols="6">
           <div class="preview-wrapper">
-            <iframe src="/dylan" class="preview-iframe">
-            </iframe>
+            <iframe ref="previewIframe" :src="previewUrl" class="preview-iframe"></iframe>
           </div>
         </b-col>
       </b-row>
