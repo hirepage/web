@@ -10,7 +10,7 @@
     },
     data () {
       return {
-        title: this.$store.state.user.fullName,
+        title: this.$store.state.user.title,
         color: this.$store.state.user.btnColor,
         bio: this.$store.state.user.bio,
         avatarUrl: this.$store.state.user.avatarUrl

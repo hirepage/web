@@ -107,7 +107,7 @@
 
           <div class="text-center">
             <h1 class="semi-bold mb-1 mt-3" style="font-size: 22px;">
-              {{ user.fullName }}
+              {{ user.title }}
             </h1>
             <p style="opacity: 0.8;">
               {{ user.bio }}

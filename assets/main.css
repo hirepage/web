@@ -230,14 +230,11 @@ p {
   font-size: 16px !important;
   letter-spacing: normal !important;
   text-decoration: none !important;
-  text-align: left;
-  color: #549DFF !important;
   padding: 0;
 }
 
 .btn-link:hover {
   text-decoration: none !important;
-  color: #0366d6 !important;
 }
 
 .nav-tabs:focus {
@@ -677,12 +674,10 @@ h6 {
 
 .btn-link, .btn-link:visited, .btn-link:active, .btn-link:focus {
   font-size: inherit !important;
-  color: rgb(88, 96, 105)
 }
 
 .btn-link:hover {
   font-size: inherit !important;
-  color: #0366d6;
 }
 
 .nav-tabs:focus {

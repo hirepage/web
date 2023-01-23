@@ -17,6 +17,7 @@
         if (!file) return
         this.$nuxt.$loading.start()
         this.$api.file.upload(file).then(url => {
+          console.log('update:avatar-url', url)
           this.$emit('update:avatar-url', url)
         }).finally(this.$nuxt.$loading.finish)
       }
@@ -78,14 +79,14 @@
   }
 
   .btn-file {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2) !important;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.8);
     font-size: 32px;
   }
 
   .btn-file:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.3) !important;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.95);
     font-size: 32px;
