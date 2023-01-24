@@ -13,7 +13,7 @@
     mixins: [socialIcons],
     data () {
       return {
-        steps: this.$store.state.user.links,
+        links: this.$store.state.user.links,
         icon: null
       }
     },
@@ -25,16 +25,16 @@
     watch: {
       user () {
         this.$store.dispatch('updatePreview')
-        this.steps = this.user.links
+        this.links = this.user.links
       }
     },
     methods: {
       updateOrder ({ newIndex }) {
-        const step = this.steps[newIndex]
-        this.$api.workspace.orderStep(step.id, newIndex).catch(err => {
+        const link = this.links[newIndex]
+        this.$api.user.orderLink(link.id, newIndex).catch(err => {
           console.error(err)
-          this.steps = this.$store.state.workspace.steps
-          this.$toast.error('Error reordering steps')
+          this.links = this.$store.state.user.links
+          this.$toast.error('Error reordering links')
         })
       },
       editIcon (icon) {
@@ -59,11 +59,11 @@
 
       <b-card no-body>
         <draggable
-          v-model="steps"
+          v-model="links"
           @end="updateOrder">
           <transition-group class="list-group list-group-flush">
             <b-list-group-item
-              v-for="s in steps"
+              v-for="s in links"
               :key="s.id"
               button
               class="p-0"

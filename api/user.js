@@ -40,5 +40,10 @@ export default app => ({
     return app.$axios.$delete(`/user/link/${id}`).then(user => {
       app.store.commit('SET_USER', user)
     })
+  },
+  orderLink (id, position) {
+    return app.$axios.$put(`/user/link/${id}/order`).then(user => {
+      app.store.commit('SET_USER', user)
+    })
   }
 })
