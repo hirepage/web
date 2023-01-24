@@ -108,7 +108,7 @@
               width="96"/>
           </div>
 
-          <div class="text-center">
+          <div class="text-center" :style="`color: ${user.textColor};`">
             <h1 class="semi-bold mb-1 mt-3" style="font-size: 22px;">
               {{ user.title }}
             </h1>

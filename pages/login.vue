@@ -39,7 +39,7 @@
       Login
     </h1>
     <hr>
-    <b-form
+    <form
       id="login-form"
       @keydown.enter.prevent="$refs.loginBtn.click()">
       <div class="form-group">
@@ -74,7 +74,7 @@
           Log in
         </loading-button>
       </div>
-    </b-form>
+    </form>
     <p>
       Don't have an account yet?
       <nuxt-link to="/register">

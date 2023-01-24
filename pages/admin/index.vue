@@ -50,7 +50,7 @@
         <b-col order-md="0">
           <div class="form-group has-feedback">
             <label>
-              Profile Title
+              Name
             </label>
             <b-form-input
               id="first-name-input"
@@ -87,7 +87,6 @@
               autocomplete="last-name"
               class="form-control"
               type="text"
-              maxlength="64"
               autocapitalize="word"/>
           </div>
 
