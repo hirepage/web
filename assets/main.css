@@ -840,7 +840,11 @@ h6 {
 /*}*/
 
 .form-control {
-  background-color: rgb(253, 253, 254);
+  /*border-color: white;*/
+  background-color: transparent;
+  /*background-color: rgb(253, 253, 254);*/
 }
 
-
+.form-control:focus {
+  background-color: transparent;
+}

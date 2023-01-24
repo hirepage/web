@@ -232,6 +232,7 @@
     right: 24px;
     height: 40px;
     width: 40px;
+    visibility: hidden;
   }
 
   @media (min-width: 768px) {
