@@ -51,4 +51,9 @@
     background-color: white;
     border-bottom: solid #ececec 1px;
   }
+
+  .nav-item .nuxt-link-exact-active {
+    /*border-bottom: 2px #549DFF solid;*/
+    color: #3a3a3a;
+  }
 </style>
