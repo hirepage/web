@@ -56,7 +56,6 @@
     },
     methods: {
       submitForm (done) {
-        console.log('submitForm', this.formData)
         this.$api.lead.submit({
           user: this.user.id,
           fields: this.fields
@@ -120,7 +119,7 @@
                 :key="link.id"
                 class="social-icon">
                 <a
-                  :href="link.url"
+                  :href="getUrl(link)"
                   target="_blank">
                   <font-awesome-icon
                     size="lg"

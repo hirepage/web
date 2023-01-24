@@ -5,7 +5,8 @@ const icons = [{
   iconSet: 'fas',
   icon: 'envelope',
   name: 'Email',
-  placeholder: 'yourname@company.com'
+  placeholder: 'yourname@company.com',
+  prefix: 'mailto:'
 }, {
   id: 'FACEBOOK',
   iconSet: 'fab',
@@ -41,30 +42,12 @@ const icons = [{
 export default {
   computed: {
     options () {
-      return [
-        {
-          value: null,
-          text: 'Select Icon'
-        },
-        {
-          value: 'EMAIL',
-          text: 'Email'
-        }, {
-          value: 'FACEBOOK',
-          text: 'Facebook'
-        }, {
-          value: 'LINKEDIN',
-          text: 'LinkedIn'
-        }, {
-          value: 'TWITTER',
-          text: 'Twitter'
-        }, {
-          value: 'YOUTUBE',
-          text: 'YouTube'
-        }, {
-          value: 'INSTAGRAM',
-          text: 'Instagram'
-        }]
+      return icons.map(i => {
+        return {
+          value: i.id,
+          text: i.name
+        }
+      })
     }
   },
   methods: {
@@ -75,6 +58,10 @@ export default {
     getIcon (id) {
       const icon = find(icons, { id: id })
       return icon ? [icon.iconSet, icon.icon] : null
+    },
+    getUrl(link) {
+      const icon = find(icons, { id: link.icon })
+      return icon ? `${icon.prefix}${link.url}` : link.url
     }
   }
 }
