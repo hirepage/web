@@ -1,6 +1,7 @@
 <script>
   import draggable from 'vuedraggable'
   import AddIconModal from './AddIconModal'
+  import socialIcons from '~/mixins/socialIcons'
   // import EditStepModal from './EditStepModal'
 
   export default {
@@ -9,6 +10,7 @@
       AddIconModal
       // EditStepModal
     },
+    mixins: [socialIcons],
     data () {
       return {
         steps: this.$store.state.user.links,
@@ -82,7 +84,7 @@
                     size="lg"
                     width="42.5"
                     height="18"
-                    :icon="[s.iconSet, s.icon]"/>
+                    :icon="getIcon(s.icon)"/>
                 </b-col>
                 <b-col style="max-lines: 1; overflow: hidden; white-space: nowrap;">
                   {{ s.url }}

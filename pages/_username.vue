@@ -3,11 +3,12 @@
   import { forOwn, find } from 'lodash'
   import ClipboardJS from 'clipboard'
   import meta from '@/mixins/meta'
+  import socialIcons from '@/mixins/socialIcons'
   import LoadingButton from '@/components/LoadingButton'
 
   export default {
     components: { LoadingButton },
-    mixins: [meta],
+    mixins: [meta, socialIcons],
     data () {
       return {
         clipboard: null,
@@ -125,7 +126,7 @@
                     size="lg"
                     width="42.5"
                     height="18"
-                    :icon="[link.iconSet, link.icon]"/>
+                    :icon="getIcon(link.icon)"/>
                 </a>
               </div>
             </div>
