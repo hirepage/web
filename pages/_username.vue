@@ -16,6 +16,9 @@
       }
     },
     computed: {
+      wrapperStyle () {
+        return `background-color: ${this.user.backgroundColor};`
+      },
       enabled () {
         return this.isEmailValid && this.firstName && this.lastName
       },
@@ -75,7 +78,7 @@
 </script>
 
 <template>
-  <div class="setup-wrapper">
+  <div class="setup-wrapper" :style="wrapperStyle">
     <b-row
       align-h="center"
       align-v="center"
@@ -137,16 +140,18 @@
             v-for="field in user.fields"
             :key="field.id"
             class="has-feedback">
-            <label class="form-label">
-              {{ field.label }}
-            </label>
+<!--            <label class="form-label">-->
+<!--              {{ field.label }}-->
+<!--            </label>-->
             <b-form-textarea
               v-if="field.type === 'textarea'"
               v-model="form[field.id]"
+              :placeholder="field.placeholder"
               rows="4"/>
             <b-form-input
               v-else
               v-model="form[field.id]"
+              :placeholder="field.placeholder"
               :type="field.type"/>
           </b-form-group>
 
@@ -198,7 +203,7 @@
   }
 
   .setup-wrapper {
-    /*height: 100vh;*/
+    min-height: 100vh;
     padding: 0 0 100px 0;
     /*background-color: rgb(250, 250, 252);*/
   }

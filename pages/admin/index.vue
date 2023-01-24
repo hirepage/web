@@ -14,6 +14,7 @@
       return {
         title: this.$store.state.user.title,
         color: this.$store.state.user.btnColor,
+        backgroundColor: this.$store.state.user.backgroundColor,
         bio: this.$store.state.user.bio,
         avatarUrl: this.$store.state.user.avatarUrl
       }
@@ -23,6 +24,7 @@
         this.$api.user.update({
           title: this.title,
           btnColor: this.color,
+          backgroundColor: this.backgroundColor,
           bio: this.bio,
           avatarUrl: this.avatarUrl
         }).then(user => {
@@ -61,7 +63,19 @@
               autocapitalize="word"/>
           </div>
 
-          <color-input :color.sync="color"/>
+          <b-form-group>
+            <label>
+              Button Color
+            </label>
+            <color-input :color.sync="color"/>
+          </b-form-group>
+
+          <b-form-group>
+            <label>
+              Background Color
+            </label>
+            <color-input :color.sync="backgroundColor"/>
+          </b-form-group>
 
           <div class="form-group has-feedback">
             <label>

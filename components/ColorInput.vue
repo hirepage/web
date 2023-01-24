@@ -32,17 +32,12 @@
 </script>
 
 <template>
-  <b-form-group>
-    <label>
-      Button Color
-    </label>
-    <b-input-group>
-      <b-input-group-prepend>
-        <b-form-input v-model="pickerColor" type="color" class="color-picker"/>
-      </b-input-group-prepend>
-      <b-form-input v-model="innerColor" name="widget-innerColor" type="text"/>
-    </b-input-group>
-  </b-form-group>
+  <b-input-group>
+    <b-input-group-prepend>
+      <b-form-input v-model="pickerColor" type="color" class="color-picker"/>
+    </b-input-group-prepend>
+    <b-form-input v-model="innerColor" name="widget-innerColor" type="text"/>
+  </b-input-group>
 </template>
 
 <style>
