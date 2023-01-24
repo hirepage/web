@@ -32,7 +32,17 @@
           this.$refs.editIconModal.hide()
         }).catch(err => {
           console.error(err)
-          this.$toast.error('Error adding icon')
+          this.$toast.error('Error updating icon')
+        }).finally(done)
+      },
+      removeIcon (done) {
+        return this.$api.user.removeLink(this.icon.id).then(user => {
+          this.selected = null
+          this.url = ''
+          this.$refs.editIconModal.hide()
+        }).catch(err => {
+          console.error(err)
+          this.$toast.error('Error removing icon')
         }).finally(done)
       }
     }
@@ -73,20 +83,29 @@
           type="url"/>
       </b-form-group>
     </form>
-    <div class="text-right">
-      <b-btn
-        variant="default"
-        class="btn-margin"
-        @click="$bvModal.hide('editIconModal')">
-        Cancel
-      </b-btn>
-      <loading-button
-        ref="createBtn"
-        class="btn-primary"
-        :disabled="!url || !selected"
-        @click="addIcon">
-        Update Icon
-      </loading-button>
-    </div>
+    <b-row>
+      <b-col>
+        <loading-button
+          variant="danger"
+          @click="removeIcon">
+          Remove
+        </loading-button>
+      </b-col>
+      <b-col cols="auto">
+        <b-btn
+          variant="default"
+          class="btn-margin"
+          @click="$bvModal.hide('editIconModal')">
+          Cancel
+        </b-btn>
+        <loading-button
+          ref="createBtn"
+          variant="primary"
+          :disabled="!url || !selected"
+          @click="addIcon">
+          Update Icon
+        </loading-button>
+      </b-col>
+    </b-row>
   </b-modal>
 </template>

@@ -26,7 +26,7 @@
           bio: this.bio,
           avatarUrl: this.avatarUrl
         }).then(user => {
-          document.getElementsByClassName('preview-iframe')[0].contentWindow.location.reload()
+          this.$store.dispatch('updatePreview')
         }).catch(err => {
           this.$toast.error('Error updating profile')
         }).finally(done)

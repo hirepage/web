@@ -29,5 +29,11 @@ export const actions = {
     //   commit('SET_AUTH', token)
     //   app.$axios.setHeader('Authorization', token)
     // }
+  },
+  updatePreview() {
+    if (!process.client) {
+      return
+    }
+    document.getElementsByClassName('preview-iframe')[0].contentWindow.location.reload()
   }
 }

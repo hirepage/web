@@ -24,7 +24,7 @@
     },
     watch: {
       user () {
-        console.log('=== user updated')
+        this.$store.dispatch('updatePreview')
         this.steps = this.user.links
       }
     },

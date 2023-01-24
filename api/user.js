@@ -35,5 +35,10 @@ export default app => ({
     return app.$axios.$put(`/user/link/${id}`, data).then(user => {
       app.store.commit('SET_USER', user)
     })
+  },
+  removeLink (id) {
+    return app.$axios.$delete(`/user/link/${id}`).then(user => {
+      app.store.commit('SET_USER', user)
+    })
   }
 })
