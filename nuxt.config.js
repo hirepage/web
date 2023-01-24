@@ -10,8 +10,7 @@ const modules = [
   'nuxt-rfg-icon',
   '@nuxtjs/axios',
   'bootstrap-vue/nuxt',
-  '@nuxtjs/google-analytics',
-  '@nuxtjs/redirect-module'
+  '@nuxtjs/google-analytics'
 ]
 
 if (process.env.LOCAL !== 'true') {
