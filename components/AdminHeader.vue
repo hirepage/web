@@ -1,6 +1,6 @@
 <script>
   import SettingsDropdown from '@/components/SettingsDropdown'
-  import LogoutModal from '@/components/LogoutModal'
+  import LogoutModal from '@/components/modals/LogoutModal'
 
   export default {
     middleware: 'authenticated',

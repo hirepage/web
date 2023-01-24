@@ -69,7 +69,8 @@ export default {
   },
   methods: {
     getPlaceholder (id) {
-      return id ? find(icons, { id: id }).placeholder : null
+      const icon = find(icons, { id: id })
+      return icon ? icon.placeholder : null
     },
     getIcon (id) {
       const icon = find(icons, { id: id })

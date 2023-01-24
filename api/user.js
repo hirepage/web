@@ -30,5 +30,10 @@ export default app => ({
     return app.$axios.$post('/user/link', data).then(user => {
       app.store.commit('SET_USER', user)
     })
+  },
+  editLink (id, data) {
+    return app.$axios.$put(`/user/link/${id}`, data).then(user => {
+      app.store.commit('SET_USER', user)
+    })
   }
 })

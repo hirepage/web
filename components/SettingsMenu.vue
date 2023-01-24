@@ -1,5 +1,5 @@
 <script>
-  import LogoutModal from '@/components/LogoutModal'
+  import LogoutModal from '@/components/modals/LogoutModal'
 
   export default {
     components: { LogoutModal },

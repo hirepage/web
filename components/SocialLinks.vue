@@ -1,30 +1,30 @@
 <script>
   import draggable from 'vuedraggable'
-  import AddIconModal from './AddIconModal'
+  import AddIconModal from '@/components/modals/AddIconModal'
+  import EditIconModal from '@/components/modals/EditIconModal'
   import socialIcons from '~/mixins/socialIcons'
-  // import EditStepModal from './EditStepModal'
 
   export default {
     components: {
       draggable,
-      AddIconModal
-      // EditStepModal
+      AddIconModal,
+      EditIconModal
     },
     mixins: [socialIcons],
     data () {
       return {
         steps: this.$store.state.user.links,
-        step: null,
-        kind: 'INPUT'
+        icon: null
       }
     },
     computed: {
-      workspace () {
-        return this.$store.state.workspace
+      user () {
+        return this.$store.state.user
       }
     },
     watch: {
       user () {
+        console.log('=== user updated')
         this.steps = this.user.links
       }
     },
@@ -37,13 +37,9 @@
           this.$toast.error('Error reordering steps')
         })
       },
-      editStep (s) {
-        this.step = s
-        this.$bvModal.show('editStepModal')
-      },
-      openStepModal (kind) {
-        this.kind = kind
-        this.$bvModal.show('addStepModal')
+      editIcon (icon) {
+        this.icon = icon
+        this.$bvModal.show('editIconModal')
       }
     }
   }
@@ -59,7 +55,7 @@
     </p>
     <b-card-group>
       <add-icon-modal/>
-      <!--    <edit-step-modal :step="step"/>-->
+      <edit-icon-modal :icon="icon"/>
 
       <b-card no-body>
         <draggable
@@ -71,7 +67,7 @@
               :key="s.id"
               button
               class="p-0"
-              @click="editStep(s)">
+              @click="editIcon(s)">
               <b-row align-v="center" no-gutters class="flex-nowrap">
                 <b-col cols="auto">
                   <div class="handle p-3">
@@ -81,6 +77,7 @@
                 </b-col>
                 <b-col cols="auto" class="pr-2 semi-bold">
                   <font-awesome-icon
+                    v-if="getIcon(s.icon)"
                     size="lg"
                     width="42.5"
                     height="18"
