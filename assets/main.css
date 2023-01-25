@@ -16,6 +16,10 @@ html {
 :root {
   --danger: #a94442 !important;
   --success: rgb(25, 186, 122) !important;
+  --text-color: #3a3a3a;
+  --light-text-color: #3a3a3a;
+  --theme-color: #549DFF;
+  --background-color: #ffffff;
 }
 
 a {

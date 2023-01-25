@@ -17,7 +17,7 @@
     },
     computed: {
       wrapperStyle () {
-        return `background-color: ${this.user.backgroundColor};`
+        return `background-color: ${this.user.backgroundColor}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor};`
       },
       enabled () {
         return this.isEmailValid && this.firstName && this.lastName
@@ -108,7 +108,7 @@
               width="96"/>
           </div>
 
-          <div class="text-center" :style="`color: ${user.textColor};`">
+          <div class="text-center">
             <h1 class="semi-bold mb-1 mt-3" style="font-size: 22px;">
               {{ user.title }}
             </h1>
@@ -144,11 +144,13 @@
             <!--              {{ field.label }}-->
             <!--            </label>-->
             <b-form-textarea
+              class="profile-field"
               v-if="field.type === 'textarea'"
               v-model="form[field.id]"
               :placeholder="field.placeholder"
               rows="4"/>
             <b-form-input
+              class="profile-field"
               v-else
               v-model="form[field.id]"
               :placeholder="field.placeholder"
@@ -269,5 +271,26 @@
 
   .hirepage-link:hover {
     opacity: 0.9;
+  }
+
+  .profile-field {
+    color: var(--text-color);
+  }
+
+  .profile-field:focus {
+    border-color: var(--theme-color);
+  }
+
+  .profile-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--light-text-color);
+    opacity: 1; /* Firefox */
+  }
+
+  .profile-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--light-text-color);
+  }
+
+  .profile-field::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--light-text-color);
   }
 </style>
