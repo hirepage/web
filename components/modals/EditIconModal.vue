@@ -22,7 +22,7 @@
       }
     },
     methods: {
-      addIcon (done) {
+      updateIcon (done) {
         return this.$api.user.editLink(this.icon.id, {
           url: this.url,
           icon: this.selected
@@ -102,7 +102,7 @@
           ref="createBtn"
           variant="primary"
           :disabled="!url || !selected"
-          @click="addIcon">
+          @click="updateIcon">
           Update Icon
         </loading-button>
       </b-col>

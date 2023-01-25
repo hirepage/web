@@ -1,20 +1,20 @@
 <script>
   import draggable from 'vuedraggable'
-  import AddIconModal from '@/components/modals/AddIconModal'
-  import EditIconModal from '@/components/modals/EditIconModal'
+  import AddFieldModal from '@/components/modals/AddFieldModal'
+  import EditFieldModal from '@/components/modals/EditFieldModal'
   import socialIcons from '~/mixins/socialIcons'
 
   export default {
     components: {
       draggable,
-      AddIconModal,
-      EditIconModal
+      AddFieldModal,
+      EditFieldModal
     },
     mixins: [socialIcons],
     data () {
       return {
         fields: this.$store.state.user.fields,
-        icon: null
+        field: null
       }
     },
     computed: {
@@ -37,9 +37,9 @@
           this.$toast.error('Error reordering fields')
         })
       },
-      editIcon (icon) {
-        this.icon = icon
-        this.$bvModal.show('editIconModal')
+      editField (field) {
+        this.field = field
+        this.$bvModal.show('editFieldModal')
       }
     }
   }
@@ -54,8 +54,8 @@
       Collect information from potential clients. Responses will be sent to your email.
     </p>
     <b-card-group>
-      <add-icon-modal/>
-      <edit-icon-modal :icon="icon"/>
+      <add-field-modal/>
+      <edit-field-modal :field="field"/>
 
       <b-card no-body>
         <draggable
@@ -67,7 +67,7 @@
               :key="s.id"
               button
               class="p-0"
-              @click="editIcon(s)">
+              @click="editField(s)">
               <b-row align-v="center" no-gutters class="flex-nowrap">
                 <b-col cols="auto">
                   <div class="handle p-3">
@@ -100,7 +100,7 @@
       </b-card>
     </b-card-group>
 
-    <b-btn v-b-modal.addIconModal class="mb-5" variant="primary">
+    <b-btn v-b-modal.addFieldModal class="mb-5" variant="primary">
       Add Field
     </b-btn>
   </div>
