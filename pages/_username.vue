@@ -112,7 +112,7 @@
             <h1 class="semi-bold mb-1 mt-3" style="font-size: 22px;">
               {{ user.title }}
             </h1>
-            <p style="opacity: 0.8;">
+            <p style="opacity: 0.7;">
               {{ user.bio }}
             </p>
 
@@ -140,9 +140,9 @@
             v-for="field in user.fields"
             :key="field.id"
             class="has-feedback">
-<!--            <label class="form-label">-->
-<!--              {{ field.label }}-->
-<!--            </label>-->
+            <!--            <label class="form-label">-->
+            <!--              {{ field.label }}-->
+            <!--            </label>-->
             <b-form-textarea
               v-if="field.type === 'textarea'"
               v-model="form[field.id]"
@@ -172,8 +172,8 @@
       </b-col>
     </b-row>
     <div class="text-center w-100 mt-5">
-      <a href="/">
-        Hirepage
+      <a href="/" :style="`color: ${user.textColor};`" class="hirepage-link">
+        Powered by Hirepage
       </a>
     </div>
   </div>
@@ -261,5 +261,13 @@
 
   .share-btn {
     z-index: 500;
+  }
+
+  .hirepage-link {
+    opacity: 0.7;
+  }
+
+  .hirepage-link:hover {
+    opacity: 0.9;
   }
 </style>

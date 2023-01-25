@@ -57,7 +57,7 @@
       <add-icon-modal/>
       <edit-icon-modal :icon="icon"/>
 
-      <b-card no-body>
+      <b-card v-if="links.length" no-body>
         <draggable
           v-model="links"
           @end="updateOrder">

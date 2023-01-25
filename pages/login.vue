@@ -42,7 +42,7 @@
     <form
       id="login-form"
       @keydown.enter.prevent="$refs.loginBtn.click()">
-      <div class="form-group">
+      <b-form-group>
         <label>
           Username
         </label>
@@ -54,8 +54,8 @@
             autofocus
             maxlength="64"/>
         </b-input-group>
-      </div>
-      <div class="form-group">
+      </b-form-group>
+      <b-from-group>
         <label>
           Password
         </label>
@@ -65,7 +65,7 @@
           autocomplete="current-password"
           class="form-control"
           type="password"/>
-      </div>
+      </b-from-group>
       <div class="form-group">
         <loading-button
           ref="loginBtn"
