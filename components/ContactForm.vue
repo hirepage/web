@@ -30,8 +30,8 @@
     },
     methods: {
       updateOrder ({ newIndex }) {
-        const link = this.fields[newIndex]
-        this.$api.user.orderLink(link.id, newIndex).catch(err => {
+        const field = this.fields[newIndex]
+        this.$api.user.orderField(field.id, newIndex).catch(err => {
           console.error(err)
           this.fields = this.$store.state.user.fields
           this.$toast.error('Error reordering fields')
