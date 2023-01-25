@@ -116,7 +116,7 @@
               {{ user.bio }}
             </p>
 
-            <div class="form-group social-icons pt-1">
+            <div v-if="user.links.length" class="form-group social-icons pt-1">
               <div
                 v-for="link in user.links"
                 :key="link.id"
