@@ -37,6 +37,12 @@ const icons = [{
   icon: 'instagram',
   name: 'Instagram',
   placeholder: 'https://www.instagram.com/username/'
+}, {
+  id: 'GITHUB',
+  iconSet: 'fab',
+  icon: 'github',
+  name: 'Github',
+  placeholder: 'https://github.com/username'
 }]
 
 export default {

@@ -144,16 +144,16 @@
             <!--              {{ field.label }}-->
             <!--            </label>-->
             <b-form-textarea
-              class="profile-field"
               v-if="field.type === 'textarea'"
               v-model="form[field.id]"
               :placeholder="field.placeholder"
+              class="profile-field"
               rows="4"/>
             <b-form-input
-              class="profile-field"
               v-else
               v-model="form[field.id]"
               :placeholder="field.placeholder"
+              class="profile-field"
               :type="field.type"/>
           </b-form-group>
 
@@ -252,13 +252,15 @@
     margin: 12px auto 12px auto;
     max-width: 160px;
     display: flex;
-    /*margin-top: 24px;*/
-    /*margin-bottom: 24px;*/
+    justify-content: center;
   }
 
   .social-icon a {
-    color: #3a3a3a;
-    /*opacity: 0.7;*/
+    color: var(--text-color);
+  }
+
+  .social-icon a:hover {
+    opacity: 0.7;
   }
 
   .share-btn {
