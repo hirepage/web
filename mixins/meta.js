@@ -7,7 +7,7 @@ export default {
       meta: [
         {
           hid: 'description',
-          name: 'this.metaDescription',
+          name: 'description',
           content: this.metaDescription
         },
         {
@@ -74,7 +74,7 @@ export default {
   },
   computed: {
     metaName () {
-      return get(this.user, 'fullName')
+      return get(this.user, 'title')
     },
     avatarUrl () {
       return get(this.user, 'avatarUrl')
@@ -83,7 +83,7 @@ export default {
       return get(this.user, 'bio')
     },
     metaTitle() {
-      return `${get(this.user, 'fullName')} | Hirepage`
+      return `${get(this.user, 'title')} | Hirepage`
     }
   }
 }

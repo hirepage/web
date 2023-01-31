@@ -73,11 +73,6 @@ function head () {
         content: '@hirepage_'
       },
       {
-        hid: 'twitter:creator',
-        name: 'twitter:creator',
-        content: '@dgwight'
-      },
-      {
         hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary'
