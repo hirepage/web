@@ -105,8 +105,8 @@
               class="logo-img"
               :src="user.avatarUrl"
               :alt="`${user.fullName} Profile Picture`"
-              height="96"
-              width="96"/>
+              height="120"
+              width="120"/>
           </div>
 
           <div class="text-center">
