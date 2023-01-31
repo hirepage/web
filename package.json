@@ -54,9 +54,11 @@
     "nuxt-start": "2.15.8",
     "serverless-apigw-binary": "^0.4.4",
     "serverless-http": "^2.7.0",
+    "showdown": "^2.1.0",
     "validator": "^13.5.2",
     "vue-plyr": "^7.0.0",
-    "vuedraggable": "^2.24.3"
+    "vuedraggable": "^2.24.3",
+    "xss": "^1.0.14"
   },
   "devDependencies": {
     "@sentry/cli": "2.0.4",

@@ -16,6 +16,7 @@
         color: this.$store.state.user.btnColor,
         backgroundColor: this.$store.state.user.backgroundColor,
         bio: this.$store.state.user.bio,
+        about: this.$store.state.user.about,
         avatarUrl: this.$store.state.user.avatarUrl
       }
     },
@@ -26,6 +27,7 @@
           btnColor: this.color,
           backgroundColor: this.backgroundColor,
           bio: this.bio,
+          about: this.about,
           avatarUrl: this.avatarUrl
         }).then(user => {
           this.$store.dispatch('updatePreview')
@@ -79,7 +81,7 @@
 
           <div class="form-group has-feedback">
             <label>
-              Bio
+              Headline
             </label>
             <b-form-textarea
               v-model="bio"
@@ -91,11 +93,11 @@
 
       <div class="form-group has-feedback">
         <label>
-          Content
+          About
         </label>
         <b-form-textarea
-          v-model="bio"
-          :lines="5"
+          v-model="about"
+          :rows="5"
           autocapitalize="word"/>
       </div>
 

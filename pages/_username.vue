@@ -4,10 +4,10 @@
   import ClipboardJS from 'clipboard'
   import meta from '@/mixins/meta'
   import socialIcons from '@/mixins/socialIcons'
-  import LoadingButton from '@/components/LoadingButton'
+  import MarkdownText from '@/components/MarkdownText'
 
   export default {
-    components: { LoadingButton },
+    components: { MarkdownText },
     mixins: [meta, socialIcons],
     data () {
       return {
@@ -109,7 +109,7 @@
           </div>
 
           <div class="text-center">
-            <h1 class="semi-bold mb-1 mt-3" style="font-size: 22px;">
+            <h1 class="semi-bold mb-1 mt-3" style="font-size: 32px;">
               {{ user.title }}
             </h1>
             <p style="opacity: 0.7;">
@@ -134,7 +134,13 @@
             </div>
           </div>
 
+          <markdown-text :text="user.about"/>
+
           <div class="pt-2 mb-3"/>
+
+          <h3 v-if="user.bio" style="font-weight: bold; text-align: center; margin-bottom: 16px;">
+            Get in touch
+          </h3>
 
           <b-form-group
             v-for="field in user.fields"
