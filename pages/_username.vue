@@ -134,7 +134,7 @@
             </div>
           </div>
 
-          <markdown-text :text="user.about"/>
+          <markdown-text :text="user.about" class="mt-4"/>
 
           <div class="pt-2 mb-3"/>
 

@@ -43,6 +43,19 @@ const icons = [{
   icon: 'github',
   name: 'Github',
   placeholder: 'https://github.com/username'
+}, {
+  id: 'PHONE',
+  iconSet: 'far',
+  icon: 'phone',
+  name: 'Phone Number',
+  prefix: 'tel:',
+  placeholder: '555-666-7777'
+}, {
+  id: 'WEBSITE',
+  iconSet: 'far',
+  icon: 'link',
+  name: 'Website',
+  placeholder: 'https://your-site.com'
 }]
 
 export default {
@@ -65,9 +78,9 @@ export default {
       const icon = find(icons, { id: id })
       return icon ? [icon.iconSet, icon.icon] : null
     },
-    getUrl(link) {
+    getUrl (link) {
       const icon = find(icons, { id: link.icon })
-      return icon ? `${icon.prefix}${link.url}` : link.url
+      return icon && icon.prefix ? `${icon.prefix}${link.url}` : link.url
     }
   }
 }
