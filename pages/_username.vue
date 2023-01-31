@@ -17,7 +17,8 @@
     },
     computed: {
       wrapperStyle () {
-        return `background-color: ${this.user.backgroundColor}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor};`
+        const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
+        return `${background}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor};`
       },
       enabled () {
         return this.isEmailValid && this.firstName && this.lastName

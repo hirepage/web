@@ -17,7 +17,8 @@
         backgroundColor: this.$store.state.user.backgroundColor,
         bio: this.$store.state.user.bio,
         about: this.$store.state.user.about,
-        avatarUrl: this.$store.state.user.avatarUrl
+        avatarUrl: this.$store.state.user.avatarUrl,
+        backgroundType: this.$store.state.user.backgroundType
       }
     },
     methods: {
@@ -28,7 +29,8 @@
           backgroundColor: this.backgroundColor,
           bio: this.bio,
           about: this.about,
-          avatarUrl: this.avatarUrl
+          avatarUrl: this.avatarUrl,
+          backgroundType: this.backgroundType
         }).then(user => {
           this.$store.dispatch('updatePreview')
         }).catch(err => {
@@ -50,10 +52,7 @@
           <avatar-image-input :avatar-url.sync="avatarUrl"/>
         </b-col>
         <b-col order-md="0">
-          <div class="form-group has-feedback">
-            <label>
-              Name
-            </label>
+          <b-form-group label="Name">
             <b-form-input
               id="first-name-input"
               v-model="title"
@@ -63,31 +62,39 @@
               type="text"
               maxlength="64"
               autocapitalize="word"/>
-          </div>
+          </b-form-group>
 
-          <b-form-group>
-            <label>
-              Button Color
-            </label>
+          <b-form-group label="Button Color">
             <color-input :color.sync="color"/>
           </b-form-group>
 
-          <b-form-group>
-            <label>
-              Background Color
-            </label>
+          <b-form-group label="Background Color">
             <color-input :color.sync="backgroundColor"/>
           </b-form-group>
 
-          <div class="form-group has-feedback">
-            <label>
-              Headline
-            </label>
+          <b-form-group label="Background Type" v-slot="{ ariaDescribedby }">
+            <b-form-radio
+              v-model="backgroundType"
+              :aria-describedby="ariaDescribedby"
+              name="background-type"
+              value="FLAT">
+              Flat Color
+            </b-form-radio>
+            <b-form-radio
+              v-model="backgroundType"
+              :aria-describedby="ariaDescribedby"
+              name="background-type"
+              value="GRADIENT">
+              Gradient
+            </b-form-radio>
+          </b-form-group>
+
+          <b-form-group label="Headline">
             <b-form-textarea
               v-model="bio"
               type="text"
               autocapitalize="word"/>
-          </div>
+          </b-form-group>
         </b-col>
       </b-row>
 
