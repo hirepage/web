@@ -16,20 +16,31 @@
     <b-list-group flush>
       <b-dd-header>
         <div>
-          {{ $store.state.user.fullName }}
-        </div>
-        <div>
           hire.page/{{ $store.state.user.username }}
         </div>
+        <div>
+
+        </div>
       </b-dd-header>
+      <b-dd-item :href="`https://hire.page/${ $store.state.user.username }`" target="_blank">
+        View Page
+        <font-awesome-icon
+          size="sm"
+          :icon="['fas', 'arrow-up-right-from-square']"
+          width="24"
+          height="24"/>
+      </b-dd-item>
       <b-dd-divider/>
-      <b-dd-item href="https://feedback.otechie.com" target="_blank">
-        Request Feature
+      <b-dd-item to="/admin">
+        Appearance
       </b-dd-item>
-      <b-dd-item v-b-modal.logoutModal class="d-md-none">
-        Docs
+      <b-dd-item to="/admin/form">
+        Contact Form
       </b-dd-item>
-      <b-dd-divider class="d-md-none"/>
+      <b-dd-item to="/admin/settings">
+        Settings
+      </b-dd-item>
+      <b-dd-divider/>
       <b-dd-item v-b-modal.logoutModal variant="danger">
         Log Out
       </b-dd-item>

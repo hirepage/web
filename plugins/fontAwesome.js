@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faMessageBot, faVideoCircle, faShieldCheck, faWavePulse, faCircleHeart  }  from '@fortawesome/pro-solid-svg-icons'
+import { faMessageBot, faVideoCircle, faShieldCheck, faWavePulse, faCircleHeart, faArrowUpRightFromSquare  }  from '@fortawesome/pro-solid-svg-icons'
 import { faBoltLightning, faCommentDollar, faFileInvoiceDollar, faInboxIn }  from '@fortawesome/pro-regular-svg-icons'
 import { faArrowUpFromSquare }  from '@fortawesome/pro-light-svg-icons'
 
@@ -102,7 +102,8 @@ library.add(
   faFileInvoiceDollar,
   faInboxIn,
   faComments,
-  faArrowUpFromSquare
+  faArrowUpFromSquare,
+  faArrowUpRightFromSquare
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

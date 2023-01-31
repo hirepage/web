@@ -48,10 +48,10 @@
 <template>
   <div>
     <h2>
-      Social Icons
+      Social Links
     </h2>
-    <p class="mb-2">
-      Add icons linking to your social profiles, email and more.
+    <p class="mb-2" style="opacity: 0.7">
+      Add links to your social profiles, email and more.
     </p>
     <b-card-group>
       <add-icon-modal/>
@@ -101,7 +101,7 @@
     </b-card-group>
 
     <b-btn v-b-modal.addIconModal class="mb-5" variant="primary">
-      Add Icon
+      Add Link
     </b-btn>
   </div>
 </template>

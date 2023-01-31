@@ -109,7 +109,7 @@
           </div>
 
           <div class="text-center">
-            <h1 class="semi-bold mb-1 mt-3" style="font-size: 32px;">
+            <h1 class="semi-bold mb-1 mt-3 profile-title">
               {{ user.title }}
             </h1>
             <p style="opacity: 0.7;">
@@ -138,7 +138,7 @@
 
           <div class="pt-2 mb-3"/>
 
-          <h3 v-if="user.bio" style="font-weight: bold; text-align: center; margin-bottom: 16px;">
+          <h3 v-if="user.about" style="font-weight: bold; text-align: center; margin-bottom: 16px;">
             Get in touch
           </h3>
 
@@ -188,6 +188,11 @@
 </template>
 
 <style scoped>
+
+  .profile-title {
+    font-size: 32px;
+  }
+
   .form-label {
     text-transform: capitalize;
     font-size: 13px;

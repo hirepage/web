@@ -91,16 +91,6 @@
         </b-col>
       </b-row>
 
-      <div class="form-group has-feedback">
-        <label>
-          About
-        </label>
-        <b-form-textarea
-          v-model="about"
-          :rows="5"
-          autocapitalize="word"/>
-      </div>
-
       <loading-button
         variant="primary"
         @click="save">
@@ -109,5 +99,25 @@
     </b-card>
 
     <social-links class="mt-5"/>
+
+
+    <div class="form-group has-feedback">
+      <h2>
+        About
+      </h2>
+      <p class="mb-2" style="opacity: 0.7">
+        Add content to your page using markdown syntax.
+      </p>
+      <b-form-textarea
+        v-model="about"
+        :rows="5"
+        autocapitalize="word"/>
+    </div>
+
+    <loading-button
+      variant="primary"
+      @click="save">
+      Update
+    </loading-button>
   </div>
 </template>

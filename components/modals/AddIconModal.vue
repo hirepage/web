@@ -31,7 +31,7 @@
   <b-modal
     id="addIconModal"
     ref="addIconModal"
-    title="Add Icon"
+    title="Add Link"
     :hide-footer="true">
     <form @keydown.enter.prevent="$refs.createBtn.click()">
       <b-form-group>
@@ -73,7 +73,7 @@
         class="btn-primary"
         :disabled="!url || !selected"
         @click="addIcon">
-        Add Icon
+        Add Link
       </loading-button>
     </div>
   </b-modal>

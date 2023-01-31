@@ -53,7 +53,7 @@
   <b-modal
     id="editIconModal"
     ref="editIconModal"
-    title="Edit Icon"
+    title="Edit Link"
     :hide-footer="true">
     <form @keydown.enter.prevent="$refs.createBtn.click()">
       <b-form-group>
@@ -103,7 +103,7 @@
           variant="primary"
           :disabled="!url || !selected"
           @click="updateIcon">
-          Update Icon
+          Update Link
         </loading-button>
       </b-col>
     </b-row>
