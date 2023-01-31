@@ -55,7 +55,7 @@
             maxlength="64"/>
         </b-input-group>
       </b-form-group>
-      <b-from-group>
+      <b-form-group>
         <label>
           Password
         </label>
@@ -65,7 +65,7 @@
           autocomplete="current-password"
           class="form-control"
           type="password"/>
-      </b-from-group>
+      </b-form-group>
       <div class="form-group">
         <loading-button
           ref="loginBtn"

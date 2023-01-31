@@ -1,7 +1,12 @@
 export default app => ({
   myUser () {
     return app.$axios.$get('/user').then(user => {
-      app.store.commit('SET_USER', user)
+      if (user) {
+        app.store.commit('SET_USER', user)
+      } else {
+        app.$api.auth.logout()
+        app.router.push('/login')
+      }
       return user
     }).catch(console.error)
   },
@@ -23,6 +28,14 @@ export default app => ({
   },
   login (data) {
     return app.$axios.$post('/user/login', data).then(auth => {
+      app.$api.auth.setAuth(auth)
+    })
+  },
+  forgotPassword (data) {
+    return app.$axios.$post('/user/forgot', data)
+  },
+  resetPassword (data) {
+    return app.$axios.$post('/user/password', data).then(auth => {
       app.$api.auth.setAuth(auth)
     })
   },

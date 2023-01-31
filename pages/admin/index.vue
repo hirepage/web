@@ -83,20 +83,27 @@
             </label>
             <b-form-textarea
               v-model="bio"
-              name="last-name"
-              autocomplete="last-name"
-              class="form-control"
               type="text"
               autocapitalize="word"/>
           </div>
-
-          <loading-button
-            variant="primary"
-            @click="save">
-            Update
-          </loading-button>
         </b-col>
       </b-row>
+
+      <div class="form-group has-feedback">
+        <label>
+          Content
+        </label>
+        <b-form-textarea
+          v-model="bio"
+          :lines="5"
+          autocapitalize="word"/>
+      </div>
+
+      <loading-button
+        variant="primary"
+        @click="save">
+        Update
+      </loading-button>
     </b-card>
 
     <social-links class="mt-5"/>
