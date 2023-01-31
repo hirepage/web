@@ -24,13 +24,19 @@
   <div>
     <admin-header/>
     <b-container>
-      <b-row>
-        <b-col cols="6">
+      <b-row style="position: relative;">
+        <b-col lg="7">
           <nuxt v-if="$store.state.user" class="setting-tab"/>
         </b-col>
-        <b-col cols="6">
+        <b-col lg="5" class="sticky-col">
           <div class="preview-wrapper">
-            <iframe ref="previewIframe" :src="previewUrl" class="preview-iframe"></iframe>
+            <b-embed
+              ref="previewIframe"
+              class="preview-iframe"
+              type="iframe"
+              aspect="phone"
+              :src="previewUrl">
+            </b-embed>
           </div>
         </b-col>
       </b-row>
@@ -40,10 +46,26 @@
 
 <style scoped>
 
+  @media (min-width: 992px) {
+    .sticky-col {
+      position: fixed;
+      top: 80px;
+      right: 0;
+    }
+  }
+
+  .embed-responsive-phone::before {
+    padding-top: 175%;
+  }
+
   .preview-wrapper {
-    transform: scale(0.686561) translateX(-10%) translateY(-20%);
-    width: 100%;
-    height: 140%;
+    transform: scale(0.686561) translateY(-20%) translateX(-10%);
+    width: 550px;
+    max-width: 146%;
+    text-align: center;
+    display: flex;
+    padding-bottom: 56.25%;
+    position: relative;
   }
 
   .preview-iframe {
@@ -51,6 +73,7 @@
     border-radius: 50px;
     width: 100%;
     height: 100%;
+    margin: auto;
   }
 
   .setting-tab {
