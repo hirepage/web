@@ -97,6 +97,10 @@
     color: var(--light-text-color);
   }
 
+  .showdown p {
+    margin-bottom: 16px;
+  }
+
   .showdown h4 {
     margin-top: 6px;
     margin-bottom: 2px;

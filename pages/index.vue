@@ -28,8 +28,8 @@
               Make it easy for new clients to get in touch
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Hirepage is a contact page that freelancers can link to from their bios, website, or blogs.
-              Claim your link and create your free page in less than five minutes.
+              Hirepage is a page and contact form that freelancers can link to from their bios, website, or blogs.
+              Claim your link and get started for free in less than five minutes.
             </div>
             <b-form @submit.prevent="claimUsername">
               <b-input-group

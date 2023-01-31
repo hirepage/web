@@ -82,7 +82,7 @@
       Create your account
     </h1>
     <hr>
-    <form @keydown.enter.prevent="$refs.registerBtn.click()">
+    <div>
       <b-form-group>
         <label>
           Username
@@ -204,7 +204,7 @@
           Create Account
         </loading-button>
       </div>
-    </form>
+    </div>
     <div class="">
       <p>
         Already have a Hirepage?

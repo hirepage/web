@@ -40,7 +40,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="mb-5">
     <h2>
       Profile
     </h2>

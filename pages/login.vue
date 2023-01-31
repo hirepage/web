@@ -39,42 +39,38 @@
       Login
     </h1>
     <hr>
-    <form
-      id="login-form"
-      @keydown.enter.prevent="$refs.loginBtn.click()">
-      <b-form-group>
-        <label>
-          Username
-        </label>
-        <b-input-group
-          prepend="hire.page/"
-          class="username-input-group">
-          <b-form-input
-            v-model="username"
-            autofocus
-            maxlength="64"/>
-        </b-input-group>
-      </b-form-group>
-      <b-form-group>
-        <label>
-          Password
-        </label>
+    <b-form-group>
+      <label>
+        Username
+      </label>
+      <b-input-group
+        prepend="hire.page/"
+        class="username-input-group">
         <b-form-input
-          id="password-input"
-          v-model="password"
-          autocomplete="current-password"
-          class="form-control"
-          type="password"/>
-      </b-form-group>
-      <div class="form-group">
-        <loading-button
-          ref="loginBtn"
-          class="btn btn-block btn-primary btn-lg"
-          @click="login">
-          Log in
-        </loading-button>
-      </div>
-    </form>
+          v-model="username"
+          autofocus
+          maxlength="64"/>
+      </b-input-group>
+    </b-form-group>
+    <b-form-group>
+      <label>
+        Password
+      </label>
+      <b-form-input
+        id="password-input"
+        v-model="password"
+        autocomplete="current-password"
+        class="form-control"
+        type="password"/>
+    </b-form-group>
+    <div class="form-group">
+      <loading-button
+        ref="loginBtn"
+        class="btn btn-block btn-primary btn-lg"
+        @click="login">
+        Log in
+      </loading-button>
+    </div>
     <p>
       Don't have an account yet?
       <nuxt-link to="/register">

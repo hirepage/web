@@ -3,7 +3,6 @@ import cookie from 'cookie'
 export const state = () => ({
   auth: null,
   user: null,
-  workspace: null
 })
 
 export const mutations = {
@@ -13,12 +12,9 @@ export const mutations = {
   SET_USER (state, user) {
     state.user = user
   },
-  SET_WORKSPACE (state, workspace) {
-    state.workspace = workspace
-  },
   RESET (state) {
     state.auth = null
-    state.workpace = null
+    state.user = null
   }
 }
 
