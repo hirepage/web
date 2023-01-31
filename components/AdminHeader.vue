@@ -12,17 +12,14 @@
 </script>
 
 <template>
-  <b-navbar toggleable="lg" sticky class="admin-header">
+  <b-navbar sticky class="admin-header">
     <logout-modal/>
     <b-container>
       <b-navbar-brand to="/admin">
         <b-img src="/favicon.png" height="28"/>
       </b-navbar-brand>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav>
+        <b-navbar-nav class="d-none d-md-flex">
           <b-nav-item to="/admin">
             Appearance
           </b-nav-item>
@@ -41,7 +38,6 @@
         <b-navbar-nav class="ml-auto">
           <settings-dropdown/>
         </b-navbar-nav>
-      </b-collapse>
     </b-container>
   </b-navbar>
 </template>
