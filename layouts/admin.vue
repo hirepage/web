@@ -59,12 +59,13 @@
   }
 
   .preview-wrapper {
-    transform: scale(0.686561) translateY(-20%) translateX(-10%);
+    transform: scale(0.6667) translateY(-25%) translateX(-25%);
     width: 550px;
-    max-width: 146%;
+    max-width: 150%;
     text-align: center;
     display: flex;
     padding-bottom: 56.25%;
+    margin-top: 24px;
     position: relative;
   }
 

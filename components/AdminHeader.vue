@@ -19,25 +19,25 @@
         <b-img src="/favicon.png" height="28"/>
       </b-navbar-brand>
 
-        <b-navbar-nav class="d-none d-md-flex">
-          <b-nav-item to="/admin">
-            Appearance
-          </b-nav-item>
-          <b-nav-item to="/admin/form">
-            Contact Form
-          </b-nav-item>
-<!--          <b-nav-item to="/admin/leads">-->
-<!--            Leads-->
-<!--          </b-nav-item>-->
-          <b-nav-item to="/admin/settings">
-            Settings
-          </b-nav-item>
-        </b-navbar-nav>
+      <b-navbar-nav class="d-none d-md-flex">
+        <b-nav-item to="/admin">
+          Appearance
+        </b-nav-item>
+        <b-nav-item to="/admin/form">
+          Contact Form
+        </b-nav-item>
+        <!--          <b-nav-item to="/admin/leads">-->
+        <!--            Leads-->
+        <!--          </b-nav-item>-->
+        <b-nav-item to="/admin/settings">
+          Settings
+        </b-nav-item>
+      </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <settings-dropdown/>
-        </b-navbar-nav>
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+        <settings-dropdown/>
+      </b-navbar-nav>
     </b-container>
   </b-navbar>
 </template>
