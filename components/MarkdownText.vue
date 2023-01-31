@@ -81,12 +81,12 @@
     font-weight: bold;
     text-align: center;
     font-size: 24px;
-    margin-top: 28px;
     margin-bottom: 12px;
   }
 
-  .showdown ul {
+  .showdown ul, .showdown ol {
     padding-left: 28px;
+    padding-bottom: 28px;
   }
 
   .showdown li {
