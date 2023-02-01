@@ -1,9 +1,10 @@
 <script>
   import InfoFooter from '@/components/InfoFooter'
   import InfoHeader from '@/components/InfoHeader'
+  import StatusOval from '@/components/StatusOval'
 
   export default {
-    components: { InfoHeader, InfoFooter },
+    components: { InfoHeader, InfoFooter, StatusOval },
     data () {
       return {
         username: ''
@@ -75,7 +76,7 @@
   }
 
   .top-container {
-    padding-top: 88px;
+    padding-top: 148px;
     padding-bottom: 78px;
   }
 
@@ -123,21 +124,13 @@
 
   @media (min-width: 992px) {
     .top-container {
-      padding-top: 100px;
+      padding-top: 160px;
       padding-bottom: 100px;
     }
 
     .main-text-wrapper {
       margin-top: 1rem;
       margin-bottom: 1rem;
-    }
-  }
-
-  @media (min-width: 1200px) {
-
-    .top-container {
-      padding-top: 100px;
-      padding-bottom: 60px;
     }
   }
 

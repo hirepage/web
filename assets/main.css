@@ -565,6 +565,7 @@ p {
 }
 
 .info-body {
+  margin-top: 60px;
   flex: 1;
 }
 

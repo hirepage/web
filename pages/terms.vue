@@ -1,17 +1,15 @@
 <script>
   import InfoHeader from '../components/InfoHeader'
-  import BottomCta from '../components/BottomCta'
   import InfoFooter from '../components/InfoFooter'
 
   export default {
     components: {
       InfoHeader,
-      BottomCta,
       InfoFooter
     },
     head () {
       return {
-        title: 'Terms and Conditions | ChatPass'
+        title: 'Terms and Conditions | Hirepage'
       }
     },
     asyncData ({ app }) {
@@ -37,7 +35,6 @@
         </b-col>
       </b-row>
     </b-container>
-    <bottom-cta/>
     <info-footer/>
   </div>
 </template>

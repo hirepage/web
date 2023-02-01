@@ -124,7 +124,7 @@
               </div>
               <div class="social-icon">
                 <a
-                  href="https://twitter.com/otechie"
+                  href="https://twitter.com/hirepage_"
                   target="_blank"
                   title="Twitter Profile">
                   <font-awesome-icon
