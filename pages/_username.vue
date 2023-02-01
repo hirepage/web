@@ -137,9 +137,7 @@
 
           <markdown-text :text="user.about" class="mt-4"/>
 
-          <div class="pt-2 mb-3"/>
-
-          <h3 v-if="user.about" style="font-weight: bold; text-align: center; margin-bottom: 16px;">
+          <h3 v-if="user.about" style="font-weight: bold; text-align: center; margin-bottom: 16px; font-size: 24px;">
             Get in touch
           </h3>
 
@@ -247,17 +245,6 @@
     height: 40px;
     width: 40px;
     visibility: hidden;
-  }
-
-  @media (min-width: 768px) {
-    .color-bg {
-      display: block;
-      background-image: url(/bg.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      border-left: 1px solid rgba(0, 0, 0, 0.125);
-    }
   }
 
   .social-icons {

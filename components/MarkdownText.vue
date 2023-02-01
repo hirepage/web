@@ -86,7 +86,7 @@
 
   .showdown ul, .showdown ol {
     padding-left: 28px;
-    padding-bottom: 28px;
+    margin-bottom: 28px;
   }
 
   .showdown li {

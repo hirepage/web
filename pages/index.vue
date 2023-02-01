@@ -25,7 +25,7 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Make it easy for new clients to get in touch
+              Make it easy for new clients to contact you
             </h1>
             <div class="landing-text mt-3 pb-3">
               Hirepage is a page and contact form that freelancers can link to from their bios, website, or blogs.
@@ -56,10 +56,10 @@
           </b-col>
           <b-col class="text-right">
             <b-img
-              src="/apollo-widget.png"
+              src="/landing-examples.png"
               class="slack-chat mr-4"
               fluid
-              alt="Cross Platform Chat Graphic"/>
+              alt="Page Example Screenshots"/>
           </b-col>
         </b-row>
       </b-container>
@@ -102,7 +102,7 @@
   }
 
   .slack-chat {
-    width: 300px;
+    width: 500px;
   }
 
   @media (min-width: 768px) {
