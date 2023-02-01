@@ -9,8 +9,7 @@ const modules = [
   '@nuxtjs/toast',
   'nuxt-rfg-icon',
   '@nuxtjs/axios',
-  'bootstrap-vue/nuxt',
-  '@nuxtjs/google-analytics'
+  'bootstrap-vue/nuxt'
 ]
 
 if (process.env.LOCAL !== 'true') {
@@ -19,12 +18,9 @@ if (process.env.LOCAL !== 'true') {
 
 const plugins = [
   { src: '~/plugins/fontAwesome' },
-  { src: '~/plugins/api' }
+  { src: '~/plugins/api' },
+  { src: '~/plugins/gtag' }
 ]
-
-if (process.env.WEB_URL === 'https://chatpass.io') {
-  plugins.push({ src: '~/plugins/inspectlet', mode: 'client' })
-}
 
 module.exports = {
   ssr: true,
@@ -38,23 +34,20 @@ module.exports = {
   css: [
     '@/assets/main.css'
   ],
-  googleAnalytics: {
-    id: process.env.GA_ID
-  },
   sentry: {
     dsn: process.env.SENTRY_DSN_WEB,
     publishRelease: false,
     config: {
-      environment: process.env.API_URL === 'https://api.chatpass.io' ? 'production' : 'development',
+      environment: process.env.API_URL === 'https://api.hire.page' ? 'production' : 'development',
       release: process.env.CIRCLE_SHA1
     },
-    clientIntegrations: {
-      TryCatch: { eventTarget: false }
-    }
+    // clientIntegrations: {
+    //   TryCatch: { eventTarget: false }
+    // }
   },
   axios: {
     progress: false,
-    baseURL: `${process.env.WEB_URL}/api`
+    baseURL: process.env.API_URL
   },
   toast: {
     position: 'top-right',
@@ -84,9 +77,6 @@ module.exports = {
       '/connect/**'
     ]
   },
-  // serverMiddleware: [
-  //   { path: 'api', handler: '~/serverMiddleware/api' }
-  // ],
   dev: false,
   build: {
     analyze: false,

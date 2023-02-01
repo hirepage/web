@@ -23,7 +23,7 @@
         </div>
       </b-dd-header>
       <b-dd-item :href="`https://hire.page/${ $store.state.user.username }`" target="_blank">
-        View Page
+        Open Page
         <font-awesome-icon
           size="sm"
           :icon="['fas', 'arrow-up-right-from-square']"

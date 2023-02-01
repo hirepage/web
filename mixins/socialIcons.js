@@ -56,6 +56,12 @@ const icons = [{
   icon: 'link',
   name: 'Website',
   placeholder: 'https://your-site.com'
+}, {
+  id: 'CALENDAR',
+  iconSet: 'far',
+  icon: 'calendar-lines',
+  name: 'Calendar',
+  placeholder: 'https://calendly.com/username'
 }]
 
 export default {
