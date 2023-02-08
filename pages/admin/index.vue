@@ -54,23 +54,33 @@
         <b-col order-md="0">
           <b-form-group label="Name">
             <b-form-input
-              id="first-name-input"
               v-model="title"
-              name="first-name"
-              autocomplete="first-name"
-              class="form-control"
+              name="full-name"
+              autocomplete="full-name"
               type="text"
               maxlength="64"
               autocapitalize="word"/>
           </b-form-group>
 
-          <b-form-group label="Button Color">
-            <color-input :color.sync="color"/>
+          <b-form-group label="Headline">
+            <b-form-input
+              v-model="bio"
+              type="text"
+              autocapitalize="word"/>
           </b-form-group>
 
-          <b-form-group label="Background Color">
-            <color-input :color.sync="backgroundColor"/>
-          </b-form-group>
+          <b-row>
+            <b-col md="6">
+              <b-form-group label="Background Color">
+                <color-input :color.sync="backgroundColor"/>
+              </b-form-group>
+            </b-col>
+            <b-col md="6">
+              <b-form-group label="Button Color">
+                <color-input :color.sync="color"/>
+              </b-form-group>
+            </b-col>
+          </b-row>
 
           <b-form-group label="Background Type" v-slot="{ ariaDescribedby }">
             <b-form-radio
@@ -88,13 +98,6 @@
               Gradient
             </b-form-radio>
           </b-form-group>
-
-          <b-form-group label="Headline">
-            <b-form-textarea
-              v-model="bio"
-              type="text"
-              autocapitalize="word"/>
-          </b-form-group>
         </b-col>
       </b-row>
 
@@ -110,7 +113,7 @@
 
     <div class="form-group has-feedback">
       <h2>
-        About
+        Info
       </h2>
       <p class="mb-2" style="opacity: 0.7">
         Add content to your page using markdown syntax.

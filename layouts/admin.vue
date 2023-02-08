@@ -5,17 +5,28 @@
   export default {
     middleware: 'authenticated',
     components: {
-      AdminHeader,
+      AdminHeader
       // UpdatesButton
     },
     computed: {
       previewUrl () {
-        return  this.$store.state.user ? `/${this.$store.state.user.username}` : null
+        return this.$store.state.user ? `/${this.$store.state.user.username}` : null
       }
     },
     created () {
       this.$api.auth.loadAuth()
       this.$api.user.myUser()
+    },
+    mounted () {
+      window.$crisp = []
+      window.CRISP_WEBSITE_ID = '899d838a-2247-49cf-99e5-a2d3a6a85ebc';
+      (function (d, s) {
+        d = document
+        s = d.createElement('script')
+        s.src = 'https://client.crisp.chat/l.js'
+        s.async = 1
+        d.getElementsByTagName('head')[0].appendChild(s)
+      })()
     }
   }
 </script>
