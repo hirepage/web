@@ -1,10 +1,14 @@
 <script>
+  import UsernameInput from '@/components/UsernameInput'
   import validator from 'validator'
   import { get } from 'lodash'
 
   export default {
     layout: 'auth',
     middleware: 'notAuthenticated',
+    components: {
+      UsernameInput
+    },
     metaInfo () {
       return {
         title: 'Register | Hirepage'
@@ -16,9 +20,7 @@
         email: '',
         firstName: '',
         lastName: '',
-        password: '',
-        usernameValid: false,
-        takenUsername: null
+        password: ''
       }
     },
     computed: {
@@ -33,17 +35,8 @@
           && this.passwordValid
           && this.firstName.length
           && this.lastName.length
-          && this.usernameValid
+          && this.username
       }
-    },
-    watch: {
-      username () {
-        // TODO: debounce this
-        this.checkUsername()
-      }
-    },
-    created () {
-      this.checkUsername()
     },
     methods: {
       register (done) {
@@ -59,18 +52,6 @@
           console.error(err)
           get(err, 'response.data.error') ? this.$toast.error(get(err, 'response.data.error')) : null
         }).finally(done)
-      },
-      checkUsername () {
-        if (!validator.isSlug(this.username)) {
-          this.takenUsername = null
-          this.usernameValid = false
-          return
-        }
-        this.usernameValid = true
-        this.$api.user.checkUsername(this.username).then(data => {
-          this.usernameValid = data.available
-          this.takenUsername = data.available ? null : data.username
-        })
       }
     }
   }
@@ -83,32 +64,8 @@
     </h1>
     <hr>
     <div>
-      <b-form-group>
-        <label>
-          Username
-        </label>
 
-        <b-input-group
-          prepend="hire.page/"
-          class="username-input-group">
-          <b-form-input
-            :class="{'is-invalid': username && !usernameValid, 'is-valid': usernameValid}"
-            ref="usernameInput"
-            v-model="username"
-            autofocus
-            maxlength="64"/>
-        </b-input-group>
-        <p v-if="usernameValid || !username" class="help-block with-errors">
-          Choose your Hirepage username. You can always change it later.
-        </p>
-        <p v-else-if="takenUsername" class="help-block with-errors">
-          The username "{{ takenUsername }}" is already taken.
-        </p>
-        <p v-else class="help-block with-errors">
-          Usernames may only contain letters, numbers, underscores ("_") and periods (".")
-        </p>
-
-      </b-form-group>
+      <username-input :username.sync="username"/>
 
       <div class="row">
         <div class="col-sm-6">
