@@ -1,18 +1,16 @@
 <script>
-  import validator from 'validator'
-  import { forOwn, find } from 'lodash'
   import ClipboardJS from 'clipboard'
   import meta from '@/mixins/meta'
   import socialIcons from '@/mixins/socialIcons'
   import MarkdownText from '@/components/MarkdownText'
+  import PageForm from '@/components/PageForm'
 
   export default {
-    components: { MarkdownText },
+    components: { MarkdownText, PageForm },
     mixins: [meta, socialIcons],
     data () {
       return {
-        clipboard: null,
-        form: {}
+        clipboard: null
       }
     },
     computed: {
@@ -20,25 +18,8 @@
         const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
         return `${background}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor};`
       },
-      enabled () {
-        return this.isEmailValid && this.firstName && this.lastName
-      },
-      isEmailValid () {
-        return this.email.length && validator.isEmail(this.email)
-      },
       shareUrl () {
         return `${process.env.WEB_URL}/${this.user.username}`
-      },
-      fields () {
-        return Object.entries(this.form).map(([key, value]) => {
-          const field = find(this.user.fields, { id: key })
-          return {
-            value: value,
-            label: field.label,
-            fieldType: field.type,
-            id: field.id
-          }
-        })
       }
     },
     asyncData ({ params, app, error }) {
@@ -59,18 +40,6 @@
       this.clipboard.destroy()
     },
     methods: {
-      submitForm (done) {
-        this.$api.lead.submit({
-          user: this.user.id,
-          fields: this.fields
-        }).then(lead => {
-          console.log(lead)
-          this.$toast.success('Message sent')
-        }).catch(err => {
-          console.error(err)
-          this.$toast.error('Error sending message')
-        }).finally(done)
-      },
       shareForm () {
         console.log('shareForm')
       }
@@ -108,7 +77,7 @@
             <b-img
               class="logo-img"
               :src="user.avatarUrl"
-              :alt="`${user.fullName} Profile Picture`"
+              :alt="`${user.title}'s Profile Picture`"
               height="120"
               width="120"/>
           </div>
@@ -141,44 +110,7 @@
 
           <markdown-text :text="user.about" class="mt-4"/>
 
-          <h3 v-if="user.about" style="font-weight: bold; text-align: center; margin-bottom: 16px; font-size: 24px;">
-            Get in touch
-          </h3>
-
-          <b-form-group
-            v-for="field in user.fields"
-            :key="field.id"
-            class="has-feedback">
-            <!--            <label class="form-label">-->
-            <!--              {{ field.label }}-->
-            <!--            </label>-->
-            <b-form-textarea
-              v-if="field.type === 'textarea'"
-              v-model="form[field.id]"
-              :placeholder="field.placeholder"
-              class="profile-field"
-              rows="4"/>
-            <b-form-input
-              v-else
-              v-model="form[field.id]"
-              :placeholder="field.placeholder"
-              class="profile-field"
-              :type="field.type"/>
-          </b-form-group>
-
-          <div class="text-center pt-3">
-            <loading-button
-              pill
-              size="xl"
-              type="submit"
-              variant="primary"
-              style="min-width: 300px;"
-              :style="`background-color: ${user.btnColor} !important;`"
-              class="colored-btn"
-              @click="submitForm">
-              {{ user.btnText }}
-            </loading-button>
-          </div>
+          <page-form :user="user"/>
         </div>
       </b-col>
     </b-row>
@@ -278,24 +210,4 @@
     opacity: 0.9;
   }
 
-  .profile-field {
-    color: var(--text-color);
-  }
-
-  .profile-field:focus {
-    border-color: var(--theme-color);
-  }
-
-  .profile-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--light-text-color);
-    opacity: 1; /* Firefox */
-  }
-
-  .profile-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--light-text-color);
-  }
-
-  .profile-field::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--light-text-color);
-  }
 </style>
