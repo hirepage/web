@@ -82,7 +82,7 @@
             </b-col>
           </b-row>
 
-          <b-form-group label="Background Type" v-slot="{ ariaDescribedby }">
+          <b-form-group v-slot="{ ariaDescribedby }" label="Background Type">
             <b-form-radio
               v-model="backgroundType"
               :aria-describedby="ariaDescribedby"

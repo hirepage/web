@@ -84,9 +84,10 @@
         <b-list-group-item to="/#features" style="border: none; padding-bottom: 20px;">
           <b-row no-gutters>
             <b-col cols="auto">
-              <b-img width="22"
-                     class="product-icon"
-                     src="/microsoft_teams_blue.svg"/>
+              <b-img
+                width="22"
+                class="product-icon"
+                src="/microsoft_teams_blue.svg"/>
             </b-col>
             <b-col>
               <div class="product-header">

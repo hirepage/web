@@ -41,7 +41,7 @@ module.exports = {
     config: {
       environment: process.env.API_URL === 'https://api.hire.page' ? 'production' : 'development',
       release: process.env.CIRCLE_SHA1
-    },
+    }
     // clientIntegrations: {
     //   TryCatch: { eventTarget: false }
     // }

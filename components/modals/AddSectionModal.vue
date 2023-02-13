@@ -34,7 +34,6 @@
     ref="addSectionModal"
     title="Add Info Section"
     :hide-footer="true">
-
     <div>
       <b-form-group>
         <label>

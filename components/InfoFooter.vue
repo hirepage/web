@@ -2,106 +2,106 @@
   <div class="otechie-footer">
     <b-container>
       <footer>
-<!--        <b-row>-->
-<!--          <b-col-->
-<!--            md="3"-->
-<!--            class="d-none d-md-inline form-group">-->
-<!--            <b-form-group>-->
-<!--              <nuxt-link to="/">-->
-<!--                <b-img-->
-<!--                  src="https://cdn.otechie.com/attachments/XnLYSoIW/otechie-round.png"-->
-<!--                  height="64"-->
-<!--                  width="64"/>-->
-<!--              </nuxt-link>-->
-<!--            </b-form-group>-->
-<!--          </b-col>-->
-<!--          <b-col>-->
-<!--            <b-row>-->
-<!--              <b-col-->
-<!--                cols="6"-->
-<!--                md="4"-->
-<!--                class="pb-4">-->
-<!--                <b-form-group class="footer-header">-->
-<!--                  Otechie-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <nuxt-link to="/">-->
-<!--                    Home-->
-<!--                  </nuxt-link>-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <a href="https://twitter.com/dylangwight" target="_blank">-->
-<!--                    About-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <nuxt-link to="/#pricing">-->
-<!--                    Pricing-->
-<!--                  </nuxt-link>-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <a href="mailto:hello@otechie.com">-->
-<!--                    Contact Us-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--              </b-col>-->
-<!--              <b-col-->
-<!--                cols="6"-->
-<!--                md="4"-->
-<!--                class="pb-4">-->
-<!--                <b-form-group class="footer-header">-->
-<!--                  Features-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <a href="/#cross-platform-chat">-->
-<!--                    Cross Platform Chat-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <a href="/#lead-intake">-->
-<!--                    Lead Intake-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <a href="/#inline-billing">-->
-<!--                    Inline Billing-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--              </b-col>-->
+        <!--        <b-row>-->
+        <!--          <b-col-->
+        <!--            md="3"-->
+        <!--            class="d-none d-md-inline form-group">-->
+        <!--            <b-form-group>-->
+        <!--              <nuxt-link to="/">-->
+        <!--                <b-img-->
+        <!--                  src="https://cdn.otechie.com/attachments/XnLYSoIW/otechie-round.png"-->
+        <!--                  height="64"-->
+        <!--                  width="64"/>-->
+        <!--              </nuxt-link>-->
+        <!--            </b-form-group>-->
+        <!--          </b-col>-->
+        <!--          <b-col>-->
+        <!--            <b-row>-->
+        <!--              <b-col-->
+        <!--                cols="6"-->
+        <!--                md="4"-->
+        <!--                class="pb-4">-->
+        <!--                <b-form-group class="footer-header">-->
+        <!--                  Otechie-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <nuxt-link to="/">-->
+        <!--                    Home-->
+        <!--                  </nuxt-link>-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="https://twitter.com/dylangwight" target="_blank">-->
+        <!--                    About-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <nuxt-link to="/#pricing">-->
+        <!--                    Pricing-->
+        <!--                  </nuxt-link>-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="mailto:hello@otechie.com">-->
+        <!--                    Contact Us-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--              </b-col>-->
+        <!--              <b-col-->
+        <!--                cols="6"-->
+        <!--                md="4"-->
+        <!--                class="pb-4">-->
+        <!--                <b-form-group class="footer-header">-->
+        <!--                  Features-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="/#cross-platform-chat">-->
+        <!--                    Cross Platform Chat-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="/#lead-intake">-->
+        <!--                    Lead Intake-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="/#inline-billing">-->
+        <!--                    Inline Billing-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--              </b-col>-->
 
-<!--              <b-col-->
-<!--                cols="6"-->
-<!--                md="4"-->
-<!--                class="pb-4">-->
-<!--                <b-form-group class="footer-header">-->
-<!--                  Info-->
-<!--                </b-form-group>-->
-<!--                &lt;!&ndash;                <b-form-group>&ndash;&gt;-->
-<!--                &lt;!&ndash;                  <a href="https://github.com/otechie/widget#readme" target="_blank">&ndash;&gt;-->
-<!--                &lt;!&ndash;                    Documentation&ndash;&gt;-->
-<!--                &lt;!&ndash;                  </a>&ndash;&gt;-->
-<!--                &lt;!&ndash;                </b-form-group>&ndash;&gt;-->
-<!--                <b-form-group>-->
-<!--                  <a href="https://otechie-dev.slack.com/apps/AAY68EJKB-otechie" target="_blank">-->
-<!--                    Slack Directory-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <a href="https://feedback.otechie.com" target="_blank">-->
-<!--                    Roadmap-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--                <b-form-group>-->
-<!--                  <a href="https://feedback.otechie.com/changelog" target="_blank">-->
-<!--                    Updates-->
-<!--                  </a>-->
-<!--                </b-form-group>-->
-<!--              </b-col>-->
-<!--            </b-row>-->
-<!--          </b-col>-->
-<!--        </b-row>-->
+        <!--              <b-col-->
+        <!--                cols="6"-->
+        <!--                md="4"-->
+        <!--                class="pb-4">-->
+        <!--                <b-form-group class="footer-header">-->
+        <!--                  Info-->
+        <!--                </b-form-group>-->
+        <!--                &lt;!&ndash;                <b-form-group>&ndash;&gt;-->
+        <!--                &lt;!&ndash;                  <a href="https://github.com/otechie/widget#readme" target="_blank">&ndash;&gt;-->
+        <!--                &lt;!&ndash;                    Documentation&ndash;&gt;-->
+        <!--                &lt;!&ndash;                  </a>&ndash;&gt;-->
+        <!--                &lt;!&ndash;                </b-form-group>&ndash;&gt;-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="https://otechie-dev.slack.com/apps/AAY68EJKB-otechie" target="_blank">-->
+        <!--                    Slack Directory-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="https://feedback.otechie.com" target="_blank">-->
+        <!--                    Roadmap-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--                <b-form-group>-->
+        <!--                  <a href="https://feedback.otechie.com/changelog" target="_blank">-->
+        <!--                    Updates-->
+        <!--                  </a>-->
+        <!--                </b-form-group>-->
+        <!--              </b-col>-->
+        <!--            </b-row>-->
+        <!--          </b-col>-->
+        <!--        </b-row>-->
 
-<!--        <hr class="pb-3">-->
+        <!--        <hr class="pb-3">-->
 
         <b-row class="mt-5">
           <b-col
@@ -161,8 +161,12 @@
             </div>
           </b-col>
           <b-col order-md="1" class="text-center mb-4">
-            <nuxt-link to="/privacy" class="bottom-link mr-3">Privacy Policy</nuxt-link>
-            <nuxt-link to="/terms" class="bottom-link ml-3">Terms of Use</nuxt-link>
+            <nuxt-link to="/privacy" class="bottom-link mr-3">
+              Privacy Policy
+            </nuxt-link>
+            <nuxt-link to="/terms" class="bottom-link ml-3">
+              Terms of Use
+            </nuxt-link>
           </b-col>
           <b-col
             md="auto"

@@ -63,9 +63,9 @@
       prepend="hire.page/"
       class="username-input-group">
       <b-form-input
-        :class="{'is-invalid': usernameLocal && !usernameValid, 'is-valid': usernameValid && showPrompt}"
         ref="usernameInput"
         v-model="usernameLocal"
+        :class="{'is-invalid': usernameLocal && !usernameValid, 'is-valid': usernameValid && showPrompt}"
         autofocus
         maxlength="64"/>
     </b-input-group>

@@ -41,6 +41,13 @@
         })
       }
     },
+    asyncData ({ params, app, error }) {
+      return app.$api.user.getUser(params.username).then(user => {
+        return { user }
+      }).catch(err => {
+        error(err)
+      })
+    },
     mounted () {
       this.clipboard = new ClipboardJS('.share-btn')
       const self = this
@@ -50,13 +57,6 @@
     },
     beforeDestroy () {
       this.clipboard.destroy()
-    },
-    asyncData ({ params, app, error }) {
-      return app.$api.user.getUser(params.username).then(user => {
-        return { user }
-      }).catch(err => {
-        error(err)
-      })
     },
     methods: {
       submitForm (done) {
@@ -85,7 +85,11 @@
       align-v="center"
       style="height: 100%;"
       no-gutters>
-      <b-col sm="10" md="8" lg="6" xl="5">
+      <b-col
+        sm="10"
+        md="8"
+        lg="6"
+        xl="5">
         <b-btn
           id="share-btn"
           class="share-btn"

@@ -46,8 +46,7 @@
               class="preview-iframe"
               type="iframe"
               aspect="phone"
-              :src="previewUrl">
-            </b-embed>
+              :src="previewUrl"/>
           </div>
         </b-col>
       </b-row>

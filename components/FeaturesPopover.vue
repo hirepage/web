@@ -48,9 +48,10 @@
         @click="$root.$emit('bv::hide::popover')">
         <b-row no-gutters>
           <b-col cols="auto">
-            <b-img width="22"
-                   class="product-icon"
-                   src="/microsoft_teams_blue.svg"/>
+            <b-img
+              width="22"
+              class="product-icon"
+              src="/microsoft_teams_blue.svg"/>
           </b-col>
           <b-col>
             <div class="product-header">

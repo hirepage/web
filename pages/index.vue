@@ -1,10 +1,9 @@
 <script>
   import InfoFooter from '@/components/InfoFooter'
   import InfoHeader from '@/components/InfoHeader'
-  import StatusOval from '@/components/StatusOval'
 
   export default {
-    components: { InfoHeader, InfoFooter, StatusOval },
+    components: { InfoHeader, InfoFooter },
     data () {
       return {
         username: ''
@@ -40,18 +39,18 @@
                 @click="$refs.usernameInput.focus()">
                 <b-form-input
                   ref="usernameInput"
+                  v-model="username"
                   maxlength="64"
-                  placeholder="yourname"
-                  v-model="username"/>
+                  placeholder="yourname"/>
               </b-input-group>
             </b-form>
             <b-btn
               ref="claimBtn"
               size="lg"
-              @click="claimUsername"
               variant="primary"
               pill
-              class="main-btn mt-3">
+              class="main-btn mt-3"
+              @click="claimUsername">
               Claim your link
             </b-btn>
           </b-col>

@@ -18,9 +18,7 @@
         <div>
           hire.page/{{ $store.state.user.username }}
         </div>
-        <div>
-
-        </div>
+        <div/>
       </b-dd-header>
       <b-dd-item :href="`https://hire.page/${ $store.state.user.username }`" target="_blank">
         Open Page
