@@ -75,6 +75,14 @@
     display: inline-block;
     width: 100%;
     line-height: 1.5;
+    margin-bottom:20px;
+  }
+
+  .showdown h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 12px;
   }
 
   .showdown h2 {
@@ -85,12 +93,12 @@
   }
 
   .showdown ul, .showdown ol {
-    padding-left: 28px;
-    margin-bottom: 28px;
+    /*padding-left: 28px;*/
+    /*margin-bottom: 28px;*/
   }
 
   .showdown li {
-    padding-bottom: 8px;
+    /*padding-bottom: 8px;*/
   }
 
   .showdown li::marker {
@@ -98,7 +106,7 @@
   }
 
   .showdown p {
-    margin-bottom: 16px;
+    /*margin-bottom: 16px;*/
   }
 
   .showdown h4 {
