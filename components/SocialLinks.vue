@@ -23,7 +23,7 @@
       }
     },
     watch: {
-      user () {
+      'user.links' () {
         this.$store.dispatch('updatePreview')
         this.links = this.user.links
       }

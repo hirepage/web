@@ -23,7 +23,7 @@
       }
     },
     watch: {
-      user () {
+      'user.fields' () {
         this.$store.dispatch('updatePreview')
         this.fields = this.user.fields
       }

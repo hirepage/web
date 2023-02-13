@@ -63,7 +63,7 @@
       prepend="hire.page/"
       class="username-input-group">
       <b-form-input
-        :class="{'is-invalid': usernameLocal && !usernameValid, 'is-valid': usernameValid}"
+        :class="{'is-invalid': usernameLocal && !usernameValid, 'is-valid': usernameValid && showPrompt}"
         ref="usernameInput"
         v-model="usernameLocal"
         autofocus
@@ -76,7 +76,7 @@
       The username "{{ takenUsername }}" is already taken.
     </p>
     <p v-else-if="!usernameValid" class="help-block with-errors">
-      Usernames may only contain letters, numbers, underscores ("_") and periods (".")
+      Usernames must be at least 3 characters and only contain letters, numbers, underscores ("_") and periods (".")
     </p>
   </b-form-group>
 </template>
