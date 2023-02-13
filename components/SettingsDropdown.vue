@@ -32,7 +32,10 @@
       </b-dd-item>
       <b-dd-divider/>
       <b-dd-item to="/admin">
-        Appearance
+        Profile
+      </b-dd-item>
+      <b-dd-item to="/admin/info">
+        Info
       </b-dd-item>
       <b-dd-item to="/admin/form">
         Contact Form

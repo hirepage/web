@@ -43,7 +43,7 @@
         Describe your services, explain your expertise, or answer common questions.
       </p>
 
-        <vue-editor v-model="about" :editor-toolbar="customToolbar" style="height: 400px;"/>
+        <vue-editor v-model="about" :editor-toolbar="customToolbar" style="height: 500px;"/>
       <loading-button @click="save" style="margin-top: 60px;" variant="primary">
         Save
       </loading-button>

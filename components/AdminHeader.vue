@@ -21,7 +21,10 @@
 
       <b-navbar-nav class="d-none d-md-flex">
         <b-nav-item to="/admin">
-          Appearance
+          Profile
+        </b-nav-item>
+        <b-nav-item to="/admin/info">
+          Info
         </b-nav-item>
         <b-nav-item to="/admin/form">
           Contact Form

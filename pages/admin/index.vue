@@ -2,15 +2,13 @@
   import AvatarImageInput from '@/components/AvatarImageInput'
   import ColorInput from '@/components/ColorInput'
   import SocialLinks from '@/components/SocialLinks'
-  import BodySection from '@/components/BodySection'
 
   export default {
     layout: 'admin',
     components: {
       AvatarImageInput,
       ColorInput,
-      SocialLinks,
-      BodySection
+      SocialLinks
     },
     data () {
       return {
@@ -111,8 +109,5 @@
     </b-card>
 
     <social-links class="mt-5"/>
-
-    <body-section/>
-
   </div>
 </template>
