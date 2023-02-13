@@ -7,6 +7,10 @@
       username: {
         type: String,
         default: null
+      },
+      showPrompt: {
+        type: Boolean,
+        default: false
       }
     },
     data () {
@@ -65,13 +69,13 @@
         autofocus
         maxlength="64"/>
     </b-input-group>
-    <p v-if="usernameValid || !usernameLocal" class="help-block with-errors">
+    <p v-if="(usernameValid || !usernameLocal) && showPrompt" class="help-block with-errors">
       Choose your Hirepage username. You can always change it later.
     </p>
     <p v-else-if="takenUsername" class="help-block with-errors">
       The username "{{ takenUsername }}" is already taken.
     </p>
-    <p v-else class="help-block with-errors">
+    <p v-else-if="!usernameValid" class="help-block with-errors">
       Usernames may only contain letters, numbers, underscores ("_") and periods (".")
     </p>
   </b-form-group>
