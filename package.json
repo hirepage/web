@@ -51,6 +51,7 @@
     "showdown": "^2.1.0",
     "validator": "^13.5.2",
     "vue-gtag": "1.16.1",
+    "vue2-editor": "^2.10.3",
     "vuedraggable": "^2.24.3",
     "xss": "^1.0.14"
   },

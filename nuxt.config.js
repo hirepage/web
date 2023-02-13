@@ -9,7 +9,8 @@ const modules = [
   '@nuxtjs/toast',
   'nuxt-rfg-icon',
   '@nuxtjs/axios',
-  'bootstrap-vue/nuxt'
+  'bootstrap-vue/nuxt',
+  'vue2-editor/nuxt'
 ]
 
 if (process.env.LOCAL !== 'true') {

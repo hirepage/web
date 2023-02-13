@@ -2,13 +2,15 @@
   import AvatarImageInput from '@/components/AvatarImageInput'
   import ColorInput from '@/components/ColorInput'
   import SocialLinks from '@/components/SocialLinks'
+  import BodySection from '@/components/BodySection'
 
   export default {
     layout: 'admin',
     components: {
       AvatarImageInput,
       ColorInput,
-      SocialLinks
+      SocialLinks,
+      BodySection
     },
     data () {
       return {
@@ -110,24 +112,7 @@
 
     <social-links class="mt-5"/>
 
+    <body-section/>
 
-    <div class="form-group has-feedback">
-      <h2>
-        Info
-      </h2>
-      <p class="mb-2" style="opacity: 0.7">
-        Add content to your page using markdown syntax.
-      </p>
-      <b-form-textarea
-        v-model="about"
-        :rows="5"
-        autocapitalize="word"/>
-    </div>
-
-    <loading-button
-      variant="primary"
-      @click="save">
-      Update
-    </loading-button>
   </div>
 </template>
