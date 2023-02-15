@@ -1,5 +1,6 @@
 <script>
   import validator from 'validator'
+  import { debounce } from 'lodash'
 
   export default {
     name: 'UsernameInput',
@@ -30,7 +31,7 @@
       this.checkUsername()
     },
     methods: {
-      checkUsername () {
+      checkUsername: debounce(function (value) {
         if (!validator.isSlug(this.usernameLocal)) {
           this.takenUsername = null
           this.usernameValid = false
@@ -54,7 +55,7 @@
           this.$toast.error('Error checking username')
           this.$emit('update:username', null)
         })
-      }
+      }, 500)
     }
   }
 </script>
