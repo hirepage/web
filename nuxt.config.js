@@ -82,7 +82,7 @@ module.exports = {
   build: {
     analyze: false,
     cssSourceMap: false,
-    publicPath: process.env.DOMAIN === 'localhost' || process.env.NODE_ENV === 'test' ? undefined : `https://cdn.otechie.com/${process.env.NODE_ENV}/_nuxt/`,
+    // publicPath: process.env.DOMAIN === 'localhost' || process.env.NODE_ENV === 'test' ? undefined : `https://cdn.otechie.com/${process.env.NODE_ENV}/_nuxt/`,
     extend (config, ctx) {
       if (process.env.NODE_ENV === 'local' && ctx.isClient) {
         config.module.rules.push({
