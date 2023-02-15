@@ -3,14 +3,14 @@ service: web
 provider:
   name: aws
   runtime: nodejs14.x
-  stage: ${env:NODE_ENV}
+  stage: ${env:STAGE}
   region: us-east-1
   memorySize: 2048
   environment:
-    NODE_ENV: ${env:NODE_ENV}
     DOMAIN: ${env:DOMAIN}
     WEB_URL: ${env:WEB_URL}
     API_URL: ${env:API_URL}
+    STAGE: ${env:STAGE}
 
   iamRoleStatements:
     - Effect: 'Allow'
