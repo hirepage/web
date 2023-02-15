@@ -47,6 +47,12 @@
           } else {
             this.$emit('update:username', null)
           }
+        }).catch(err => {
+          console.error(err)
+          this.takenUsername = null
+          this.usernameValid = false
+          this.$toast.error('Error checking username')
+          this.$emit('update:username', null)
         })
       }
     }
