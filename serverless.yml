@@ -57,5 +57,5 @@ custom:
     types:
       - '*/*'
   customDomain:
-    domainName: hire.page
+    domainName: ${env:DOMAIN}
     createRoute53Record: true
