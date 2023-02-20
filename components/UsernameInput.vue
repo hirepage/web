@@ -9,7 +9,7 @@
         type: String,
         default: null
       },
-      showPrompt: {
+      register: {
         type: Boolean,
         default: false
       }
@@ -17,7 +17,7 @@
     data () {
       return {
         usernameLocal: this.username,
-        usernameValid: false,
+        usernameValid: !this.register,
         takenUsername: null
       }
     },
@@ -72,11 +72,11 @@
       <b-form-input
         ref="usernameInput"
         v-model="usernameLocal"
-        :class="{'is-invalid': usernameLocal && !usernameValid, 'is-valid': usernameValid && showPrompt}"
-        autofocus
+        :class="{'is-invalid': usernameLocal && !usernameValid, 'is-valid': usernameValid && register}"
+        :autofocus="register"
         maxlength="64"/>
     </b-input-group>
-    <p v-if="(usernameValid || !usernameLocal) && showPrompt" class="help-block with-errors">
+    <p v-if="(usernameValid || !usernameLocal) && register" class="help-block with-errors">
       Choose your Hirepage username. You can always change it later.
     </p>
     <p v-else-if="takenUsername" class="help-block with-errors">
@@ -87,7 +87,3 @@
     </p>
   </b-form-group>
 </template>
-
-<style scoped>
-
-</style>

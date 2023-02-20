@@ -40,7 +40,7 @@
       Settings
     </h2>
     <b-card>
-      <username-input :username.sync="username"/>
+      <username-input :username.sync="username" />
 
       <b-form-group>
         <label>
@@ -48,7 +48,6 @@
         </label>
         <b-form-input
           v-model="email"
-          autofocus
           maxlength="64"/>
       </b-form-group>
 

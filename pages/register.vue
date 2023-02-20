@@ -64,7 +64,7 @@
     </h1>
     <hr>
     <div>
-      <username-input :username.sync="username" show-prompt/>
+      <username-input :username.sync="username" register/>
 
       <div class="row">
         <div class="col-sm-6">
