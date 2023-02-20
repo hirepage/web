@@ -31,6 +31,9 @@ export default app => ({
       app.$api.auth.setAuth(auth)
     })
   },
+  confirmEmail (data) {
+    return app.$axios.$post('/user/email/confirm', data)
+  },
   forgotPassword (data) {
     return app.$axios.$post('/user/forgot', data)
   },

@@ -21,7 +21,20 @@
         backgroundType: this.$store.state.user.backgroundType
       }
     },
+    mounted () {
+      this.confirmEmail()
+    },
     methods: {
+      confirmEmail () {
+        if (this.$route.query.confirmEmail) {
+          this.$api.user.confirmEmail({ token: this.$route.query.confirmEmail }).then(data => {
+            this.$toast.success(data.message)
+            this.$router.replace(this.$route.path)
+          }).catch(err => {
+            this.$toast.error('Error confirming email')
+          })
+        }
+      },
       save (done) {
         this.$api.user.update({
           title: this.title,
