@@ -32,7 +32,10 @@ export default app => ({
     })
   },
   confirmEmail (data) {
-    return app.$axios.$post('/user/email/confirm', data)
+    return app.$axios.$post('/user/email/confirm', data).then(({ user, message }) => {
+      app.store.commit('SET_USER', user)
+      return message
+    })
   },
   forgotPassword (data) {
     return app.$axios.$post('/user/forgot', data)

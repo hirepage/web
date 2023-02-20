@@ -23,7 +23,9 @@
         this.$api.user.login({
           username: this.username,
           password: this.password
-        }).then(next => {
+        }).then(auth => {
+          const next = this.$cookies.get('next')
+          this.$cookies.remove('next')
           this.$router.push(next || '/admin')
         }).catch(err => {
           this.$toast.error('Invalid Login')

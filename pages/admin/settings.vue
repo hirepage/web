@@ -19,6 +19,9 @@
       },
       enabled () {
         return this.emailValid && this.username
+      },
+      user () {
+        return this.$store.state.user
       }
     },
     methods: {
@@ -26,6 +29,8 @@
         this.$api.user.update({
           username: this.username,
           email: this.email
+        }).then(user => {
+          this.$toast.success('Settings updated')
         }).catch(err => {
           this.$toast.error('Error updating settings')
         }).finally(done)
@@ -49,6 +54,9 @@
         <b-form-input
           v-model="email"
           maxlength="64"/>
+        <p v-if="user && !user.emailConfirmed" class="help-block with-errors">
+          Please check your email to confirm your email
+        </p>
       </b-form-group>
 
       <loading-button variant="primary" :disabled="!enabled" @click="save">
