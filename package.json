@@ -21,7 +21,8 @@
     "offline": "sls offline start --skipCacheInvalidation",
     "test": "ava --verbose",
     "precommit": "yarn lint",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix"
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
+    "merge": "git checkout main; git merge dev; git push; git checkout dev"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.1.1",

@@ -1,7 +1,7 @@
 function head () {
   const title = 'Contact page for freelancers, consultants, and agencies | Hirepage'
   const description = 'Grow your service business with a professional contact form'
-  const socialImageUrl = 'https://cdn.otechie.com/attachments/UfbU_qNsK/SocialImage.png'
+  const socialImageUrl = 'https://hire.page/landing-examples.png'
   return {
     title: `Hirepage - ${title}`,
     script: [],
