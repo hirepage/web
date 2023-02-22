@@ -43,7 +43,6 @@
           this.usernameValid = data.available
           this.takenUsername = data.available ? null : data.username
           if (data.available) {
-            console.log('update:username', data.username)
             this.$emit('update:username', data.username)
           } else {
             this.$emit('update:username', null)

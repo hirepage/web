@@ -17,7 +17,6 @@
         if (!file) return
         this.$nuxt.$loading.start()
         this.$api.file.upload(file).then(url => {
-          console.log('update:avatar-url', url)
           this.$emit('update:avatar-url', url)
         }).finally(this.$nuxt.$loading.finish)
       }

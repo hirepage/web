@@ -8,7 +8,6 @@ export default app => ({
         bodyFormData.set(key, data.signature[key])
       }
       bodyFormData.append('file', file)
-      console.log('=== upload', data)
       return axios({
         method: 'post',
         url: data.postEndpoint,

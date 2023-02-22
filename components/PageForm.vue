@@ -35,7 +35,6 @@
           user: this.user.id,
           fields: this.fields
         }).then(lead => {
-          console.log(lead)
           this.$toast.success('Message sent')
         }).catch(err => {
           console.error(err)
