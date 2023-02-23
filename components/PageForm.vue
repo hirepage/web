@@ -75,7 +75,7 @@
         type="submit"
         variant="primary"
         style="min-width: 300px;"
-        :style="`background-color: ${user.btnColor} !important;`"
+        :style="`background-color: ${user.btnColor} !important; color: ${user.btnTextColor} !important;`"
         class="colored-btn"
         @click="submitForm">
         {{ user.btnText }}
