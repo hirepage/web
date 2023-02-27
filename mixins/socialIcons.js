@@ -62,6 +62,12 @@ const icons = [{
   icon: 'calendar-lines',
   name: 'Calendar',
   placeholder: 'https://calendly.com/username'
+}, {
+  id: 'STACKOVERFLOW',
+  iconSet: 'fab',
+  icon: 'stack-overflow',
+  name: 'StackOverflow',
+  placeholder: 'https://stackoverflow.com/users/username'
 }]
 
 export default {

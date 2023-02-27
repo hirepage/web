@@ -18,7 +18,8 @@ import {
   faSlack,
   faYoutube,
   faFacebook,
-  faInstagram
+  faInstagram,
+  faStackOverflow
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faLock,
@@ -105,7 +106,8 @@ library.add(
   faArrowUpRightFromSquare,
   faPhone,
   faLink,
-  faCalendarLines
+  faCalendarLines,
+  faStackOverflow
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
