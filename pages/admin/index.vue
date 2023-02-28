@@ -82,6 +82,9 @@
               autocapitalize="word"/>
           </b-form-group>
 
+
+
+
           <b-row>
             <b-col md="6">
               <b-form-group label="Background Color">
@@ -124,3 +127,7 @@
     <social-links class="mt-5"/>
   </div>
 </template>
+
+<style scoped>
+
+</style>
