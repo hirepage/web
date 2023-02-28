@@ -50,7 +50,7 @@
     <h2>
       Contact Form
     </h2>
-    <p class="mb-2">
+    <p class="mb-2" style="opacity: 0.7">
       Collect information from potential clients. Responses will be sent to your email.
     </p>
     <b-card-group>
