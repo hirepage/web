@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <b-navbar sticky class="admin-header">
+  <b-navbar class="admin-header">
     <logout-modal/>
     <b-container>
       <b-navbar-brand to="/admin">
@@ -47,8 +47,13 @@
 
 <style scoped>
   .admin-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     background-color: white;
     border-bottom: solid #ececec 1px;
+    z-index: 1000;
   }
 
   .nav-item .nuxt-link-exact-active {
