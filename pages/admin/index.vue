@@ -4,6 +4,8 @@
   import SocialLinks from '@/components/SocialLinks'
   import WelcomeAlert from '@/components/WelcomeAlert'
   import BodySection from '@/components/BodySection'
+  import ThemeSelector from '@/components/ThemeSelector'
+
 
   export default {
     layout: 'admin',
@@ -12,7 +14,8 @@
       ColorInput,
       SocialLinks,
       WelcomeAlert,
-      BodySection
+      BodySection,
+      ThemeSelector
     },
     data () {
       return {
@@ -88,6 +91,7 @@
               autocapitalize="word"/>
           </b-form-group>
 
+          <theme-selector/>
 
           <b-row>
             <b-col md="6">

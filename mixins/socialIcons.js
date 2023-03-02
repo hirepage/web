@@ -96,7 +96,7 @@ export default {
         return '#'
       } else if (icon.prefix) {
         return `${icon.prefix}${link.url}`
-      } else if (!link.url.startsWith('http://') || !link.url.startsWith('https://')) {
+      } else if (!link.url.startsWith('http://') && !link.url.startsWith('https://')) {
         return `https://${link.url}`
       } else {
         return link.url
