@@ -853,3 +853,7 @@ h6 {
 .form-control:focus {
   background-color: transparent;
 }
+
+.success-text {
+  color: var(--success);
+}

@@ -1,4 +1,6 @@
 <script>
+  import ClipboardJS from 'clipboard'
+
   export default {
     props: {
       user: {
@@ -9,6 +11,40 @@
       self: {
         type: Boolean,
         default: false
+      }
+    },
+    data () {
+      return {
+        clipboard: null,
+        copied: false
+      }
+    },
+    beforeDestroy () {
+      if (this.clipboard) {
+        this.clipboard.destroy()
+      }
+    },
+    methods: {
+      shown () {
+        this.clipboard = new ClipboardJS('.copy-btn', {
+          container: document.getElementById('sharePageBody')
+        })
+        const self = this
+        this.clipboard.on('success', function (e) {
+          self.copied = true
+          setTimeout(function () {
+            self.copied = false
+          }, 2000)
+          e.clearSelection()
+        })
+        this.clipboard.on('error', function (e) {
+          console.log('error', e)
+        })
+      },
+      hidden () {
+        if (this.clipboard) {
+          this.clipboard.destroy()
+        }
       }
     },
     computed: {
@@ -30,7 +66,7 @@
         }
       },
       pageUrl () {
-        return `https://hire.page/${this.user.username}`
+        return `${process.env.WEB_URL}/${this.user.username}`
       },
       platforms () {
         return [{
@@ -65,15 +101,39 @@
 
 <template>
   <b-modal
+    @shown="shown"
+    @hidden="hidden"
     id="sharePageModal"
+    ref="sharePageModal"
     :title="title"
     hide-footer>
-    <div>
+    <div id="sharePageBody">
       <p>
         {{ subtitle }}
       </p>
-      <b-card no-body class="mt-2">
+      <b-card no-body class="mt-3">
         <b-list-group flush>
+          <b-list-group-item
+            class="copy-btn"
+            data-clipboard-action="copy"
+            :data-clipboard-text="pageUrl">
+            <b-row align-v="center" no-gutters class="flex-nowrap">
+              <b-col cols="auto" class="pr-2 semi-bold" style="width:36px;">
+                <b-img src="favicon.png" width="24" height="24"/>
+              </b-col>
+              <b-col>
+                hire.page/{{ user.username }}
+              </b-col>
+              <b-col style="" cols="auto">
+                <span v-if="copied" class="success-text">
+                  Copied!
+                </span>
+                <span v-else>
+                  Copy
+                </span>
+              </b-col>
+            </b-row>
+          </b-list-group-item>
           <b-list-group-item
             v-for="platform in platforms"
             :key="platform.name"

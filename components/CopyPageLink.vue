@@ -3,12 +3,6 @@
 
   export default {
     name: 'CopyPageLink',
-    props: {
-      user: {
-        type: Object,
-        default: null
-      }
-    },
     data () {
       return {
         clipboard: null
@@ -19,17 +13,23 @@
       const self = this
       this.clipboard.on('success', function (e) {
         self.$toast.success('Copied link')
+        console.log('clipboard', e)
       })
     },
     beforeDestroy () {
       this.clipboard.destroy()
     },
+    computed: {
+      shareUrl () {
+        return this.user ? `${process.env.WEB_URL}/${this.user.username}` : 'nope'
+      },
+      user () {
+        return this.$store.state.user
+      }
+    },
     methods: {
       shareForm () {
         console.log('shareForm')
-      },
-      shareUrl () {
-        return `${process.env.WEB_URL}/${this.user.username}`
       }
     }
   }

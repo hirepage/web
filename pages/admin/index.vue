@@ -61,6 +61,7 @@
 <template>
   <div class="mb-5">
     <welcome-alert/>
+
     <h2>
       Profile
     </h2>
