@@ -13,7 +13,7 @@
     },
     computed: {
       title () {
-        return this.self ? 'Share your Hirepage' : `Share this Hirepage`
+        return this.self ? 'Share your Hirepage' : 'Share this Hirepage'
       },
       subtitle () {
         if (this.self) {
@@ -58,16 +58,6 @@
           image: '/socials/email.svg',
           url: `mailto:?subject=Check out my Hirepage!&body=${this.body}`
         }]
-      },
-      methods: {
-        logout () {
-          this.$api.auth.logout()
-          this.$bvModal.hide('logoutModal')
-          this.$router.push('/login')
-        },
-        cancel () {
-          this.$bvModal.hide('logoutModal')
-        }
       }
     }
   }

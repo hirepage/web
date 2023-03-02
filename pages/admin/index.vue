@@ -2,13 +2,15 @@
   import AvatarImageInput from '@/components/AvatarImageInput'
   import ColorInput from '@/components/ColorInput'
   import SocialLinks from '@/components/SocialLinks'
+  import WelcomeAlert from '@/components/WelcomeAlert'
 
   export default {
     layout: 'admin',
     components: {
       AvatarImageInput,
       ColorInput,
-      SocialLinks
+      SocialLinks,
+      WelcomeAlert
     },
     data () {
       return {
@@ -56,6 +58,7 @@
 
 <template>
   <div class="mb-5">
+    <welcome-alert/>
     <h2>
       Profile
     </h2>
@@ -81,8 +84,6 @@
               type="text"
               autocapitalize="word"/>
           </b-form-group>
-
-
 
 
           <b-row>
