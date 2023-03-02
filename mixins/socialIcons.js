@@ -92,7 +92,15 @@ export default {
     },
     getUrl (link) {
       const icon = find(icons, { id: link.icon })
-      return icon && icon.prefix ? `${icon.prefix}${link.url}` : link.url
+      if (!icon) {
+        return '#'
+      } else if (icon.prefix) {
+        return `${icon.prefix}${link.url}`
+      } else if (!link.url.startsWith('http://') || !link.url.startsWith('https://')) {
+        return `https://${link.url}`
+      } else {
+        return link.url
+      }
     }
   }
 }
