@@ -3,6 +3,7 @@
   import ColorInput from '@/components/ColorInput'
   import SocialLinks from '@/components/SocialLinks'
   import WelcomeAlert from '@/components/WelcomeAlert'
+  import BodySection from '@/components/BodySection'
 
   export default {
     layout: 'admin',
@@ -10,7 +11,8 @@
       AvatarImageInput,
       ColorInput,
       SocialLinks,
-      WelcomeAlert
+      WelcomeAlert,
+      BodySection
     },
     data () {
       return {
@@ -126,6 +128,8 @@
     </b-card>
 
     <social-links class="mt-5"/>
+
+    <body-section/>
   </div>
 </template>
 

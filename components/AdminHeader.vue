@@ -26,9 +26,9 @@
         <b-nav-item to="/admin">
           Profile
         </b-nav-item>
-        <b-nav-item to="/admin/info">
-          Info
-        </b-nav-item>
+<!--        <b-nav-item to="/admin/info">-->
+<!--          Info-->
+<!--        </b-nav-item>-->
         <b-nav-item to="/admin/form">
           Contact Form
         </b-nav-item>

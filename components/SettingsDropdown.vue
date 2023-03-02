@@ -32,9 +32,9 @@
       <b-dd-item to="/admin">
         Profile
       </b-dd-item>
-      <b-dd-item to="/admin/info">
-        Info
-      </b-dd-item>
+<!--      <b-dd-item to="/admin/info">-->
+<!--        Info-->
+<!--      </b-dd-item>-->
       <b-dd-item to="/admin/form">
         Contact Form
       </b-dd-item>
