@@ -1,25 +1,17 @@
 <script>
-  import ClipboardJS from 'clipboard'
   import meta from '@/mixins/meta'
   import socialIcons from '@/mixins/socialIcons'
   import MarkdownText from '@/components/MarkdownText'
+  import SharePageModal from '@/components/modals/SharePageModal'
   import PageForm from '@/components/PageForm'
 
   export default {
-    components: { MarkdownText, PageForm },
+    components: { MarkdownText, PageForm, SharePageModal },
     mixins: [meta, socialIcons],
-    data () {
-      return {
-        clipboard: null
-      }
-    },
     computed: {
       wrapperStyle () {
         const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
         return `${background}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor};`
-      },
-      shareUrl () {
-        return `${process.env.WEB_URL}/${this.user.username}`
       }
     },
     asyncData ({ params, app, error }) {
@@ -28,27 +20,13 @@
       }).catch(err => {
         error(err)
       })
-    },
-    mounted () {
-      this.clipboard = new ClipboardJS('.share-btn')
-      const self = this
-      this.clipboard.on('success', function (e) {
-        self.$toast.success('Copied link')
-      })
-    },
-    beforeDestroy () {
-      this.clipboard.destroy()
-    },
-    methods: {
-      shareForm () {
-        console.log('shareForm')
-      }
     }
   }
 </script>
 
 <template>
   <div class="setup-wrapper" :style="wrapperStyle">
+    <share-page-modal :user="user"/>
     <b-row
       align-h="center"
       align-v="center"
@@ -60,12 +38,10 @@
         lg="6"
         xl="5">
         <b-btn
-          id="share-btn"
+          v-b-modal.sharePageModal
           class="share-btn"
           variant="default"
-          pill
-          data-clipboard-action="copy"
-          :data-clipboard-text="shareUrl">
+          pill>
           <font-awesome-icon
             class="concern-icon"
             height="12"
@@ -180,7 +156,7 @@
     right: 24px;
     height: 40px;
     width: 40px;
-    visibility: hidden;
+    z-index: 500;
   }
 
   .social-icons {
@@ -196,10 +172,6 @@
 
   .social-icon a:hover {
     opacity: 0.7;
-  }
-
-  .share-btn {
-    z-index: 500;
   }
 
   .hirepage-link {

@@ -35,7 +35,7 @@
   <div>
     <admin-header/>
     <b-container style="margin-top: 58px;">
-      <b-row style="position: relative;">
+      <b-row>
         <b-col lg="7">
           <nuxt v-if="$store.state.user" class="setting-tab"/>
         </b-col>
