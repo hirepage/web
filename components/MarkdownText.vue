@@ -35,7 +35,7 @@
     },
     computed: {
       html () {
-        return converter.makeHtml(this.text)
+        return converter.makeHtml(this.text + '<br><h1>Get in touch</h1>')
       }
     },
     created () {
@@ -75,19 +75,19 @@
     display: inline-block;
     width: 100%;
     line-height: 1.5;
-    margin-bottom:20px;
+    margin-bottom: 2px;
   }
 
   .showdown h1 {
     font-weight: bold;
-    text-align: center;
+    /*text-align: center;*/
     font-size: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
   }
 
   .showdown h2 {
     font-weight: bold;
-    text-align: center;
+    /*text-align: center;*/
     font-size: 24px;
     margin-bottom: 12px;
   }
@@ -106,7 +106,6 @@
   }
 
   .showdown p {
-    /*margin-bottom: 16px;*/
   }
 
   .showdown h4 {

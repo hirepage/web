@@ -47,9 +47,9 @@
 
 <template>
   <div>
-    <h3 v-if="user.about" style="font-weight: bold; text-align: center; margin-bottom: 16px; font-size: 24px;">
-      Get in touch
-    </h3>
+<!--    <h3 v-if="user.about" style="font-weight: bold; margin-bottom: 16px; font-size: 24px;">-->
+<!--      Get in touch-->
+<!--    </h3>-->
     <b-form-group
       v-for="field in fields"
       :key="field.id"

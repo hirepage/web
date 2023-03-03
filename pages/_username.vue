@@ -11,7 +11,7 @@
     computed: {
       wrapperStyle () {
         const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
-        return `${background}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor};`
+        return `${background}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor}; --background-color: ${this.user.backgroundColor};`
       }
     },
     asyncData ({ params, app, error }) {
@@ -33,6 +33,7 @@
       style="height: 100%;"
       no-gutters>
       <b-col
+        class="card-col"
         sm="10"
         md="8"
         lg="6"
@@ -62,11 +63,11 @@
             <h1 class="semi-bold mb-1 mt-3 profile-title">
               {{ user.title }}
             </h1>
-            <p style="opacity: 0.7;">
+            <p class="profile-subtitle">
               {{ user.bio }}
             </p>
 
-            <div v-if="user.links.length" class="form-group social-icons pt-1">
+            <div v-if="user.links.length" class="form-group social-icons">
               <div
                 v-for="link in user.links"
                 :key="link.id"
@@ -76,7 +77,8 @@
                   target="_blank">
                   <font-awesome-icon
                     size="lg"
-                    width="42.5"
+                    fixed-width
+                    width="18"
                     height="18"
                     :icon="getIcon(link.icon)"/>
                 </a>
@@ -101,7 +103,11 @@
 <style scoped>
 
   .profile-title {
-    font-size: 32px;
+    font-size: 36px;
+  }
+
+  .profile-subtitle {
+    opacity: 0.7;
   }
 
   .form-label {
@@ -137,7 +143,7 @@
     border-radius: 20px;
     /*border: 1px solid rgba(0, 0, 0, 0.125);*/
     padding: 24px;
-    padding-top: 64px;
+    padding-top: 56px;
     position: relative;
   }
 
@@ -160,14 +166,24 @@
   }
 
   .social-icons {
-    margin: 12px auto 12px auto;
+    margin: auto;
+    /*width: 100%;*/
     max-width: 160px;
     display: flex;
     justify-content: center;
+    margin-top: 16px;
+  }
+
+  .social-icon {
+    border-radius: 20px;
+    border: #ccc solid 1px !important;
+    margin: 0 8px;
+    padding: 6px;
   }
 
   .social-icon a {
     color: var(--text-color);
+    opacity: 0.8;
   }
 
   .social-icon a:hover {
@@ -180,6 +196,14 @@
 
   .hirepage-link:hover {
     opacity: 0.9;
+  }
+
+  .card-col {
+    background-color: rgba(255, 255, 255, 1);
+    /*background-color: #181818;*/
+    box-shadow: rgb(0 0 0 / 19%) 0rem 1.75rem 3.125rem 0.25rem;
+    border-radius: 44px;
+    margin-top: 64px;
   }
 
 </style>
