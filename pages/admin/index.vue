@@ -4,7 +4,7 @@
   import SocialLinks from '@/components/SocialLinks'
   import WelcomeAlert from '@/components/WelcomeAlert'
   import BodySection from '@/components/BodySection'
-  import ThemeSelector from '@/components/ThemeSelector'
+  // import ThemeSelector from '@/components/ThemeSelector'
 
 
   export default {
@@ -14,8 +14,7 @@
       ColorInput,
       SocialLinks,
       WelcomeAlert,
-      BodySection,
-      ThemeSelector
+      BodySection
     },
     data () {
       return {
@@ -91,7 +90,7 @@
               autocapitalize="word"/>
           </b-form-group>
 
-          <theme-selector/>
+<!--          <theme-selector/>-->
 
           <b-row>
             <b-col md="6">
