@@ -1,10 +1,10 @@
 {
   "name": "hirepage-web",
   "version": "1.0.0",
-  "description": "Talk to all of your clients from Slack | ChatPass",
+  "description": "Contact page for freelancers, consultants, and agencies | Hirepage",
   "copyright": "© 2023 Hirepage",
   "homepage": "https://hire.page",
-  "author": "Otechie <hello@otechie.com>",
+  "author": "Hirepage <dylan@hire.page>",
   "keywords": [],
   "license": "UNLICENSED",
   "private": true,

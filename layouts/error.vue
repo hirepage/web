@@ -51,8 +51,8 @@
             </nuxt-link>
             or message us at
             <a
-              href="mailto:hello@otechie.com">
-              <span>hello@otechie.com</span>
+              href="mailto:dylan@hire.page">
+              <span>dylan@hire.page</span>
             </a>
             for help with anything.
           </p>

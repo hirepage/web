@@ -112,14 +112,14 @@
             <div class="form-group social-icons">
               <div class="social-icon">
                 <a
-                  href="https://www.youtube.com/c/dylanwight"
+                  href="https://www.facebook.com/hirepageapp"
                   target="_blank"
-                  title="YouTube Channel">
+                  title="Facebook Pae">
                   <font-awesome-icon
                     size="lg"
                     width="42.5"
                     height="35"
-                    :icon="['fab', 'youtube']"/>
+                    :icon="['fab', 'facebook']"/>
                 </a>
               </div>
               <div class="social-icon">
@@ -136,7 +136,7 @@
               </div>
               <div class="social-icon">
                 <a
-                  href="https://www.linkedin.com/company/otechie"
+                  href="https://www.linkedin.com/company/hirepage"
                   target="_blank"
                   title="LinkedIn Profile">
                   <font-awesome-icon
@@ -148,8 +148,8 @@
               </div>
               <div class="social-icon">
                 <a
-                  href="mailto:hello@otechie.com"
-                  title="Github Profile">
+                  href="mailto:dylan@hire.page"
+                  title="Contact Email">
                   <font-awesome-icon
                     style="margin-top: 0px;"
                     size="lg"
