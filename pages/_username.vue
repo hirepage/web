@@ -11,7 +11,7 @@
     computed: {
       wrapperStyle () {
         const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
-        return `${background}; color: ${this.user.textColor}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor}; --background-color: ${this.user.backgroundColor};`
+        return `${background}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor}; --background-color: ${this.user.backgroundColor};`
       }
     },
     asyncData ({ params, app, error }) {
@@ -176,14 +176,15 @@
 
   .social-icon {
     border-radius: 20px;
-    border: #ccc solid 1px !important;
+    /*border: #ccc solid 1px !important;*/
     margin: 0 8px;
     padding: 6px;
+    background-color: var(--background-color);
   }
 
   .social-icon a {
-    color: var(--text-color);
-    opacity: 0.8;
+    color: white;
+    /*opacity: 0.7;*/
   }
 
   .social-icon a:hover {

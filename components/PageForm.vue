@@ -47,9 +47,9 @@
 
 <template>
   <div>
-<!--    <h3 v-if="user.about" style="font-weight: bold; margin-bottom: 16px; font-size: 24px;">-->
-<!--      Get in touch-->
-<!--    </h3>-->
+    <!--    <h3 v-if="user.about" style="font-weight: bold; margin-bottom: 16px; font-size: 24px;">-->
+    <!--      Get in touch-->
+    <!--    </h3>-->
     <b-form-group
       v-for="field in fields"
       :key="field.id"
@@ -68,15 +68,14 @@
         :type="field.type"/>
     </b-form-group>
 
-    <div class="text-center pt-3">
+    <div class="text-center">
       <loading-button
         pill
         size="xl"
-        type="submit"
         variant="primary"
-        style="min-width: 300px;"
         :style="`background-color: ${user.btnColor} !important; color: ${user.btnTextColor} !important;`"
-        class="colored-btn"
+        class="colored-btn mb-1"
+        style="min-width: 350px;"
         @click="submitForm">
         {{ user.btnText }}
       </loading-button>
@@ -87,7 +86,8 @@
 <style scoped>
 
   .profile-field {
-    color: var(--text-color);
+    /*color: var(--text-color);*/
+    background: rgba(0, 0, 0, 0.015);
   }
 
   .profile-field:focus {
@@ -95,12 +95,12 @@
   }
 
   .profile-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--light-text-color);
+    /*color: var(--light-text-color);*/
     opacity: 1; /* Firefox */
   }
 
   .profile-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--light-text-color);
+    /*color: var(--light-text-color);*/
   }
 
   .profile-field::-ms-input-placeholder { /* Microsoft Edge */

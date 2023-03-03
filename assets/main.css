@@ -511,7 +511,7 @@ p {
   line-height: 1.5;
   border-radius: 0.35rem;
   font-size: 14px !important;
-  width: 180px;
+  /*width: 180px;*/
 }
 
 .simplebar-scrollbar::before {
