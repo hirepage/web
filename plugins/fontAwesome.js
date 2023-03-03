@@ -1,13 +1,26 @@
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faMessageBot, faVideoCircle, faShieldCheck, faWavePulse, faCircleHeart, faArrowUpRightFromSquare  }  from '@fortawesome/pro-solid-svg-icons'
-import { faBoltLightning, faCommentDollar, faFileInvoiceDollar, faInboxIn, faPhone, faLink, faCalendarLines }  from '@fortawesome/pro-regular-svg-icons'
-import { faArrowUpFromSquare }  from '@fortawesome/pro-light-svg-icons'
-
+import {
+  faMessageBot,
+  faVideoCircle,
+  faShieldCheck,
+  faWavePulse,
+  faCircleHeart,
+  faArrowUpRightFromSquare
+} from '@fortawesome/pro-solid-svg-icons'
+import {
+  faBoltLightning,
+  faCommentDollar,
+  faFileInvoiceDollar,
+  faInboxIn,
+  faPhone,
+  faLink,
+  faCalendarLines
+} from '@fortawesome/pro-regular-svg-icons'
+import { faArrowUpFromSquare } from '@fortawesome/pro-light-svg-icons'
 
 import { faCopy, faEdit, faSmile, faHeart, faAddressCard, faComments } from '@fortawesome/free-regular-svg-icons'
-
 
 import {
   faGithub,
@@ -19,7 +32,8 @@ import {
   faYoutube,
   faFacebook,
   faInstagram,
-  faStackOverflow
+  faStackOverflow,
+  faRedditAlien
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faLock,
@@ -107,7 +121,8 @@ library.add(
   faPhone,
   faLink,
   faCalendarLines,
-  faStackOverflow
+  faStackOverflow,
+  faRedditAlien
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

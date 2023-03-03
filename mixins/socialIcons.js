@@ -68,6 +68,12 @@ const icons = [{
   icon: 'stack-overflow',
   name: 'StackOverflow',
   placeholder: 'https://stackoverflow.com/users/username'
+}, {
+  id: 'REDDIT',
+  iconSet: 'fab',
+  icon: 'reddit-alien',
+  name: 'Reddit',
+  placeholder: 'https://www.reddit.com/user/username'
 }]
 
 export default {
