@@ -23,6 +23,10 @@ const plugins = [
   { src: '~/plugins/gtag' }
 ]
 
+if (process.env.WEB_URL === 'https://hire.page') {
+  plugins.push({ src: '~/plugins/inspectlet', mode: 'client' })
+}
+
 module.exports = {
   ssr: true,
   head: head(),
