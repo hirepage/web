@@ -25,7 +25,7 @@ function head () {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'contact page consulting, contact page freelancing, contact form consulting, contact form freelancing, link in bio freelance, link in bio consultant'
+        content: 'hirepage, hire page, contact page consulting, contact page freelancing, contact form consulting, contact form freelancing, link in bio freelance, link in bio consultant'
       },
       {
         hid: 'og:title',
