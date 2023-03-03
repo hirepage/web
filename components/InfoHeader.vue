@@ -44,7 +44,7 @@
 </script>
 
 <template>
-  <b-navbar class="otechie-header" :style="headerStyle">
+  <b-navbar class="hirepage-header" :style="headerStyle">
     <b-container>
       <b-navbar-brand to="/" style="text-decoration: none; font-weight: 400; font-size: 20px">
         <b-row no-gutters align-v="center">
@@ -77,7 +77,7 @@
 
 <style scoped>
 
-  .otechie-header {
+  .hirepage-header {
     padding: 0;
     z-index: 100;
     background-color: white;
