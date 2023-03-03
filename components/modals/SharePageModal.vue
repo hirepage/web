@@ -119,7 +119,7 @@
             :data-clipboard-text="pageUrl">
             <b-row align-v="center" no-gutters class="flex-nowrap">
               <b-col cols="auto" class="pr-2 semi-bold" style="width:36px;">
-                <b-img src="favicon.png" width="24" height="24"/>
+                <b-img src="/favicon.png" width="24" height="24"/>
               </b-col>
               <b-col>
                 hire.page/{{ user.username }}
