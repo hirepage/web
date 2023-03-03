@@ -39,6 +39,26 @@
           Spray
         </div>
       </b-col>
+      <b-col cols="4">
+        <b-card class="theme-card"
+                style="background-color: #181818;"
+                @click="selectTheme('Night')">
+          <div class="theme-btn" style="background-color: #f8d47a;"/>
+        </b-card>
+        <div class="theme-label">
+          Night
+        </div>
+      </b-col>
+      <b-col cols="4">
+        <b-card class="theme-card"
+                style="background-color: #363657;"
+                @click="selectTheme('Ben')">
+          <div class="theme-btn" style="background-color: #FF8CA8;"/>
+        </b-card>
+        <div class="theme-label">
+          Ben
+        </div>
+      </b-col>
     </b-row>
   </b-form-group>
 </template>

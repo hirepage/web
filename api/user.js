@@ -61,7 +61,7 @@ export default app => ({
     })
   },
   orderLink (id, position) {
-    return app.$axios.$put(`/user/link/${id}/order`).then(user => {
+    return app.$axios.$put(`/user/link/${id}/order`, { index: position }).then(user => {
       app.store.commit('SET_USER', user)
     })
   },
@@ -81,7 +81,7 @@ export default app => ({
     })
   },
   orderField (id, position) {
-    return app.$axios.$put(`/user/field/${id}/order`).then(user => {
+    return app.$axios.$put(`/user/field/${id}/order`, { index: position }).then(user => {
       app.store.commit('SET_USER', user)
     })
   }
