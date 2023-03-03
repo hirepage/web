@@ -119,7 +119,8 @@
             :data-clipboard-text="pageUrl">
             <b-row align-v="center" no-gutters class="flex-nowrap">
               <b-col cols="auto" class="pr-2 semi-bold" style="width:36px;">
-                <b-img src="/favicon.png" width="24" height="24"/>
+                <b-img :src="user.avatarUrl" width="24" height="24" rounded/>
+<!--                <b-img src="/favicon.png" width="24" height="24"/>-->
               </b-col>
               <b-col>
                 hire.page/{{ user.username }}
@@ -131,6 +132,31 @@
                 <span v-else>
                   Copy
                 </span>
+              </b-col>
+            </b-row>
+          </b-list-group-item>
+          <b-list-group-item
+            v-if="self"
+            target="_blank"
+            :href="pageUrl">
+            <b-row align-v="center" no-gutters class="flex-nowrap">
+              <b-col cols="auto" class="pr-2 semi-bold" style="width:36px;">
+                <b-img src="/favicon.png" width="24" height="24"/>
+              </b-col>
+              <b-col>
+                Open your Hirepage
+              </b-col>
+              <b-col style="opacity: 0.7" cols="auto" class="">
+<!--                <font-awesome-icon-->
+<!--                  icon="chevron-right"-->
+<!--                  size="sm"-->
+<!--                  width="24"-->
+<!--                  height="24"/>-->
+                <font-awesome-icon
+                  size="sm"
+                  :icon="['fas', 'arrow-up-right-from-square']"
+                  width="24"
+                  height="24"/>
               </b-col>
             </b-row>
           </b-list-group-item>
