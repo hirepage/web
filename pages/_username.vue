@@ -9,9 +9,12 @@
     components: { MarkdownText, PageForm, SharePageModal },
     mixins: [meta, socialIcons],
     computed: {
-      wrapperStyle () {
-        const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
-        return `${background}; --theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor}; --background-color: ${this.user.backgroundColor};`
+      backgroundStyle () {
+        const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(90deg, ${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
+        return `${background};`
+      },
+      themeStyle () {
+        return `--theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor}; --background-color: ${this.user.backgroundColor};`
       }
     },
     asyncData ({ params, app, error }) {
@@ -25,7 +28,10 @@
 </script>
 
 <template>
-  <div class="setup-wrapper" :style="wrapperStyle">
+  <div class="profile-wrapper" :style="themeStyle">
+    <div class="setup-wrapper" :style="backgroundStyle">
+
+    </div>
     <share-page-modal :user="user"/>
     <b-row
       align-h="center"
@@ -102,6 +108,10 @@
 
 <style scoped>
 
+  .profile-wrapper {
+    padding: 0 0 100px 0;
+  }
+
   .profile-title {
     font-size: 36px;
   }
@@ -134,8 +144,11 @@
 
   .setup-wrapper {
     min-height: 100vh;
-    padding: 0 0 100px 0;
-    /*background-color: rgb(250, 250, 252);*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   .setup-cell {
@@ -176,15 +189,15 @@
 
   .social-icon {
     border-radius: 20px;
-    /*border: #ccc solid 1px !important;*/
+    border: #ccc solid 1px !important;
     margin: 0 8px;
     padding: 6px;
-    background-color: var(--background-color);
+    /*background-color: var(--background-color);*/
   }
 
   .social-icon a {
-    color: white;
-    /*opacity: 0.7;*/
+    color: inherit;
+    opacity: 0.7;
   }
 
   .social-icon a:hover {
@@ -202,7 +215,7 @@
   .card-col {
     background-color: rgba(255, 255, 255, 1);
     /*background-color: #181818;*/
-    box-shadow: rgb(0 0 0 / 19%) 0rem 1.75rem 3.125rem 0.25rem;
+    box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
     border-radius: 44px;
     margin-top: 64px;
   }
