@@ -10,7 +10,7 @@
     mixins: [meta, socialIcons],
     computed: {
       backgroundStyle () {
-        const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(90deg, ${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
+        const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
         return `${background};`
       },
       themeStyle () {
@@ -37,6 +37,7 @@
       align-h="center"
       align-v="center"
       style="height: 100%;"
+      class="mr-2 ml-2"
       no-gutters>
       <b-col
         class="card-col"
@@ -213,11 +214,17 @@
   }
 
   .card-col {
-    background-color: rgba(255, 255, 255, 1);
-    /*background-color: #181818;*/
+    background-color: white;
     box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
     border-radius: 44px;
-    margin-top: 64px;
+    margin-top: 20px;
   }
+
+  @media (min-width: 992px) {
+    .card-col {
+      margin-top: 48px;
+    }
+  }
+
 
 </style>

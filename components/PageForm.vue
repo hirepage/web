@@ -74,8 +74,8 @@
         size="xl"
         variant="primary"
         :style="`background-color: ${user.btnColor} !important; color: ${user.btnTextColor} !important;`"
-        class="colored-btn mb-1"
-        style="min-width: 350px;"
+        class="colored-btn mb-4"
+        style="width: 350px; max-width: 100%;"
         @click="submitForm">
         {{ user.btnText }}
       </loading-button>
