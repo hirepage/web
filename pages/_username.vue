@@ -100,7 +100,7 @@
       </b-col>
     </b-row>
     <div class="text-center w-100 mt-5">
-      <a href="/" :style="`color: ${user.textColor};`" class="hirepage-link">
+      <a href="/" class="hirepage-link">
         Powered by Hirepage
       </a>
     </div>
@@ -206,6 +206,7 @@
   }
 
   .hirepage-link {
+    color: var(--text-color);
     opacity: 0.7;
   }
 

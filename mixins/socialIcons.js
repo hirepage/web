@@ -74,6 +74,18 @@ const icons = [{
   icon: 'reddit-alien',
   name: 'Reddit',
   placeholder: 'https://www.reddit.com/user/username'
+}, {
+  id: 'DRIBBBLE',
+  iconSet: 'fab',
+  icon: 'dribbble',
+  name: 'Dribbble',
+  placeholder: 'https://dribbble.com/username'
+}, {
+  id: 'BEHANCE',
+  iconSet: 'fab',
+  icon: 'behance',
+  name: 'Behance',
+  placeholder: 'https://www.behance.net/username'
 }]
 
 export default {
