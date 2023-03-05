@@ -64,7 +64,7 @@
   <b-modal
     id="editFieldModal"
     ref="editFieldModal"
-    title="Edit Form Field"
+    title="Edit Question"
     :hide-footer="true">
     <form @keydown.enter.prevent="$refs.createBtn.click()">
       <b-row>
@@ -76,7 +76,11 @@
             <b-input-group>
               <b-form-select
                 v-model="type"
-                :options="['text', 'email', 'number', 'url', 'textarea', 'radio', 'checkbox']"/>
+                :options="[{ value: 'text', text: 'Short Answer' },
+                           { value: 'textarea', text: 'Paragraph' },
+                           { value: 'radio', text: 'Multiple Choice' },
+                           { value: 'checkbox', text: 'Checkboxes' },
+                           { value: 'email', text: 'Email' }]"/>
             </b-input-group>
           </b-form-group>
         </b-col>
@@ -107,12 +111,6 @@
         </loading-button>
       </b-col>
       <b-col cols="auto">
-        <b-btn
-          variant="default"
-          class="btn-margin"
-          @click="$bvModal.hide('editFieldModal')">
-          Cancel
-        </b-btn>
         <loading-button
           ref="createBtn"
           variant="primary"

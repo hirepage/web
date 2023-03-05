@@ -56,7 +56,11 @@
             <b-input-group>
               <b-form-select
                 v-model="type"
-                :options="['text', 'email', 'number', 'url', 'textarea', 'radio', 'checkbox']"/>
+                :options="[{ value: 'text', text: 'Short Answer' },
+                           { value: 'textarea', text: 'Paragraph' },
+                           { value: 'radio', text: 'Multiple Choice' },
+                           { value: 'checkbox', text: 'Checkboxes' },
+                           { value: 'email', text: 'Email' }]"/>
             </b-input-group>
           </b-form-group>
         </b-col>
@@ -80,12 +84,6 @@
 
     </form>
     <div class="text-right">
-      <b-btn
-        variant="default"
-        class="btn-margin"
-        @click="$bvModal.hide('addFieldModal')">
-        Cancel
-      </b-btn>
       <loading-button
         ref="createBtn"
         class="btn-primary"
