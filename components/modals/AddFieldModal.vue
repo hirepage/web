@@ -79,10 +79,10 @@
         </label>
         <b-form-input v-model="label" type="text"/>
       </b-form-group>
-
-      <options-editor v-if="type=== 'checkbox' || type === 'radio'" :options.sync="options"/>
-
     </form>
+
+    <options-editor v-if="type=== 'checkbox' || type === 'radio'" :options.sync="options"/>
+
     <div class="text-right">
       <loading-button
         ref="createBtn"

@@ -23,7 +23,7 @@
         this.type = this.field.type
         this.label = this.field.label
         this.isRequired = this.field.isRequired
-        this.options = this.field.options
+        this.options = this.field.options.slice()
       }
     },
     methods: {
@@ -99,9 +99,8 @@
         </label>
         <b-form-input v-model="label" type="text"/>
       </b-form-group>
-
-      <options-editor v-if="type=== 'checkbox' || type === 'radio'" :options.sync="options"/>
     </form>
+    <options-editor v-if="type=== 'checkbox' || type === 'radio'" :options.sync="options"/>
     <b-row>
       <b-col>
         <loading-button
