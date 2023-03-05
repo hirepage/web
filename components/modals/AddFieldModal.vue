@@ -60,6 +60,7 @@
                            { value: 'textarea', text: 'Paragraph' },
                            { value: 'radio', text: 'Multiple Choice' },
                            { value: 'checkbox', text: 'Checkboxes' },
+                           { value: 'date', text: 'Date' },
                            { value: 'email', text: 'Email' }]"/>
             </b-input-group>
           </b-form-group>

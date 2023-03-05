@@ -88,6 +88,12 @@
           :aria-describedby="ariaDescribedby"
           name="buttons-2"/>
       </b-form-group>
+      <b-form-group v-else-if="field.type === 'date'" :label="field.placeholder">
+        <b-form-input
+          v-model="field.value"
+          class="profile-field"
+          type="date"/>
+      </b-form-group>
       <b-form-group v-else-if="field.type === 'textarea'" :label="user.showLabels ? field.placeholder : null">
         <b-form-textarea
           v-model="field.value"
