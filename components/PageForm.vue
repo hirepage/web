@@ -88,17 +88,17 @@
           :aria-describedby="ariaDescribedby"
           name="buttons-2"/>
       </b-form-group>
-      <b-form-group v-else-if="field.type === 'textarea'">
+      <b-form-group v-else-if="field.type === 'textarea'" :label="user.showLabels ? field.placeholder : null">
         <b-form-textarea
           v-model="field.value"
-          :placeholder="field.placeholder"
+          :placeholder="user.showLabels ? null : field.placeholder"
           class="profile-field"
           rows="4"/>
       </b-form-group>
-      <b-form-group v-else>
+      <b-form-group v-else :label="user.showLabels ? field.placeholder : null">
         <b-form-input
           v-model="field.value"
-          :placeholder="field.placeholder"
+          :placeholder="user.showLabels ? null : field.placeholder"
           class="profile-field"
           :type="field.type"/>
       </b-form-group>
