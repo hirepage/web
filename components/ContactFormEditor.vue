@@ -51,7 +51,7 @@
       Contact Form
     </h2>
     <p class="mb-2" style="opacity: 0.7">
-      Collect information from potential clients. Responses will be sent to your email.
+      Responses will be emailed to {{ user.email }}.
     </p>
     <b-card-group>
       <add-field-modal/>
