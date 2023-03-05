@@ -76,7 +76,7 @@
         maxlength="64"/>
     </b-input-group>
     <p v-if="(usernameValid || !usernameLocal) && register" class="help-block with-errors">
-      Choose your Hirepage username. You can always change it later.
+      Choose your Hirepage link. You can change it later.
     </p>
     <p v-else-if="takenUsername" class="help-block with-errors">
       The username "{{ takenUsername }}" is already taken.

@@ -35,7 +35,7 @@
     },
     computed: {
       html () {
-        return converter.makeHtml(this.text + '<br><h1>Get in touch</h1>')
+        return converter.makeHtml(this.text)
       }
     },
     created () {

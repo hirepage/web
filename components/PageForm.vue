@@ -11,7 +11,8 @@
     },
     data () {
       return {
-        fields: this.user.fields
+        fields: this.user.fields,
+        lead: null
       }
     },
     methods: {
@@ -35,7 +36,7 @@
           user: this.user.id,
           fields: this.fields
         }).then(lead => {
-          this.$toast.success('Message sent')
+          this.lead = lead
         }).catch(err => {
           console.error(err)
           this.$toast.error('Error sending message')
@@ -46,10 +47,24 @@
 </script>
 
 <template>
-  <div>
-    <!--    <h3 v-if="user.about" style="font-weight: bold; margin-bottom: 16px; font-size: 24px;">-->
-    <!--      Get in touch-->
-    <!--    </h3>-->
+  <div v-if="lead">
+    <b-alert show variant="success" class="mt-4">
+      <div class="my-3">
+        <h3 class="alert-heading">
+          Submission Sent!
+        </h3>
+        <p>
+          {{ user.title }} will be in touch with you by email at {{ lead.email }}.
+          <a class="alert-link" @click="lead = null">Click here</a> if you want to edit your submission.
+        </p>
+      </div>
+    </b-alert>
+  </div>
+  <div v-else>
+    <hr v-if="user.about">
+    <h3 style="font-weight: bold; margin-bottom: 16px; font-size: 24px;">
+      Get in touch
+    </h3>
     <div
       v-for="field in fields"
       :key="field.id">
