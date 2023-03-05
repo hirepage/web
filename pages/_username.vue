@@ -10,8 +10,14 @@
     mixins: [meta, socialIcons],
     computed: {
       backgroundStyle () {
-        const background = this.user.backgroundType === 'GRADIENT' ? `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})` : `background-color: ${this.user.backgroundColor}`
-        return `${background};`
+        switch (this.user.backgroundType) {
+          case 'IMAGE':
+            return `background-image: url(${this.user.backgroundImageUrl}); `
+          case 'GRADIENT':
+            return `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})`
+          default:
+            return `background-color: ${this.user.backgroundColor}`
+        }
       },
       themeStyle () {
         return `--theme-color: ${this.user.btnColor}; --text-color: ${this.user.textColor}; --light-text-color: ${this.user.lightTextColor}; --background-color: ${this.user.backgroundColor};`
@@ -38,11 +44,7 @@
       class="mr-2 ml-2"
       no-gutters>
       <b-col
-        class="card-col"
-        sm="10"
-        md="8"
-        lg="6"
-        xl="5">
+        class="card-col" cols="auto">
         <b-btn
           v-b-modal.sharePageModal
           class="share-btn"
@@ -141,6 +143,10 @@
   }
 
   .setup-wrapper {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     min-height: 100vh;
     position: fixed;
     top: 0;
@@ -210,6 +216,8 @@
   }
 
   .card-col {
+    width: 650px;
+    max-width: 100%;
     background-color: white;
     box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
     border-radius: 44px;

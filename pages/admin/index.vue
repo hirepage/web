@@ -4,8 +4,6 @@
   import SocialLinks from '@/components/SocialLinks'
   import WelcomeAlert from '@/components/WelcomeAlert'
   import BodySection from '@/components/BodySection'
-  // import ThemeSelector from '@/components/ThemeSelector'
-
 
   export default {
     layout: 'admin',
@@ -24,7 +22,8 @@
         bio: this.$store.state.user.bio,
         about: this.$store.state.user.about,
         avatarUrl: this.$store.state.user.avatarUrl,
-        backgroundType: this.$store.state.user.backgroundType
+        backgroundType: this.$store.state.user.backgroundType,
+        backgroundImageUrl: this.$store.state.user.backgroundImageUrl
       }
     },
     mounted () {
@@ -49,7 +48,8 @@
           bio: this.bio,
           about: this.about,
           avatarUrl: this.avatarUrl,
-          backgroundType: this.backgroundType
+          backgroundType: this.backgroundType,
+          backgroundImageUrl: this.backgroundImageUrl
         }).then(user => {
           this.$store.dispatch('updatePreview')
         }).catch(err => {
@@ -63,7 +63,6 @@
 <template>
   <div class="mb-5">
     <welcome-alert/>
-
     <h2>
       Profile
     </h2>
@@ -120,7 +119,17 @@
               value="GRADIENT">
               Gradient
             </b-form-radio>
+            <b-form-radio
+              v-model="backgroundType"
+              :aria-describedby="ariaDescribedby"
+              name="background-type"
+              value="IMAGE">
+              Image
+            </b-form-radio>
           </b-form-group>
+
+          <avatar-image-input :avatar-url.sync="backgroundImageUrl"/>
+
         </b-col>
       </b-row>
 
