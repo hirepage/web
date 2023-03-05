@@ -1,8 +1,10 @@
 <script>
-  import socialIcons from '/mixins/socialIcons'
+  import OptionsEditor from '/components/OptionsEditor'
 
   export default {
-    mixins: [socialIcons],
+    components: {
+      OptionsEditor
+    },
     props: {
       field: {
         type: Object,
@@ -21,6 +23,7 @@
         this.type = this.field.type
         this.label = this.field.label
         this.isRequired = this.field.isRequired
+        this.options = this.field.options
       }
     },
     methods: {
@@ -28,15 +31,17 @@
         return this.$api.user.editField(this.field.id, {
           type: this.type,
           label: this.label,
-          isRequired: this.isRequired
+          isRequired: this.isRequired,
+          options: this.options
         }).then(user => {
           this.type = 'text'
           this.label = ''
           this.isRequired = true
+          this.options = []
           this.$refs.editFieldModal.hide()
         }).catch(err => {
           console.error(err)
-          this.$toast.error('Error updating field')
+          this.$toast.error('Error updating question')
         }).finally(done)
       },
       removeField (done) {
@@ -44,10 +49,11 @@
           this.type = 'text'
           this.label = ''
           this.isRequired = true
+          this.options = []
           this.$refs.editFieldModal.hide()
         }).catch(err => {
           console.error(err)
-          this.$toast.error('Error removing field')
+          this.$toast.error('Error removing question')
         }).finally(done)
       }
     }
@@ -68,7 +74,9 @@
               Type
             </label>
             <b-input-group>
-              <b-form-select v-model="type" :options="['text', 'email', 'number', 'url', 'textarea']"/>
+              <b-form-select
+                v-model="type"
+                :options="['text', 'email', 'number', 'url', 'textarea', 'radio', 'checkbox']"/>
             </b-input-group>
           </b-form-group>
         </b-col>
@@ -87,6 +95,8 @@
         </label>
         <b-form-input v-model="label" type="text"/>
       </b-form-group>
+
+      <options-editor v-if="type=== 'checkbox' || type === 'radio'" :options.sync="options"/>
     </form>
     <b-row>
       <b-col>

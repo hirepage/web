@@ -56,7 +56,7 @@
       <b-form-group
         v-if="field.type === 'radio'"
         v-slot="{ ariaDescribedby }"
-        :label="field.label">
+        :label="field.placeholder">
         <b-form-radio-group
           v-model="field.value"
           :options="field.options"
@@ -66,7 +66,7 @@
       <b-form-group
         v-else-if="field.type === 'checkbox'"
         v-slot="{ ariaDescribedby }"
-        :label="field.label">
+        :label="field.placeholder">
         <b-form-checkbox-group
           v-model="field.value"
           :options="field.options"

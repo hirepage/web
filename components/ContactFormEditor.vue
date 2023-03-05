@@ -101,7 +101,7 @@
     </b-card-group>
 
     <b-btn v-b-modal.addFieldModal class="mb-5" variant="primary">
-      Add Field
+      Add Question
     </b-btn>
   </div>
 </template>
