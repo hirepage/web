@@ -22,7 +22,7 @@
     methods: {
       addOption () {
         if (this.newOption.length && this.optionsLocal.length <= 8) {
-          this.optionsLocal.unshift(this.newOption)
+          this.optionsLocal.push(this.newOption)
           this.newOption = ''
           this.$emit('update:options', this.optionsLocal)
         }
