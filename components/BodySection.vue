@@ -37,7 +37,7 @@
   <client-only>
     <div>
       <h2>
-        Info
+        About
       </h2>
       <vue-editor
         v-model="about"
