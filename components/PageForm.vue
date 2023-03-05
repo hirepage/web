@@ -50,23 +50,44 @@
     <!--    <h3 v-if="user.about" style="font-weight: bold; margin-bottom: 16px; font-size: 24px;">-->
     <!--      Get in touch-->
     <!--    </h3>-->
-    <b-form-group
+    <div
       v-for="field in fields"
-      :key="field.id"
-      class="has-feedback">
-      <b-form-textarea
-        v-if="field.type === 'textarea'"
-        v-model="field.value"
-        :placeholder="field.placeholder"
-        class="profile-field"
-        rows="4"/>
-      <b-form-input
-        v-else
-        v-model="field.value"
-        :placeholder="field.placeholder"
-        class="profile-field"
-        :type="field.type"/>
-    </b-form-group>
+      :key="field.id">
+      <b-form-group
+        v-if="field.type === 'radio'"
+        v-slot="{ ariaDescribedby }"
+        :label="field.label">
+        <b-form-radio-group
+          v-model="field.value"
+          :options="field.options"
+          :aria-describedby="ariaDescribedby"
+          name="buttons-2"/>
+      </b-form-group>
+      <b-form-group
+        v-else-if="field.type === 'checkbox'"
+        v-slot="{ ariaDescribedby }"
+        :label="field.label">
+        <b-form-checkbox-group
+          v-model="field.value"
+          :options="field.options"
+          :aria-describedby="ariaDescribedby"
+          name="buttons-2"/>
+      </b-form-group>
+      <b-form-group v-else-if="field.type === 'textarea'">
+        <b-form-textarea
+          v-model="field.value"
+          :placeholder="field.placeholder"
+          class="profile-field"
+          rows="4"/>
+      </b-form-group>
+      <b-form-group v-else>
+        <b-form-input
+          v-model="field.value"
+          :placeholder="field.placeholder"
+          class="profile-field"
+          :type="field.type"/>
+      </b-form-group>
+    </div>
 
     <div class="text-center">
       <loading-button

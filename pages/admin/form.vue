@@ -1,14 +1,14 @@
 <script>
-  import ContactForm from '@/components/ContactForm'
+  import ContactFormEditor from '@/components/ContactFormEditor'
 
   export default {
-    components: { ContactForm },
+    components: { ContactFormEditor },
     layout: 'admin'
   }
 </script>
 
 <template>
   <div>
-    <contact-form/>
+    <contact-form-editor/>
   </div>
 </template>

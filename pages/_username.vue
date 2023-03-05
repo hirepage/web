@@ -29,9 +29,7 @@
 
 <template>
   <div class="profile-wrapper" :style="themeStyle">
-    <div class="setup-wrapper" :style="backgroundStyle">
-
-    </div>
+    <div class="setup-wrapper" :style="backgroundStyle"/>
     <share-page-modal :user="user"/>
     <b-row
       align-h="center"
@@ -51,7 +49,6 @@
           variant="default"
           pill>
           <font-awesome-icon
-            class="concern-icon"
             height="12"
             width="12"
             :icon="['fal', 'arrow-up-from-square']"/>
@@ -74,25 +71,25 @@
               {{ user.bio }}
             </p>
 
-            <div v-if="user.links.length" class="form-group social-icons">
-              <div
+            <div v-if="user.links.length" class="form-group social-links">
+              <b-btn
                 v-for="link in user.links"
                 :key="link.id"
-                class="social-icon">
-                <a
-                  :href="getUrl(link)"
-                  target="_blank">
-                  <font-awesome-icon
-                    size="lg"
-                    fixed-width
-                    width="18"
-                    height="18"
-                    :icon="getIcon(link.icon)"/>
-                </a>
-              </div>
+                class="social-link"
+                variant="default"
+                pill
+                :href="getUrl(link)"
+                target="_blank">
+                <font-awesome-icon
+                  class="social-icon"
+                  size="lg"
+                  fixed-width
+                  width="19"
+                  height="15"
+                  :icon="getIcon(link.icon)"/>
+              </b-btn>
             </div>
           </div>
-
           <markdown-text :text="user.about" class="mt-4"/>
 
           <page-form :user="user"/>
@@ -179,7 +176,7 @@
     z-index: 500;
   }
 
-  .social-icons {
+  .social-links {
     margin: auto;
     /*width: 100%;*/
     max-width: 160px;
@@ -188,20 +185,18 @@
     margin-top: 16px;
   }
 
-  .social-icon {
+  .social-link {
     border-radius: 20px;
     border: #ccc solid 1px !important;
     margin: 0 8px;
-    padding: 6px;
-    /*background-color: var(--background-color);*/
+    padding: 7px;
   }
 
-  .social-icon a {
-    color: inherit;
+  .social-icon {
     opacity: 0.7;
   }
 
-  .social-icon a:hover {
+  .social-link a:hover {
     opacity: 0.7;
   }
 
