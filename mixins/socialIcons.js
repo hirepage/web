@@ -86,6 +86,18 @@ const icons = [{
   icon: 'behance',
   name: 'Behance',
   placeholder: 'https://www.behance.net/username'
+}, {
+  id: 'PAYPAL',
+  iconSet: 'fab',
+  icon: 'paypal',
+  name: 'PayPal',
+  placeholder: 'https://paypal.me/username'
+}, {
+  id: 'ETSY',
+  iconSet: 'fab',
+  icon: 'etsy',
+  name: 'Etsy',
+  placeholder: 'https://www.etsy.com/shop/username'
 }]
 
 export default {
