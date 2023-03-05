@@ -24,7 +24,7 @@ const plugins = [
 ]
 
 if (process.env.WEB_URL === 'https://hire.page') {
-  plugins.push({ src: '~/plugins/inspectlet', mode: 'client' })
+  // plugins.push({ src: '~/plugins/inspectlet', mode: 'client' })
 }
 
 module.exports = {
