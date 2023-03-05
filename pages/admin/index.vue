@@ -69,7 +69,7 @@
     <b-card>
       <b-row>
         <b-col md="auto" order-md="1">
-          <avatar-image-input :avatar-url.sync="avatarUrl"/>
+          <avatar-image-input :avatar-url.sync="avatarUrl" circle/>
         </b-col>
         <b-col order-md="0">
           <b-form-group label="Name">
@@ -89,47 +89,46 @@
               autocapitalize="word"/>
           </b-form-group>
 
-<!--          <theme-selector/>-->
+          <!--          <theme-selector/>-->
+
+
+          <b-form-group label="Button Color">
+            <color-input :color.sync="color"/>
+          </b-form-group>
 
           <b-row>
-            <b-col md="6">
-              <b-form-group label="Background Color">
+            <b-col cols="6">
+              <b-form-group v-slot="{ ariaDescribedby }" label="Background Type">
+                <b-form-radio
+                  v-model="backgroundType"
+                  :aria-describedby="ariaDescribedby"
+                  name="background-type"
+                  value="FLAT">
+                  Flat Color
+                </b-form-radio>
+                <b-form-radio
+                  v-model="backgroundType"
+                  :aria-describedby="ariaDescribedby"
+                  name="background-type"
+                  value="GRADIENT">
+                  Gradient
+                </b-form-radio>
+                <b-form-radio
+                  v-model="backgroundType"
+                  :aria-describedby="ariaDescribedby"
+                  name="background-type"
+                  value="IMAGE">
+                  Image
+                </b-form-radio>
+              </b-form-group>
+            </b-col>
+            <b-col cols="6">
+              <avatar-image-input v-if="backgroundType === 'IMAGE'" :avatar-url.sync="backgroundImageUrl"/>
+              <b-form-group v-else label="Background Color">
                 <color-input :color.sync="backgroundColor"/>
               </b-form-group>
             </b-col>
-            <b-col md="6">
-              <b-form-group label="Button Color">
-                <color-input :color.sync="color"/>
-              </b-form-group>
-            </b-col>
           </b-row>
-
-          <b-form-group v-slot="{ ariaDescribedby }" label="Background Type">
-            <b-form-radio
-              v-model="backgroundType"
-              :aria-describedby="ariaDescribedby"
-              name="background-type"
-              value="FLAT">
-              Flat Color
-            </b-form-radio>
-            <b-form-radio
-              v-model="backgroundType"
-              :aria-describedby="ariaDescribedby"
-              name="background-type"
-              value="GRADIENT">
-              Gradient
-            </b-form-radio>
-            <b-form-radio
-              v-model="backgroundType"
-              :aria-describedby="ariaDescribedby"
-              name="background-type"
-              value="IMAGE">
-              Image
-            </b-form-radio>
-          </b-form-group>
-
-          <avatar-image-input :avatar-url.sync="backgroundImageUrl"/>
-
         </b-col>
       </b-row>
 

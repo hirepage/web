@@ -5,11 +5,22 @@
         type: String,
         default: null,
         required: true
+      },
+      circle: {
+        type: Boolean,
+        default: false,
       }
     },
     data () {
       return {
         file: null
+      }
+    },
+    computed: {
+      imageStyle () {
+        const radius = this.circle ? '50%' : '12px'
+        const size = '150px'
+        return `background-image: url(${this.avatarUrl}); border-radius: ${radius}; height: ${size}; width: ${size};`
       }
     },
     watch: {
@@ -28,7 +39,7 @@
   <div class="avatar-image-wrapper">
     <div
       class="avatar-image"
-      :style="`background-image: url(${avatarUrl});`">
+      :style="imageStyle">
       <label id="upload-profile-btn" class="btn btn-link btn-file upload-avatar-btn">
         <!-- TODO: Don't allow SVG-->
         <font-awesome-icon
@@ -48,7 +59,7 @@
 
 <style scoped>
   .avatar-image {
-    border-radius: 50%;
+    /*border-radius: 50%;*/
     border: white solid 3px;
     background-repeat: no-repeat;
     background-size: cover;
