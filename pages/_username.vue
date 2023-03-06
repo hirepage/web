@@ -35,7 +35,9 @@
 
 <template>
   <div class="profile-wrapper" :style="themeStyle">
-    <div class="setup-wrapper" :style="backgroundStyle"/>
+    <div class="setup-wrapper" :style="backgroundStyle">
+      <div v-if="user.backgroundStyle === 'IMAGE'" class="darken-end"/>
+    </div>
     <share-page-modal :user="user"/>
     <b-row
       align-h="center"
@@ -108,8 +110,17 @@
 
 <style scoped>
 
+  .darken-end {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 500px;
+  }
+
   .profile-wrapper {
-    padding: 0 0 100px 0;
+    padding: 0 0 48px 0;
   }
 
   .profile-title {
@@ -208,11 +219,11 @@
 
   .hirepage-link {
     color: var(--text-color);
-    opacity: 0.7;
+    opacity: 0.99;
   }
 
   .hirepage-link:hover {
-    opacity: 0.9;
+    opacity: 0.7;
   }
 
   .card-col {
@@ -222,6 +233,7 @@
     box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
     border-radius: 44px;
     margin-top: 20px;
+    z-index: 10;
   }
 
   @media (min-width: 992px) {
