@@ -36,7 +36,7 @@
 <template>
   <div class="profile-wrapper" :style="themeStyle">
     <div class="setup-wrapper" :style="backgroundStyle">
-      <div v-if="user.backgroundStyle === 'IMAGE'" class="darken-end"/>
+      <div v-if="user.backgroundType === 'IMAGE'" class="darken-end"/>
     </div>
     <share-page-modal :user="user"/>
     <b-row
