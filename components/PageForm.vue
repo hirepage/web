@@ -75,6 +75,7 @@
         <b-form-radio-group
           v-model="field.value"
           :options="field.options"
+          :stacked="field.stacked"
           :aria-describedby="ariaDescribedby"
           name="buttons-2"/>
       </b-form-group>
@@ -85,6 +86,7 @@
         <b-form-checkbox-group
           v-model="field.value"
           :options="field.options"
+          :stacked="field.stacked"
           :aria-describedby="ariaDescribedby"
           name="buttons-2"/>
       </b-form-group>

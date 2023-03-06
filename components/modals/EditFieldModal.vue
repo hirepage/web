@@ -116,7 +116,7 @@
           variant="primary"
           :disabled="!label || !type"
           @click="updateField">
-          Update Field
+          Update Question
         </loading-button>
       </b-col>
     </b-row>
