@@ -25,7 +25,7 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Make it easy for new clients to contact you
+              Make a contact page for your business
             </h1>
             <div class="landing-text mt-3 pb-3">
               Hirepage is a page and contact form that freelancers can link to from their bios, website, or blogs.

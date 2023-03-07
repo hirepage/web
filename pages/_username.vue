@@ -35,7 +35,7 @@
 
 <template>
   <div class="profile-wrapper" :style="themeStyle">
-    <div class="setup-wrapper" :style="backgroundStyle">
+    <div class="background-wrapper" :style="backgroundStyle">
       <div v-if="user.backgroundType === 'IMAGE'" class="darken-end"/>
     </div>
     <share-page-modal :user="user"/>
@@ -153,7 +153,7 @@
     text-align: center;
   }
 
-  .setup-wrapper {
+  .background-wrapper {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -163,7 +163,7 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: 100vh;
   }
 
   .setup-cell {
