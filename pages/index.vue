@@ -25,11 +25,11 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Make a contact page for your business
+              Everything for accepting clients. In one, simple link.
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Hirepage is a page and contact form that freelancers can link to from their bios, website, or blogs.
-              Claim your link and get started for free in less than five minutes.
+              Join freelancers, consultants, and small businesses collecting clients with Hirepage. Claim your link and
+              get started in less than five minutes for free.
             </div>
             <b-form @submit.prevent="claimUsername">
               <b-input-group
