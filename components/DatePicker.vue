@@ -1,0 +1,204 @@
+<script>
+  import moment from 'moment'
+  import { range, get } from 'lodash'
+  import TimeModal from '@/components/TimeModal'
+
+  export default {
+    components: { TimeModal },
+    props: {
+      service: {
+        type: Object,
+        default: null
+      }
+    },
+    data () {
+      return {
+        monthMoment: this.$route.query.month ? moment(`${this.$route.query.month}-01`) : moment(),
+        day: null,
+        calendar: null
+      }
+    },
+    computed: {
+      days () {
+        return get(this.calendar, 'dates') || []
+      },
+      monthSpacerDays () {
+        return range(get(this.calendar, 'firstWeekday'))
+      },
+      weekDays () {
+        return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      },
+      timezone () {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone
+      },
+      month () {
+        return this.$route.query.month
+      },
+      previousMonth () {
+        return get(this.calendar, 'previousMonth')
+      },
+      nextMonth () {
+        return get(this.calendar, 'nextMonth')
+      },
+      monthDisplay () {
+        return this.monthMoment.format('MMMM YYYY')
+      }
+    },
+    watch: {
+      month () {
+        this.monthMoment = this.$route.query.month ? moment(`${this.$route.query.month}-01`) : moment()
+        this.getAvailability()
+      }
+    },
+    created () {
+      if (process.client) {
+        this.getAvailability()
+      }
+    },
+    methods: {
+      getAvailability () {
+        this.calendar = null
+        // this.$api.account.getCalendar(this.$route.params.account, this.timezone, this.month, this.service.meetingDuration).then(calendar => {
+        //   this.calendar = calendar
+        //   if (!this.month) {
+        //     this.$router.replace({ query: { month: get(calendar, 'month') } })
+        //   }
+        // }).catch(console.error)
+      },
+      changeMonth (month) {
+        this.$router.push({ query: { month: month } })
+      },
+      selectDate (day) {
+        this.day = day
+        this.$bvModal.show('selectTimeModal')
+      },
+      dayClass (day) {
+        return {
+          'day-today': day.today,
+          'day-unavailable': !day.times.length
+        }
+      }
+    }
+  }
+</script>
+
+<template>
+  <div>
+    <h3 class="checkout-title">
+      Schedule a Meeting
+    </h3>
+    <hr class="d-none d-md-block">
+    <div>
+      <b-row align-v="center">
+        <b-col>
+          <h1 class="mb-4">
+            {{ monthDisplay }}
+          </h1>
+        </b-col>
+        <b-col cols="auto" class="mb-3">
+          <b-btn variant="default" :disabled="!previousMonth" @click="changeMonth(previousMonth)">
+            <font-awesome-icon icon="chevron-left" width="8" height="12"/>
+          </b-btn>
+          <b-btn variant="default" :disabled="!nextMonth" @click="changeMonth(nextMonth)">
+            <font-awesome-icon icon="chevron-right" width="8" height="12"/>
+          </b-btn>
+        </b-col>
+      </b-row>
+      <div>
+        <div v-for="weekDay in weekDays" :key="weekDay" class="days-width">
+          {{ weekDay }}
+        </div>
+      </div>
+      <div>
+        <div v-for="d in monthSpacerDays" :key="d" class="days-width"/>
+        <div v-for="d in days" :key="d.day" class="days-width">
+          <b-btn
+            class="btn-day"
+            :disabled="!d.times.length"
+            @click="selectDate(d)">
+            <div class="day-text-wrapper" :class="dayClass(d)">
+              <div class="day-text">
+                {{ d.dayOfMonth }}
+              </div>
+            </div>
+          </b-btn>
+        </div>
+      </div>
+      <div v-if="calendar" class="help-block mt-3">
+        {{ timezone }}
+      </div>
+    </div>
+    <time-modal :day="day" :service="service"/>
+  </div>
+</template>
+
+<style scoped>
+
+    .days-width {
+        padding: 2px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .day-text-wrapper {
+        background-color: #549DFF;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 50%;
+        border: none;
+        color: white;
+    }
+
+    .day-text {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+    }
+
+    .btn-day:enabled .day-text-wrapper:hover {
+        background-color: #4887dc;
+    }
+
+    .days-width {
+        padding: 6px;
+        display: inline-block;
+        width: calc((100% - 3px) / 7);
+        height: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .days-width {
+            padding: 2px;
+        }
+    }
+
+    .btn-day {
+        border: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 100%;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .day-unavailable {
+        color: rgba(0, 0, 0, .4);
+        background-color: #ffffff;
+        border: none;
+    }
+
+    .day-today {
+        border: 2px rgba(0, 0, 0, .3) solid !important;
+    }
+</style>
