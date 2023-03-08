@@ -123,7 +123,10 @@
               </b-form-group>
             </b-col>
             <b-col cols="6">
-              <avatar-image-input v-if="backgroundType === 'IMAGE'" :avatar-url.sync="backgroundImageUrl"/>
+              <avatar-image-input
+                v-if="backgroundType === 'IMAGE'"
+                :avatar-url.sync="backgroundImageUrl"
+                :color.sync="backgroundColor"/>
               <b-form-group v-else label="Background Color">
                 <color-input :color.sync="backgroundColor"/>
               </b-form-group>

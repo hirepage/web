@@ -12,11 +12,11 @@
       backgroundStyle () {
         switch (this.user.backgroundType) {
           case 'IMAGE':
-            return `background-image: url(${this.user.backgroundImageUrl}); `
+            return `background-image: url(${this.user.backgroundImageUrl}); background-color: ${this.user.backgroundColor};`
           case 'GRADIENT':
-            return `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2})`
+            return `background: linear-gradient(${this.user.backgroundColor}, ${this.user.backgroundColor2}); background-color: ${this.user.backgroundColor};`
           default:
-            return `background-color: ${this.user.backgroundColor}`
+            return `background-color: ${this.user.backgroundColor};`
         }
       },
       themeStyle () {
@@ -60,6 +60,8 @@
         <div class="setup-cell">
           <div class="logo-wrapper">
             <b-img
+              crossorigin="anonymous"
+              ref="logoImg"
               class="logo-img"
               :src="user.avatarUrl"
               :alt="`${user.title}'s Profile Picture`"

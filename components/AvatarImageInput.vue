@@ -8,27 +8,47 @@
       },
       circle: {
         type: Boolean,
-        default: false,
+        default: false
+      },
+      color: {
+        type: String,
+        default: null
       }
     },
     data () {
       return {
-        file: null
+        file: null,
+        bgColor: ''
       }
     },
     computed: {
+      url () {
+        return this.localUrl || this.avatarUrl
+      },
       imageStyle () {
         const radius = this.circle ? '50%' : '12px'
         const size = '150px'
-        return `background-image: url(${this.avatarUrl}); border-radius: ${radius}; height: ${size}; width: ${size};`
+        const opacity = this.localUrl ? 'opacity: 0.7;' : ''
+        return `background-image: url(${this.url}); border-radius: ${radius}; height: ${size}; width: ${size}; ${opacity};`
+      },
+      localUrl () {
+        return process.client && this.file ? window.URL.createObjectURL(this.file) : null
       }
     },
     watch: {
       file (file) {
         if (!file) return
+        try {
+          this.$api.file.getImageColors(this.localUrl).then(pallete => {
+            this.$emit('update:color', pallete[0])
+          })
+        } catch (err) {
+          console.error(err)
+        }
         this.$nuxt.$loading.start()
         this.$api.file.upload(file).then(url => {
           this.$emit('update:avatar-url', url)
+          this.file = null
         }).finally(this.$nuxt.$loading.finish)
       }
     }
@@ -38,6 +58,7 @@
 <template>
   <div class="avatar-image-wrapper">
     <div
+      ref="avatarImage"
       class="avatar-image"
       :style="imageStyle">
       <label id="upload-profile-btn" class="btn btn-link btn-file upload-avatar-btn">
