@@ -1,3 +1,5 @@
+import qs from 'query-string'
+
 export default app => ({
   myUser () {
     return app.$axios.$get('/user').then(user => {
@@ -82,6 +84,18 @@ export default app => ({
   },
   orderField (id, position) {
     return app.$axios.$put(`/user/field/${id}/order`, { index: position }).then(user => {
+      app.store.commit('SET_USER', user)
+    })
+  },
+  getCalendar (username, timezone, month, duration) {
+    const query = qs.stringify({ timezone, month, duration })
+    return app.$axios.$get(`/user/${username}/calendar?${query}`)
+  },
+  getBlocks () {
+    return app.$axios.$get('/user/block')
+  },
+  addAvailablity (data) {
+    return app.$axios.$post('/user/availability', data).then(user => {
       app.store.commit('SET_USER', user)
     })
   }

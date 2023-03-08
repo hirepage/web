@@ -32,9 +32,9 @@
         <b-nav-item to="/admin/form">
           Contact Form
         </b-nav-item>
-        <!--          <b-nav-item to="/admin/leads">-->
-        <!--            Leads-->
-        <!--          </b-nav-item>-->
+        <b-nav-item to="/admin/calendar">
+          Calendar
+        </b-nav-item>
         <b-nav-item to="/admin/settings">
           Settings
         </b-nav-item>

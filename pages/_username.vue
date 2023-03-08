@@ -4,9 +4,10 @@
   import MarkdownText from '@/components/MarkdownText'
   import SharePageModal from '@/components/modals/SharePageModal'
   import PageForm from '@/components/PageForm'
+  import DatePicker from '@/components/DatePicker'
 
   export default {
-    components: { MarkdownText, PageForm, SharePageModal },
+    components: { MarkdownText, PageForm, SharePageModal, DatePicker },
     mixins: [meta, socialIcons],
     computed: {
       backgroundStyle () {
@@ -98,7 +99,8 @@
           </div>
           <markdown-text :text="user.about" class="mt-4"/>
 
-          <page-form :user="user"/>
+          <page-form v-if="!user" :user="user"/>
+          <date-picker/>
         </div>
       </b-col>
     </b-row>

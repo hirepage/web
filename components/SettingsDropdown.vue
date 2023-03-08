@@ -38,6 +38,9 @@
       <b-dd-item to="/admin/form">
         Contact Form
       </b-dd-item>
+      <b-dd-item to="/admin/calendar">
+        Calendar
+      </b-dd-item>
       <b-dd-item to="/admin/settings">
         Settings
       </b-dd-item>

@@ -2,7 +2,8 @@ import cookie from 'cookie'
 
 export const state = () => ({
   auth: null,
-  user: null
+  user: null,
+  blocks: []
 })
 
 export const mutations = {

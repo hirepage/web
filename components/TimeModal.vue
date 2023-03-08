@@ -32,7 +32,7 @@
 <template>
   <b-modal
     id="selectTimeModal"
-    :title="`${service.meetingDuration} Minute Meeting`"
+    :title="`30 Minute Meeting`"
     hide-footer>
     <h3 class="semi-bold">
       {{ title }}

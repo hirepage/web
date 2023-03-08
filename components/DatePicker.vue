@@ -58,12 +58,12 @@
     methods: {
       getAvailability () {
         this.calendar = null
-        // this.$api.account.getCalendar(this.$route.params.account, this.timezone, this.month, this.service.meetingDuration).then(calendar => {
-        //   this.calendar = calendar
-        //   if (!this.month) {
-        //     this.$router.replace({ query: { month: get(calendar, 'month') } })
-        //   }
-        // }).catch(console.error)
+        this.$api.user.getCalendar(this.$route.params.username, this.timezone, this.month, 30).then(calendar => {
+          this.calendar = calendar
+          if (!this.month) {
+            this.$router.replace({ query: { month: get(calendar, 'month') } })
+          }
+        }).catch(console.error)
       },
       changeMonth (month) {
         this.$router.push({ query: { month: month } })
