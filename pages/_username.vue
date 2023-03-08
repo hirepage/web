@@ -100,7 +100,7 @@
           <markdown-text :text="user.about" class="mt-4"/>
 
           <page-form v-if="!user" :user="user"/>
-          <date-picker/>
+          <date-picker />
         </div>
       </b-col>
     </b-row>

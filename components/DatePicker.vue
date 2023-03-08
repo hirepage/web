@@ -88,12 +88,12 @@
       Schedule a Meeting
     </h3>
     <hr class="d-none d-md-block">
-    <div>
+    <div style="max-width: 450px; margin: auto">
       <b-row align-v="center">
         <b-col>
-          <h1 class="mb-4">
+          <h3 class="mb-2">
             {{ monthDisplay }}
-          </h1>
+          </h3>
         </b-col>
         <b-col cols="auto" class="mb-3">
           <b-btn variant="default" :disabled="!previousMonth" @click="changeMonth(previousMonth)">
