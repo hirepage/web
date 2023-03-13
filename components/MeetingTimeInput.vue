@@ -41,6 +41,7 @@
     <b-form-input
       v-model="timeInner"
       v-b-modal.datePickerModal
+      readonly
       placeholder="Select available time"
       class="profile-field"/>
     <date-picker-modal :time.sync="timeInner"/>
