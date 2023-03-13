@@ -60,9 +60,6 @@
         this.calendar = null
         this.$api.user.getCalendar(this.$route.params.username, this.timezone, this.month, 30).then(calendar => {
           this.calendar = calendar
-          if (!this.month) {
-            this.$router.replace({ query: { month: get(calendar, 'month') } })
-          }
         }).catch(console.error)
       },
       changeMonth (month) {
@@ -169,7 +166,7 @@
     .days-width {
         padding: 6px;
         display: inline-block;
-        width: calc((100% - 3px) / 7);
+        width: calc((100% - 4px) / 7);
         height: 100%;
     }
 

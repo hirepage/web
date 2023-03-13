@@ -30,9 +30,6 @@
         return Intl.DateTimeFormat().resolvedOptions().timeZone
       }
     },
-    created () {
-      this.$api.user.getBlocks()
-    },
     methods: {
       timeString (block) {
         return moment.tz('1993-12-13 ' + block.start, block.timezone).clone().tz(this.timezone).format('h:mma')

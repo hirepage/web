@@ -91,9 +91,6 @@ export default app => ({
     const query = qs.stringify({ timezone, month, duration })
     return app.$axios.$get(`/user/${username}/calendar?${query}`)
   },
-  getBlocks () {
-    return app.$axios.$get('/user/block')
-  },
   addAvailablity (data) {
     return app.$axios.$post('/user/availability', data).then(user => {
       app.store.commit('SET_USER', user)

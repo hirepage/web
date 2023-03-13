@@ -40,6 +40,7 @@ import {
   faRedditAlien
 } from '@fortawesome/free-brands-svg-icons'
 import {
+  faEllipsisH,
   faLock,
   faArrowRight,
   faEuroSign,
@@ -132,7 +133,8 @@ library.add(
   faDribbble,
   faBehance,
   faEtsy,
-  faPaypal
+  faPaypal,
+  faEllipsisH
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
