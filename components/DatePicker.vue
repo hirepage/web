@@ -2,17 +2,19 @@
   import Moment from 'moment'
   import { extendMoment } from 'moment-range'
   import { range, get } from 'lodash'
-  import TimeModal from '@/components/TimeModal'
 
   const moment = extendMoment(Moment)
 
-
   export default {
-    components: { TimeModal },
+    props: {
+      day: {
+        type: Object,
+        default: null
+      }
+    },
     data () {
       return {
         monthMoment: this.$route.query.month ? moment(`${this.$route.query.month}-01`) : moment(),
-        day: null,
         calendar: null
       }
     },
@@ -85,7 +87,7 @@
         this.$router.push({ query: { month: month } })
       },
       selectDate (day) {
-        this.day = day
+        this.$emit('update:day', day)
         this.$bvModal.show('selectTimeModal')
       },
       dayClass (day) {
@@ -100,7 +102,7 @@
 
 <template>
   <div>
-    <div style="max-width: 450px; margin: auto">
+    <div>
       <b-row align-v="center">
         <b-col>
           <h3 class="mb-2">
@@ -140,77 +142,76 @@
         {{ timezone }}
       </div>
     </div>
-    <time-modal :day="day"/>
   </div>
 </template>
 
 <style scoped>
 
+  .days-width {
+    padding: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .day-text-wrapper {
+    background-color: #549DFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    border: none;
+    color: white;
+  }
+
+  .day-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+  }
+
+  .btn-day:enabled .day-text-wrapper:hover {
+    background-color: #4887dc;
+  }
+
+  .days-width {
+    padding: 6px;
+    display: inline-block;
+    width: calc((100% - 4px) / 7);
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
     .days-width {
-        padding: 2px;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+      padding: 2px;
     }
+  }
 
-    .day-text-wrapper {
-        background-color: #549DFF;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        text-align: center;
-        vertical-align: middle;
-        border-radius: 50%;
-        border: none;
-        color: white;
-    }
+  .btn-day {
+    border: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 100%;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
 
-    .day-text {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 20px;
-    }
+  .day-unavailable {
+    color: rgba(0, 0, 0, .4);
+    background-color: #ffffff;
+    border: none;
+  }
 
-    .btn-day:enabled .day-text-wrapper:hover {
-        background-color: #4887dc;
-    }
-
-    .days-width {
-        padding: 6px;
-        display: inline-block;
-        width: calc((100% - 4px) / 7);
-        height: 100%;
-    }
-
-    @media (max-width: 768px) {
-        .days-width {
-            padding: 2px;
-        }
-    }
-
-    .btn-day {
-        border: none;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        font-size: 16px;
-        padding: 0;
-        margin: 0;
-        padding-bottom: 100%;
-        background-color: transparent !important;
-        box-shadow: none !important;
-    }
-
-    .day-unavailable {
-        color: rgba(0, 0, 0, .4);
-        background-color: #ffffff;
-        border: none;
-    }
-
-    .day-today {
-        border: 2px rgba(0, 0, 0, .3) solid !important;
-    }
+  .day-today {
+    border: 2px rgba(0, 0, 0, .3) solid !important;
+  }
 </style>

@@ -31,14 +31,11 @@
 </script>
 
 <template>
-  <b-modal
-    id="selectTimeModal"
-    :title="`30 Minute Meeting`"
-    hide-footer>
+  <div>
     <h3 class="semi-bold">
       {{ title }}
     </h3>
-    <div class="text-center">
+    <div class="text-center time-btns-wrapper">
       <div v-for="time in times" :key="time.unix" class="times-width">
         <button
           class="time-btn"
@@ -52,10 +49,19 @@
         </button>
       </div>
     </div>
-  </b-modal>
+  </div>
 </template>
 
 <style scoped>
+  .time-btns-wrapper {
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: -16px;
+    margin-right: -16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+  }
+
   .time-text {
     position: relative;
     top: 50%;
@@ -63,7 +69,7 @@
   }
 
   .time-text-wrapper {
-    background-color: #549DFF;
+    /*background-color: #549DFF;*/
     position: absolute;
     top: 0;
     left: 0;
@@ -71,30 +77,34 @@
     right: 0;
     text-align: center;
     vertical-align: middle;
-    border-radius: 35%/50%;
-    border: none;
-    color: white;
+    /*border-radius: 35%/50%;*/
+    border-radius: 8px;
+    color: #549DFF;
+    border: #549DFF 1px solid;
   }
 
   .time-text-wrapper:hover {
-    background-color: #4887dc;
+    color: white;
+    background-color: #549DFF;
   }
 
   .time-btn {
     border: none;
     position: relative;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     font-size: 16px;
     padding: 0;
     margin: 0;
-    padding-bottom: 70%;
+    /*padding-bottom: 70%;*/
+    height: 44px;
+
   }
 
   .times-width {
     padding: 6px;
     display: inline-block;
-    width: calc(100% / 4);
+    width: calc(100%);
   }
 
   @media (max-width: 768px) {

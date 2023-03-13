@@ -1,18 +1,21 @@
 <script>
   import DatePicker from '@/components/DatePicker'
+  import TimeSelector from '@/components/TimeSelector'
 
   export default {
     components: {
-      DatePicker
+      DatePicker,
+      TimeSelector
     },
     props: {
-      day: {
-        type: Object,
-        default: null
-      },
       service: {
         type: Object,
         default: null
+      }
+    },
+    data () {
+      return {
+        day: null
       }
     },
     computed: {
@@ -21,6 +24,9 @@
       },
       title () {
         return `${get(this.day, 'display')}`
+      },
+      size () {
+        return this.day ? 'lg' : 'md'
       }
     },
     methods: {
@@ -36,8 +42,16 @@
   <b-modal
     id="datePickerModal"
     :title="`Schedule 30m Meeting`"
+    :size="size"
     hide-footer>
-    <date-picker/>
+    <b-row align-h="center">
+      <b-col :md="day ? '7' : 'auto'">
+        <date-picker :day.sync="day"/>
+      </b-col>
+      <b-col v-if="day" md="5">
+        <time-selector :day="day"/>
+      </b-col>
+    </b-row>
   </b-modal>
 </template>
 
