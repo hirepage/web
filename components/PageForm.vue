@@ -1,8 +1,12 @@
 <script>
   import validator from 'validator'
+  import MeetingTimeInput from '@/components/MeetingTimeInput'
 
   export default {
     name: 'PageForm',
+    components: {
+      MeetingTimeInput
+    },
     props: {
       user: {
         type: Object,
@@ -90,11 +94,14 @@
           :aria-describedby="ariaDescribedby"
           name="buttons-2"/>
       </b-form-group>
+<!--      <b-form-group v-else-if="field.type === 'date'" :label="field.placeholder">-->
+<!--        <b-form-input-->
+<!--          v-model="field.value"-->
+<!--          class="profile-field"-->
+<!--          type="date"/>-->
+<!--      </b-form-group>-->
       <b-form-group v-else-if="field.type === 'date'" :label="field.placeholder">
-        <b-form-input
-          v-model="field.value"
-          class="profile-field"
-          type="date"/>
+        <meeting-time-input :time.sync="field.value" :field="field"/>
       </b-form-group>
       <b-form-group v-else-if="field.type === 'textarea'" :label="user.showLabels ? field.placeholder : null">
         <b-form-textarea

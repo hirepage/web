@@ -1,16 +1,14 @@
 <script>
-  import moment from 'moment'
+  import Moment from 'moment'
+  import { extendMoment } from 'moment-range'
   import { range, get } from 'lodash'
   import TimeModal from '@/components/TimeModal'
 
+  const moment = extendMoment(Moment)
+
+
   export default {
     components: { TimeModal },
-    props: {
-      service: {
-        type: Object,
-        default: null
-      }
-    },
     data () {
       return {
         monthMoment: this.$route.query.month ? moment(`${this.$route.query.month}-01`) : moment(),
@@ -22,8 +20,27 @@
       days () {
         return get(this.calendar, 'dates') || []
       },
+      startOfMonth () {
+        return this.monthMoment.clone().startOf('month')
+      },
+      // days () {
+      //   const monthRange = moment.range(
+      //     this.startOfMonth,
+      //     this.monthMoment.clone().endOf('month')
+      //   )
+      //   // Each day of the month with the time slots and the users available at that time
+      //   return Array.from(monthRange.by('day')).map(day => {
+      //     return {
+      //       today: day.isSame(moment(), 'day') ? true : undefined,
+      //       day: day.format('YYYY-MM-DD'),
+      //       dayOfMonth: day.format('D'),
+      //       display: day.format('ddd, MMM D'),
+      //       times: []
+      //     }
+      //   })
+      // },
       monthSpacerDays () {
-        return range(get(this.calendar, 'firstWeekday'))
+        return range(this.startOfMonth.weekday())
       },
       weekDays () {
         return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -35,10 +52,12 @@
         return this.$route.query.month
       },
       previousMonth () {
-        return get(this.calendar, 'previousMonth')
+        const month = this.startOfMonth.clone().subtract(1, 'month').endOf('month')
+        return month.isAfter(moment()) ? month.format('YYYY-MM') : undefined
       },
       nextMonth () {
-        return get(this.calendar, 'nextMonth')
+        const month = this.startOfMonth.clone().add(1, 'month')
+        return moment().add(6, 'month').endOf('month').isAfter(month) ? month.format('YYYY-MM') : undefined
       },
       monthDisplay () {
         return this.monthMoment.format('MMMM YYYY')
@@ -81,10 +100,6 @@
 
 <template>
   <div>
-    <h3 class="checkout-title">
-      Schedule a Meeting
-    </h3>
-    <hr class="d-none d-md-block">
     <div style="max-width: 450px; margin: auto">
       <b-row align-v="center">
         <b-col>
@@ -121,11 +136,11 @@
           </b-btn>
         </div>
       </div>
-      <div v-if="calendar" class="help-block mt-3">
+      <div class="help-block mt-3">
         {{ timezone }}
       </div>
     </div>
-    <time-modal :day="day" :service="service"/>
+    <time-modal :day="day"/>
   </div>
 </template>
 

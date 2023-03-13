@@ -24,6 +24,7 @@
       selectTime (time) {
         this.$router.push({ query: { time: time.unix } })
         this.$bvModal.hide('selectTimeModal')
+        this.$bvModal.hide('datePickerModal')
       }
     }
   }
