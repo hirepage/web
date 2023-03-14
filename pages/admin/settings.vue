@@ -1,11 +1,13 @@
 <script>
   import UsernameInput from '@/components/UsernameInput'
+  import QrCodeModal from '@/components/modals/QRCodeModal'
   import validator from 'validator'
 
   export default {
     layout: 'admin',
     components: {
-      UsernameInput
+      UsernameInput,
+      QrCodeModal
     },
     data () {
       return {
@@ -45,19 +47,28 @@
       Settings
     </h2>
     <b-card>
-      <username-input :username.sync="username" />
+      <b-row>
+        <b-col>
+          <username-input :username.sync="username" />
 
-      <b-form-group>
-        <label>
-          Email
-        </label>
-        <b-form-input
-          v-model="email"
-          maxlength="64"/>
-        <p v-if="user && !user.emailConfirmed" class="help-block with-errors">
-          Please check your email to confirm your email
-        </p>
-      </b-form-group>
+          <b-form-group>
+            <label>
+              Email
+            </label>
+            <b-form-input
+              v-model="email"
+              maxlength="64"/>
+            <p v-if="user && !user.emailConfirmed" class="help-block with-errors">
+              Please check your email to confirm your email
+            </p>
+          </b-form-group>
+        </b-col>
+        <b-col md="auto">
+          <qr-code-modal/>
+        </b-col>
+      </b-row>
+
+
 
       <loading-button variant="primary" :disabled="!enabled" @click="save">
         Save

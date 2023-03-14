@@ -51,6 +51,7 @@
     "moment-timezone": "^0.5.41",
     "nuxt-rfg-icon": "0.6.4",
     "nuxt-start": "2.15.8",
+    "qrcode": "^1.5.1",
     "serverless-apigw-binary": "^0.4.4",
     "serverless-http": "^2.7.0",
     "showdown": "^2.1.0",
