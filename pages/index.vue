@@ -25,11 +25,11 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Everything for accepting clients. In one, simple link.
+              Make it easy for new clients to hire you
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Join freelancers, consultants, and small businesses collecting clients with Hirepage. One link to
-              share your services, book meetings, and collect client information. Get started in less than five
+              Join freelancers, consultants, and small businesses winning clients with Hirepage. Share your services,
+              schedule meetings, and collect client information with one link. Get started in less than five
               minutes for free.
             </div>
             <b-form @submit.prevent="claimUsername">
