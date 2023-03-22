@@ -65,56 +65,6 @@
         </b-row>
       </b-container>
 
-      <div style="background-color: rgb(239, 242, 255); padding: 200px 0; text-align: center">
-        <h1 class="main-title mb-5 mx-5">
-          Loved by programmers, marketers, designers, artists, and small businesses
-        </h1>
-        <b-row align-h="center">
-          <b-col cols="auto">
-            <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/ZtL4XYe4j/profile-pic(3).png"
-              fluid
-              width="200"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/FRPH29oVT/notsogood.jpeg"
-              fluid
-              width="200"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s.gravatar.com/avatar/2696b782f951c4cf6e0299882afa3836?s=200&d=retro"
-              fluid
-              width="200"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s.gravatar.com/avatar/6f1730c50f695669207ecc07f9ab9623?s=200&d=retro"
-              fluid
-              width="200"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/TnqVD0txm/headshot.jpg"
-              fluid
-              width="200"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/UjSi8R2AB/ProfilePicture(2)-Copy.jpg"
-              fluid
-              width="200"
-              rounded="circle"/>
-          </b-col>
-        </b-row>
-      </div>
-
       <div style="padding: 10px 0;" class="svg-background1">
         <b-container>
           <b-row align-v="center">
@@ -215,6 +165,56 @@
           </b-row>
         </b-container>
       </div>
+      <div style="background-color: rgb(239, 242, 255); padding: 200px 0; text-align: center">
+        <h1 class="main-title mb-5 mx-5">
+          Loved by programmers, marketers, designers, artists, and small businesses
+        </h1>
+        <b-row align-h="center">
+          <b-col cols="auto">
+            <b-img
+              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/ZtL4XYe4j/profile-pic(3).png"
+              fluid
+              width="200"
+              rounded="circle"/>
+          </b-col>
+          <b-col cols="auto">
+            <b-img
+              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/FRPH29oVT/notsogood.jpeg"
+              fluid
+              width="200"
+              rounded="circle"/>
+          </b-col>
+          <b-col cols="auto">
+            <b-img
+              src="https://s.gravatar.com/avatar/2696b782f951c4cf6e0299882afa3836?s=200&d=retro"
+              fluid
+              width="200"
+              rounded="circle"/>
+          </b-col>
+          <b-col cols="auto">
+            <b-img
+              src="https://s.gravatar.com/avatar/6f1730c50f695669207ecc07f9ab9623?s=200&d=retro"
+              fluid
+              width="200"
+              rounded="circle"/>
+          </b-col>
+          <b-col cols="auto">
+            <b-img
+              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/TnqVD0txm/headshot.jpg"
+              fluid
+              width="200"
+              rounded="circle"/>
+          </b-col>
+          <b-col cols="auto">
+            <b-img
+              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/UjSi8R2AB/ProfilePicture(2)-Copy.jpg"
+              fluid
+              width="200"
+              rounded="circle"/>
+          </b-col>
+        </b-row>
+      </div>
+
       <!--      <b-container>-->
       <!--        <div class="w-100 text-center mt-5 mb-5">-->
       <!--          <h1 class="main-title">-->
