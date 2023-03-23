@@ -28,12 +28,6 @@
       size () {
         return this.day ? 'lg' : 'md'
       }
-    },
-    methods: {
-      selectTime (time) {
-        this.$router.push({ query: { time: time.unix } })
-        this.$bvModal.hide('datePickerModal')
-      }
     }
   }
 </script>
@@ -49,7 +43,7 @@
         <date-picker :day.sync="day"/>
       </b-col>
       <b-col v-if="day" md="5">
-        <time-selector :day="day"/>
+        <time-selector :day="day" @update:time="time => $emit('update:time', time)"/>
       </b-col>
     </b-row>
   </b-modal>

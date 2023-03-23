@@ -50,9 +50,6 @@
       timezone () {
         return Intl.DateTimeFormat().resolvedOptions().timeZone
       },
-      month () {
-        return this.$route.query.month
-      },
       previousMonth () {
         const month = this.startOfMonth.clone().subtract(1, 'month').endOf('month')
         return month.isAfter(moment()) ? month.format('YYYY-MM') : undefined
@@ -63,12 +60,6 @@
       },
       monthDisplay () {
         return this.monthMoment.format('MMMM YYYY')
-      }
-    },
-    watch: {
-      month () {
-        this.monthMoment = this.$route.query.month ? moment(`${this.$route.query.month}-01`) : moment()
-        this.getAvailability()
       }
     },
     created () {
@@ -84,11 +75,11 @@
         }).catch(console.error)
       },
       changeMonth (month) {
-        this.$router.push({ query: { month: month } })
+        this.monthMoment = month ? moment(`${month}-01`) : moment()
+        this.getAvailability()
       },
       selectDate (day) {
         this.$emit('update:day', day)
-        this.$bvModal.show('selectTimeModal')
       },
       dayClass (day) {
         return {

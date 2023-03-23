@@ -103,17 +103,16 @@
       <b-form-group v-else-if="field.type === 'date'" :label="field.placeholder">
         <meeting-time-input :time.sync="field.value" :field="field"/>
       </b-form-group>
-      <b-form-group v-else-if="field.type === 'textarea'" :label="user.showLabels ? field.placeholder : null">
+      <b-form-group v-else-if="field.type === 'textarea'" :label="field.placeholder">
         <b-form-textarea
           v-model="field.value"
           :placeholder="user.showLabels ? null : field.placeholder"
           class="profile-field"
           rows="4"/>
       </b-form-group>
-      <b-form-group v-else :label="user.showLabels ? field.placeholder : null">
+      <b-form-group v-else :label="field.placeholder">
         <b-form-input
           v-model="field.value"
-          :placeholder="user.showLabels ? null : field.placeholder"
           class="profile-field"
           :type="field.type"/>
       </b-form-group>

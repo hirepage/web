@@ -13,24 +13,14 @@
         default: null
       },
       time: {
-        type: Date,
+        type: Number,
         default: null
       }
     },
-    data () {
-      return {
-        timeInner: this.time
-      }
-    },
     computed: {
-      queryTime () {
-        return this.$route.query.time
-      }
-    },
-    watch: {
-      queryTime () {
-        const selected = moment.unix(this.queryTime)
-        this.timeInner = selected ? selected.format('MMMM D, H:mma') : null
+      timeDisplay () {
+        const selected = moment.unix(this.time)
+        return selected ? selected.format('MMMM D, H:mma') : null
       }
     }
   }
@@ -39,12 +29,12 @@
 <template>
   <div>
     <b-form-input
-      v-model="timeInner"
+      v-model="timeDisplay"
       v-b-modal.datePickerModal
       readonly
       placeholder="Select available time"
       class="profile-field"/>
-    <date-picker-modal :time.sync="timeInner"/>
+    <date-picker-modal @update:time="time => $emit('update:time', time)"/>
   </div>
 </template>
 
