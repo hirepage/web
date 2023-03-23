@@ -71,7 +71,7 @@
             md="auto"
             order-md="0"
             class="mb-4 center-mobile">
-            <p>
+            <p style="opacity: 0.7">
               © 2023 Hirepage
             </p>
           </b-col>
@@ -85,9 +85,9 @@
 
 
   .hirepage-footer {
-    color: #3a3a3a;
-    background-color: white;
-    border-top: solid #ececec 1px;
+    background-color: #1c1c1c;
+    color: white;
+    /*border-top: solid #ececec 1px;*/
     font-size: 17px;
     padding: 46px 15px 64px 15px;
   }
@@ -99,7 +99,9 @@
   }
 
   .hirepage-footer a, .dark-link {
-    color: #3a3a3a;
+    /*color: #3a3a3a;*/
+    opacity: 0.7;
+    color: white;
   }
 
   .social-icons {
