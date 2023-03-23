@@ -78,9 +78,12 @@
 <style scoped>
 
   .hirepage-header {
+    margin: 12px 24px 0 24px;
+    border-radius: 40px;
     padding: 0;
     z-index: 100;
     background-color: white;
+    border: 1px solid #ececec;
   }
 
   .navbar-brand {

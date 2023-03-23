@@ -26,12 +26,7 @@
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
 <!--              Make it easy for new clients to hire you-->
-<!--              Accept clients with a link-->
-              Everything for booking clients in a simple page
-<!--              A page for connecting with clients-->
-<!--              Connecting with clients made simple-->
-<!--              Everything you need to connect with clients in one page-->
-<!--              Make connecting with new clients easy-->
+              Everything for accepting clients in one, simple page.
             </h1>
             <div class="landing-text mt-3 pb-3">
               Join freelancers, consultants, and small businesses receiving clients with Hirepage. Share your services,
@@ -54,7 +49,7 @@
             <b-btn
               ref="claimBtn"
               size="lg"
-              variant="default"
+              variant="warning"
               pill
               class="main-btn mt-3"
               @click="claimUsername">
