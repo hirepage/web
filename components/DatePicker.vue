@@ -14,7 +14,8 @@
     },
     data () {
       return {
-        monthMoment: this.$route.query.month ? moment(`${this.$route.query.month}-01`) : moment(),
+        monthMoment: moment(),
+        month: null,
         calendar: null
       }
     },
@@ -75,6 +76,7 @@
         }).catch(console.error)
       },
       changeMonth (month) {
+        this.month = month
         this.monthMoment = month ? moment(`${month}-01`) : moment()
         this.getAvailability()
       },

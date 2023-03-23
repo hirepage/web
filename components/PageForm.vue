@@ -1,11 +1,11 @@
 <script>
   import validator from 'validator'
-  import MeetingTimeInput from '@/components/MeetingTimeInput'
+  import ScheduleMeetingInput from '@/components/ScheduleMeetingInput'
 
   export default {
     name: 'PageForm',
     components: {
-      MeetingTimeInput
+      ScheduleMeetingInput
     },
     props: {
       user: {
@@ -101,7 +101,7 @@
 <!--          type="date"/>-->
 <!--      </b-form-group>-->
       <b-form-group v-else-if="field.type === 'date'" :label="field.placeholder">
-        <meeting-time-input :time.sync="field.value" :field="field"/>
+        <schedule-meeting-input :time.sync="field.value" :field="field"/>
       </b-form-group>
       <b-form-group v-else-if="field.type === 'textarea'" :label="field.placeholder">
         <b-form-textarea

@@ -1,11 +1,11 @@
 <script>
   import moment from 'moment'
-  import DatePickerModal from '@/components/modals/DatePickerModal'
+  import ScheduleMeetingModal from '@/components/modals/ScheduleMeetingModal'
 
   export default {
-    name: 'MeetingTimeInput',
+    name: 'ScheduleMeetingInput',
     components: {
-      DatePickerModal
+      ScheduleMeetingModal
     },
     props: {
       field: {
@@ -19,8 +19,7 @@
     },
     computed: {
       timeDisplay () {
-        const selected = moment.unix(this.time)
-        return selected ? selected.format('MMMM D, H:mma') : null
+        return this.time ? moment.unix(this.time).format('MMMM D, H:mma') : null
       }
     }
   }
@@ -34,7 +33,7 @@
       readonly
       placeholder="Select available time"
       class="profile-field"/>
-    <date-picker-modal @update:time="time => $emit('update:time', time)"/>
+    <schedule-meeting-modal @update:time="t => $emit('update:time', t)"/>
   </div>
 </template>
 
