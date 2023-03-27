@@ -26,13 +26,11 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              <!--              Make it easy for new clients to hire you-->
-              Everything for accepting clients in one, simple page.
+              Get everything for booking clients in one, simple link.
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Join freelancers, consultants, and small businesses receiving clients with Hirepage. Share your services,
-              schedule meetings, and collect client information with one link. Get started in less than five
-              minutes for free.
+              Get a sharable profile, contact form, and meeting scheduling all in one, central point for your clients to
+              get in touch. Claim your free page and started in two minutes.
             </div>
             <b-form @submit.prevent="claimUsername">
               <b-input-group
@@ -75,7 +73,7 @@
         <b-row align-v="center">
           <b-col order-md="1" style="color: white">
             <h1 class="feature-title">
-              Schedule Meetings
+              Set your availability and book meetings
             </h1>
             <p class="feature-text">
               Save on the back and forth scheduling by allowing potential clients to book meetings from your contact
@@ -101,11 +99,10 @@
         <b-row align-v="center">
           <b-col style="color: white;">
             <h1 class="feature-title">
-              Collect Information
+              Qualify clients with a contact form
             </h1>
             <p class="feature-text">
-              Make sure that you get all the info you need from potential clients upfront with a customizable contact
-              form.
+              Qualify clients with a contact form to save time and make sure you spend your energy on the right leads.
             </p>
             <b-btn pill variant="default" size="lg" class="main-btn">
               Get Started for Free
@@ -126,13 +123,13 @@
     <div style="padding: 10px 0;" class="svg-background-personalize">
       <b-container>
         <b-row align-v="center">
-          <b-col order-md="1" cols="6" style="color: white">
+          <b-col order-md="1" cols="6" style="color: white;">
             <h1 class="feature-title">
-              Personalize It
+              Create and customize your Hirepage in minutes
             </h1>
-            <p class="feature-text">
-              Make your Hirepage your own with themes, links to your social media pages, and a section to explain
-              your experience and services.
+            <p class="feature-text" style="opacity: 0.7;">
+              Explain your expertise and services. Link your Twitter, website, LinkedIn, Github, portfolio and more. It all
+              comes together in a contact page designed to convert clients.
             </p>
             <b-btn pill variant="default" size="lg" class="main-btn">
               Get Started for Free
@@ -155,11 +152,11 @@
         <b-row align-v="center">
           <b-col cols="6" order-md="0" style="color: white;">
             <h1 class="feature-title">
-              Share Your Page
+              Link from your website, social bios, and email signatures
             </h1>
             <p class="feature-text">
-              The world needs to know about your business! Send traffic to your Hirepage from your website, emails,
-              Twitter bio, or print out QR codes.
+              Add your unique Hirepage URL to all the platforms and places you find your audience. Then use your QR code
+              to drive your offline traffic online.
             </p>
             <b-btn pill variant="default" size="lg" class="main-btn">
               Get Started for Free
@@ -292,9 +289,11 @@
 
   .svg-background-personalize {
     background-color: #ff7700;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");*/
+    /*background-image: url("https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80");*/
     background-attachment: fixed;
     background-size: cover;
+    color: #3a3a3a;
     /* background by SVGBackgrounds.com */
   }
 
