@@ -1,9 +1,10 @@
 <script>
   import InfoFooter from '@/components/InfoFooter'
   import InfoHeader from '@/components/InfoHeader'
+  import SocialProof from '@/components/landing/SocialProof'
 
   export default {
-    components: { InfoHeader, InfoFooter },
+    components: { InfoHeader, InfoFooter, SocialProof },
     data () {
       return {
         username: ''
@@ -25,7 +26,7 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-<!--              Make it easy for new clients to hire you-->
+              <!--              Make it easy for new clients to hire you-->
               Everything for accepting clients in one, simple page.
             </h1>
             <div class="landing-text mt-3 pb-3">
@@ -65,173 +66,124 @@
           </b-col>
         </b-row>
       </b-container>
+    </div>
 
+    <social-proof/>
 
-      <div style="background-color: white; padding: 200px 0; text-align: center">
-        <h1 class="main-title mb-5 mx-5">
-          Loved by programmers, marketers, designers, artists, and small businesses
-        </h1>
-        <b-row align-h="center">
-          <b-col cols="auto">
-            <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/ZtL4XYe4j/profile-pic(3).png"
-              fluid
-              width="180"
-              rounded="circle"/>
+    <div style="padding: 10px 0;" class="svg-background-meetings">
+      <b-container>
+        <b-row align-v="center">
+          <b-col order-md="1" style="color: white">
+            <h1 class="feature-title">
+              Schedule Meetings
+            </h1>
+            <p class="feature-text">
+              Save on the back and forth scheduling by allowing potential clients to book meetings from your contact
+              form. Set your availability so clients can choose a time as they reach out.
+            </p>
+            <b-btn pill variant="default" size="lg" class="main-btn">
+              Get Started for Free
+            </b-btn>
           </b-col>
-          <b-col cols="auto">
+          <b-col order-md="0" cols="auto" class="feature-card mr-5">
             <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/FRPH29oVT/notsogood.jpeg"
+              src="/schedule.png"
+              class="slack-chat mr-4"
               fluid
-              width="180"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s.gravatar.com/avatar/2696b782f951c4cf6e0299882afa3836?s=200&d=retro"
-              fluid
-              width="180"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s.gravatar.com/avatar/6f1730c50f695669207ecc07f9ab9623?s=200&d=retro"
-              fluid
-              width="180"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/TnqVD0txm/headshot.jpg"
-              fluid
-              width="180"
-              rounded="circle"/>
-          </b-col>
-          <b-col cols="auto">
-            <b-img
-              src="https://s3.amazonaws.com/cdn.otechie.com/attachments/UjSi8R2AB/ProfilePicture(2)-Copy.jpg"
-              fluid
-              width="180"
-              rounded="circle"/>
+              rounded
+              alt="Page Example Screenshots"/>
           </b-col>
         </b-row>
-      </div>
-
-      <div style="padding: 10px 0;" class="svg-background-meetings">
-        <b-container>
-          <b-row align-v="center">
-            <b-col order-md="1" style="color: white">
-              <h1 class="feature-title">
-                Schedule Meetings
-              </h1>
-              <p class="feature-text">
-                Save on the back and forth scheduling by allowing potential clients to book meetings from your contact
-                form. Set your availability so clients can choose a time as they reach out.
-              </p>
-              <b-btn pill variant="default" size="lg" class="main-btn">
-                Get Started for Free
-              </b-btn>
-            </b-col>
-            <b-col order-md="0" cols="auto" class="feature-card mr-5">
-              <b-img
-                src="/schedule.png"
-                class="slack-chat mr-4"
-                fluid
-                rounded
-                alt="Page Example Screenshots"/>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
-      <div style="padding: 10px 0;" class="svg-background-collect">
-        <b-container>
-          <b-row align-v="center">
-            <b-col style="color: white;">
-              <h1 class="feature-title">
-                Collect Information
-              </h1>
-              <p class="feature-text">
-                Make sure that you get all the info you need from potential clients upfront with a customizable contact
-                form.
-              </p>
-              <b-btn pill variant="default" size="lg" class="main-btn">
-                Get Started for Free
-              </b-btn>
-            </b-col>
-            <b-col cols="auto" class="feature-card mr-5">
-              <b-img
-                src="/collect.png"
-                class="slack-chat mr-4"
-                fluid
-                alt="Page Example Screenshots"/>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
-
-
-      <div style="padding: 10px 0;" class="svg-background-personalize">
-        <b-container>
-          <b-row align-v="center">
-            <b-col order-md="1" cols="6" style="color: white" >
-              <h1 class="feature-title">
-                Personalize It
-              </h1>
-              <p class="feature-text">
-                Make your Hirepage your own with themes, links to your social media pages, and a section to explain
-                your experience and services.
-              </p>
-              <b-btn pill variant="default" size="lg" class="main-btn">
-                Get Started for Free
-              </b-btn>
-            </b-col>
-            <b-col order-md="0"  cols="auto" class="feature-card mr-5">
-              <b-img
-                src="/landing-examples.png"
-                class="slack-chat mr-4"
-                fluid
-                alt="Page Example Screenshots"/>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
-
-
-      <div style="padding: 10px 0;" class="svg-background-share">
-        <b-container>
-          <b-row align-v="center">
-            <b-col cols="6" order-md="0" style="color: white;">
-              <h1 class="feature-title">
-                Share Your Page
-              </h1>
-              <p class="feature-text">
-                The world needs to know about your business! Send traffic to your Hirepage from your website, emails,
-                Twitter bio, or print out QR codes.
-              </p>
-              <b-btn pill variant="default" size="lg" class="main-btn">
-                Get Started for Free
-              </b-btn>
-            </b-col>
-            <b-col order-md="1" cols="auto" class="feature-card mr-5">
-              <b-img
-                src="/landing-examples.png"
-                class="slack-chat mr-4"
-                fluid
-                alt="Page Example Screenshots"/>
-            </b-col>
-          </b-row>
-        </b-container>
-      </div>
-
-
-      <!--      <b-container>-->
-      <!--        <div class="w-100 text-center mt-5 mb-5">-->
-      <!--          <h1 class="main-title">-->
-      <!--            FAQ-->
-      <!--          </h1>-->
-      <!--        </div>-->
-      <!--      </b-container>-->
+      </b-container>
     </div>
+    <div style="padding: 10px 0;" class="svg-background-collect">
+      <b-container>
+        <b-row align-v="center">
+          <b-col style="color: white;">
+            <h1 class="feature-title">
+              Collect Information
+            </h1>
+            <p class="feature-text">
+              Make sure that you get all the info you need from potential clients upfront with a customizable contact
+              form.
+            </p>
+            <b-btn pill variant="default" size="lg" class="main-btn">
+              Get Started for Free
+            </b-btn>
+          </b-col>
+          <b-col cols="auto" class="feature-card mr-5">
+            <b-img
+              src="/collect.png"
+              class="slack-chat mr-4"
+              fluid
+              alt="Page Example Screenshots"/>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+
+
+    <div style="padding: 10px 0;" class="svg-background-personalize">
+      <b-container>
+        <b-row align-v="center">
+          <b-col order-md="1" cols="6" style="color: white">
+            <h1 class="feature-title">
+              Personalize It
+            </h1>
+            <p class="feature-text">
+              Make your Hirepage your own with themes, links to your social media pages, and a section to explain
+              your experience and services.
+            </p>
+            <b-btn pill variant="default" size="lg" class="main-btn">
+              Get Started for Free
+            </b-btn>
+          </b-col>
+          <b-col order-md="0" cols="auto" class="feature-card mr-5">
+            <b-img
+              src="/landing-examples.png"
+              class="slack-chat mr-4"
+              fluid
+              alt="Page Example Screenshots"/>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+
+
+    <div style="padding: 10px 0;" class="svg-background-share">
+      <b-container>
+        <b-row align-v="center">
+          <b-col cols="6" order-md="0" style="color: white;">
+            <h1 class="feature-title">
+              Share Your Page
+            </h1>
+            <p class="feature-text">
+              The world needs to know about your business! Send traffic to your Hirepage from your website, emails,
+              Twitter bio, or print out QR codes.
+            </p>
+            <b-btn pill variant="default" size="lg" class="main-btn">
+              Get Started for Free
+            </b-btn>
+          </b-col>
+          <b-col order-md="1" cols="auto" class="feature-card mr-5">
+            <b-img
+              src="/landing-examples.png"
+              class="slack-chat mr-4"
+              fluid
+              alt="Page Example Screenshots"/>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+
+
+    <!--      <b-container>-->
+    <!--        <div class="w-100 text-center mt-5 mb-5">-->
+    <!--          <h1 class="main-title">-->
+    <!--            FAQ-->
+    <!--          </h1>-->
+    <!--        </div>-->
+    <!--      </b-container>-->
     <info-footer/>
   </div>
 </template>

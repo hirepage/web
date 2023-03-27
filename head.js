@@ -70,7 +70,7 @@ function head () {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@hirepage_'
+        content: '@hiredotpage'
       },
       {
         hid: 'twitter:card',
