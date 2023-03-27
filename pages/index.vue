@@ -26,11 +26,11 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Get everything for booking clients in one, simple link.
+              One link with everything for taking in clients
             </h1>
             <div class="landing-text mt-3 pb-3">
-              Get a sharable profile, contact form, and meeting scheduling all in one, central point for your clients to
-              get in touch. Claim your free page and started in two minutes.
+              Create a sharable, central point for your clients to get in touch with you. Claim your free page and
+              started in two minutes.
             </div>
             <b-form @submit.prevent="claimUsername">
               <b-input-group
@@ -74,10 +74,11 @@
         <b-row align-v="center">
           <b-col order-md="1" cols="6" style="color: white;">
             <h1 class="feature-title">
-              Create and customize your Hirepage in minutes
+              Create and customize your profile in minutes
             </h1>
             <p class="feature-text" style="opacity: 0.7;">
-              Explain your expertise and services. Link your Twitter, website, LinkedIn, Github, portfolio and more. It all
+              Explain your expertise and services. Link your Twitter, website, LinkedIn, Github, portfolio and more. It
+              all
               comes together in a contact page designed to convert clients.
             </p>
             <b-btn pill variant="default" size="lg" class="main-btn">
@@ -154,11 +155,11 @@
         <b-row align-v="center">
           <b-col cols="6" order-md="0" style="color: white;">
             <h1 class="feature-title">
-              Link it from your website, social bios, and email signatures
+              Share and link to it from everywhere
             </h1>
             <p class="feature-text">
-              Add your unique Hirepage URL to all the platforms and places you find your audience. Then use your QR code
-              to drive your offline traffic online.
+              Add your unique Hirepage URL to your website, your platforms, your email signature, and more. Then use
+              your QR code to drive your offline traffic online.
             </p>
             <b-btn pill variant="default" size="lg" class="main-btn">
               Get Started for Free
