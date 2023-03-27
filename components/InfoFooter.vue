@@ -61,17 +61,17 @@
           </b-col>
           <b-col order-md="1" class="text-center mb-4">
             <nuxt-link to="/privacy" class="bottom-link mr-3">
-              Privacy Policy
+              <span>Privacy Policy</span>
             </nuxt-link>
             <nuxt-link to="/terms" class="bottom-link ml-3">
-              Terms of Use
+              <span>Terms of Use</span>
             </nuxt-link>
           </b-col>
           <b-col
             md="auto"
             order-md="0"
             class="mb-4 center-mobile">
-            <p style="opacity: 0.7">
+            <p style="">
               © 2023 Hirepage
             </p>
           </b-col>
@@ -85,11 +85,19 @@
 
 
   .hirepage-footer {
-    background-color: #1c1c1c;
-    color: white;
-    /*border-top: solid #ececec 1px;*/
+    color: #3a3a3a;
     font-size: 17px;
-    padding: 46px 15px 64px 15px;
+    /*padding: 46px 15px 64px 15px;*/
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: 12px 24px 0 24px;
+    border-radius: 40px 40px 0 0 ;
+    /*padding: 0;*/
+    z-index: 100;
+    background-color: white;
+    border: 1px solid #ececec;
   }
 
   @media (min-width: 767px) {
@@ -99,9 +107,9 @@
   }
 
   .hirepage-footer a, .dark-link {
-    /*color: #3a3a3a;*/
-    opacity: 0.7;
-    color: white;
+    color: #3a3a3a;
+    /*opacity: 0.7;*/
+    /*color: white;*/
   }
 
   .social-icons {

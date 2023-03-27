@@ -149,7 +149,7 @@
     </div>
 
 
-    <div style="padding: 10px 0;" class="svg-background-share">
+    <div style="padding: 10px 0; padding-bottom: 250px;" class="svg-background-share">
       <b-container>
         <b-row align-v="center">
           <b-col cols="6" order-md="0" style="color: white;">
