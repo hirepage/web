@@ -56,10 +56,7 @@
     title="Edit Link"
     :hide-footer="true">
     <form @keydown.enter.prevent="$refs.createBtn.click()">
-      <b-form-group>
-        <label>
-          Icon
-        </label>
+      <b-form-group label="Icon">
         <b-input-group>
           <b-input-group-prepend v-if="selected">
             <b-input-group-text>
@@ -73,10 +70,7 @@
           <b-form-select v-model="selected" :options="options"/>
         </b-input-group>
       </b-form-group>
-      <b-form-group>
-        <label>
-          Url
-        </label>
+      <b-form-group :label="getLabel(selected)">
         <b-form-input
           v-model="url"
           :placeholder="getPlaceholder(selected)"

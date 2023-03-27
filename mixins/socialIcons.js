@@ -98,6 +98,14 @@ const icons = [{
   icon: 'etsy',
   name: 'Etsy',
   placeholder: 'https://www.etsy.com/shop/username'
+}, {
+  id: 'WHATSAPP',
+  iconSet: 'fab',
+  icon: 'whatsapp',
+  name: 'WhatsApp',
+  prefix: 'https://wa.me/',
+  label: 'Number',
+  placeholder: '+1 (555) 555 5678'
 }]
 
 export default {
@@ -112,6 +120,10 @@ export default {
     }
   },
   methods: {
+    getLabel (id) {
+      const icon = find(icons, { id: id })
+      return icon && icon.label ? icon.label : 'Url'
+    },
     getPlaceholder (id) {
       const icon = find(icons, { id: id })
       return icon ? icon.placeholder : null
@@ -122,8 +134,11 @@ export default {
     },
     getUrl (link) {
       const icon = find(icons, { id: link.icon })
+      console.log('getUrl', icon, link)
       if (!icon) {
         return '#'
+      } else if (link.icon === 'WHATSAPP') {
+        return `${icon.prefix}${link.url.replace(/\D/g, '')}`
       } else if (icon.prefix) {
         return `${icon.prefix}${link.url}`
       } else if (!link.url.startsWith('http://') && !link.url.startsWith('https://')) {

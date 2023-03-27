@@ -23,6 +23,7 @@ import { faArrowUpFromSquare } from '@fortawesome/pro-light-svg-icons'
 import { faCopy, faEdit, faSmile, faHeart, faAddressCard, faComments } from '@fortawesome/free-regular-svg-icons'
 
 import {
+  faWhatsapp,
   faEtsy,
   faPaypal,
   faDribbble,
@@ -134,7 +135,8 @@ library.add(
   faBehance,
   faEtsy,
   faPaypal,
-  faEllipsisH
+  faEllipsisH,
+  faWhatsapp
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
