@@ -35,6 +35,7 @@
         </b-col>
       </b-row>
     </b-container>
-    <info-footer/>
+    <div style="margin-top: 250px;"></div>
+    <info-footer />
   </div>
 </template>
