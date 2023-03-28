@@ -1,6 +1,6 @@
 function head () {
   const title = 'Hirepage'
-  const description = 'Contact form builder for freelancers, consultants, and small businesses'
+  const description = 'Dynamic contact pages for freelancers, consultants, and small businesses'
   const socialImageUrl = 'https://hire.page/landing-examples-padded.png'
   return {
     title: `Hirepage - ${description}`,
@@ -25,7 +25,7 @@ function head () {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'hirepage, hire page, contact page consulting, contact page freelancing, contact form consulting, contact form freelancing, link in bio freelance, link in bio consultant'
+        content: 'Dynamic contact page, Dynamic contact pages, hirepage, hire page, contact page consulting, contact page freelancing, contact form consulting, contact form freelancing, link in bio freelance, link in bio consultant'
       },
       {
         hid: 'og:title',

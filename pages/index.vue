@@ -26,10 +26,10 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              One link with everything for taking in clients
+              Win more clients with a dynamic contact page
             </h1>
-            <div class="landing-text mt-3 pb-3">
-              Create a sharable, central point for your clients to get in touch with you. Claim your free page and
+            <div class="feature-text mt-2 pb-3">
+              Grow your freelance business with a high converting contact page. Claim your free page and
               started in two minutes.
             </div>
             <b-form @submit.prevent="claimUsername">
