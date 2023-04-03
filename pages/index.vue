@@ -3,9 +3,11 @@
   import InfoHeader from '@/components/InfoHeader'
   import SocialProof from '@/components/landing/SocialProof'
   import CommonQuestions from '@/components/landing/CommonQuestions'
+  import FeatureSections from '@/components/landing/FeatureSections'
+
 
   export default {
-    components: { InfoHeader, InfoFooter, SocialProof, CommonQuestions },
+    components: { InfoHeader, InfoFooter, SocialProof, CommonQuestions, FeatureSections },
     data () {
       return {
         username: ''
@@ -69,102 +71,13 @@
 
     <social-proof/>
 
-
-    <div style="padding: 10px 0;" class="svg-background-personalize ">
-      <b-container class="feature-section">
-        <b-row align-v="center">
-          <b-col order-md="1" cols="6" style="color: white;">
-            <h1 class="feature-title">
-              Make it beautiful and make it your own
-            </h1>
-            <p class="feature-text" style="opacity: 0.7;">
-              Describe your business, upload a background image, and connect all of your online platforms to
-              create a high converting page.
-            </p>
-            <b-btn pill variant="default" size="lg" class="main-btn">
-              Get Started for Free
-            </b-btn>
-          </b-col>
-          <b-col order-md="0" cols="auto" class="mr-5">
-            <b-img
-              src="/notsogoodprofile.png"
-              class="slack-chat mr-4"
-              fluid
-              alt="Page Example Screenshots"/>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
-
-
-    <div style="padding: 10px 0;" class="svg-background-meetings">
-      <b-container class="feature-section">
-        <b-row align-v="center">
-          <b-col order-md="0" style="color: white">
-            <h1 class="feature-title">
-              Sync your availability and schedule meetings
-            </h1>
-            <p class="feature-text">
-              Save on the back and forth scheduling by allowing potential clients to book meetings from your contact
-              form. Set your availability so clients can choose a time as they reach out.
-            </p>
-            <b-btn pill variant="default" size="lg" class="main-btn">
-              Get Started for Free
-            </b-btn>
-          </b-col>
-          <b-col order-md="1" cols="auto" class="feature-card ml-5">
-            <b-img
-              src="/calendly.png"
-              class="slack-chat mr-4"
-              fluid
-              rounded
-              alt="Page Example Screenshots"/>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
-
-    <div style="padding: 10px 0;" class="svg-background-collect">
-      <b-container class="feature-section">
-        <b-row align-v="center">
-          <b-col style="color: white;" order-md="1">
-            <h1 class="feature-title">
-              Customize your contact form to qualify leads
-            </h1>
-            <p class="feature-text">
-              Make sure you spend your energy on the right leads by collecting the information you need upfront.
-              Supports short answer, paragraphs, multiple choice, and checkboxes.
-            </p>
-            <b-btn pill variant="default" size="lg" class="main-btn">
-              Get Started for Free
-            </b-btn>
-          </b-col>
-          <b-col cols="auto" class="feature-card mr-5" order-md="0">
-            <b-img
-              src="/form.png"
-              class="slack-chat mr-4"
-              fluid
-              alt="Page Example Screenshots"/>
-          </b-col>
-        </b-row>
-      </b-container>
-    </div>
-
+    <feature-sections v-if="features"/>
 
     <div style="padding: 0; padding-bottom: 250px;" class="svg-background-share">
       <b-container>
         <common-questions/>
       </b-container>
     </div>
-
-
-    <!--      <b-container>-->
-    <!--        <div class="w-100 text-center mt-5 mb-5">-->
-    <!--          <h1 class="main-title">-->
-    <!--            FAQ-->
-    <!--          </h1>-->
-    <!--        </div>-->
-    <!--      </b-container>-->
     <info-footer/>
   </div>
 </template>
@@ -280,7 +193,7 @@
   }
 
   .svg-background-meetings {
-    background: linear-gradient(#031957, #01081c);
+    background-color: #031957;
     /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%2317CC82' width='11' height='11'/%3E%3Crect fill='%2319ca80' x='10' width='11' height='11'/%3E%3Crect fill='%231ac77e' y='10' width='11' height='11'/%3E%3Crect fill='%231bc57b' x='20' width='11' height='11'/%3E%3Crect fill='%231cc279' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%231dc077' y='20' width='11' height='11'/%3E%3Crect fill='%231ebd75' x='30' width='11' height='11'/%3E%3Crect fill='%231fbb73' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%231fb871' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%2320b66f' y='30' width='11' height='11'/%3E%3Crect fill='%2320b36d' x='40' width='11' height='11'/%3E%3Crect fill='%2321b16b' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%2321ae69' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%2322ac67' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%2322aa65' y='40' width='11' height='11'/%3E%3Crect fill='%2322a763' x='50' width='11' height='11'/%3E%3Crect fill='%2322a561' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%2323a25f' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%2323a05d' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23239e5b' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23239b59' y='50' width='11' height='11'/%3E%3Crect fill='%23239957' x='60' width='11' height='11'/%3E%3Crect fill='%23239755' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23239453' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23229251' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23228f4f' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23228d4d' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23228b4c' x='70' width='11' height='11'/%3E%3Crect fill='%2322894a' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23218648' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23218446' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23218244' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23217f43' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23207d41' x='80' width='11' height='11'/%3E%3Crect fill='%23207b3f' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%231f793d' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%231f763c' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%231f743a' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%231e7238' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%231e7037' x='90' width='11' height='11'/%3E%3Crect fill='%231d6d35' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%231d6b33' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%231c6932' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%231c6730' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%231b652e' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%231a622d' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%231a602b' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23195e2a' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23195c28' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23185a27' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23175825' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23175624' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23165322' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23155121' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23154f1f' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23144d1e' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23134b1c' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%2313491b' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23124719' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23114518' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");*/
     background-attachment: fixed;
     background-size: cover;
