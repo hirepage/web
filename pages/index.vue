@@ -2,9 +2,10 @@
   import InfoFooter from '@/components/InfoFooter'
   import InfoHeader from '@/components/InfoHeader'
   import SocialProof from '@/components/landing/SocialProof'
+  import CommonQuestions from '@/components/landing/CommonQuestions'
 
   export default {
-    components: { InfoHeader, InfoFooter, SocialProof },
+    components: { InfoHeader, InfoFooter, SocialProof, CommonQuestions },
     data () {
       return {
         username: ''
@@ -69,25 +70,24 @@
     <social-proof/>
 
 
-    <div style="padding: 10px 0;" class="svg-background-personalize">
-      <b-container>
+    <div style="padding: 10px 0;" class="svg-background-personalize ">
+      <b-container class="feature-section">
         <b-row align-v="center">
           <b-col order-md="1" cols="6" style="color: white;">
             <h1 class="feature-title">
-              Create and customize your profile in minutes
+              Make it beautiful and make it your own
             </h1>
             <p class="feature-text" style="opacity: 0.7;">
-              Explain your expertise and services. Link your Twitter, website, LinkedIn, Github, portfolio and more. It
-              all
-              comes together in a contact page designed to convert clients.
+              Describe your business, upload a background image, and connect all of your online platforms to
+              create a high converting page.
             </p>
             <b-btn pill variant="default" size="lg" class="main-btn">
               Get Started for Free
             </b-btn>
           </b-col>
-          <b-col order-md="0" cols="auto" class="feature-card mr-5">
+          <b-col order-md="0" cols="auto" class="mr-5">
             <b-img
-              src="/landing-examples.png"
+              src="/notsogoodprofile.png"
               class="slack-chat mr-4"
               fluid
               alt="Page Example Screenshots"/>
@@ -98,7 +98,7 @@
 
 
     <div style="padding: 10px 0;" class="svg-background-meetings">
-      <b-container>
+      <b-container class="feature-section">
         <b-row align-v="center">
           <b-col order-md="0" style="color: white">
             <h1 class="feature-title">
@@ -114,7 +114,7 @@
           </b-col>
           <b-col order-md="1" cols="auto" class="feature-card ml-5">
             <b-img
-              src="/schedule.png"
+              src="/calendly.png"
               class="slack-chat mr-4"
               fluid
               rounded
@@ -125,22 +125,23 @@
     </div>
 
     <div style="padding: 10px 0;" class="svg-background-collect">
-      <b-container>
+      <b-container class="feature-section">
         <b-row align-v="center">
-          <b-col style="color: white;">
+          <b-col style="color: white;" order-md="1">
             <h1 class="feature-title">
-              Qualify clients with a contact form
+              Customize your contact form to qualify leads
             </h1>
             <p class="feature-text">
-              Qualify clients with a contact form to save time and make sure you spend your energy on the right leads.
+              Make sure you spend your energy on the right leads by collecting the information you need upfront.
+              Supports short answer, paragraphs, multiple choice, and checkboxes.
             </p>
             <b-btn pill variant="default" size="lg" class="main-btn">
               Get Started for Free
             </b-btn>
           </b-col>
-          <b-col cols="auto" class="feature-card mr-5">
+          <b-col cols="auto" class="feature-card mr-5" order-md="0">
             <b-img
-              src="/collect.png"
+              src="/form.png"
               class="slack-chat mr-4"
               fluid
               alt="Page Example Screenshots"/>
@@ -150,29 +151,9 @@
     </div>
 
 
-    <div style="padding: 10px 0; padding-bottom: 250px;" class="svg-background-share">
+    <div style="padding: 0; padding-bottom: 250px;" class="svg-background-share">
       <b-container>
-        <b-row align-v="center">
-          <b-col cols="6" order-md="0" style="color: white;">
-            <h1 class="feature-title">
-              Share and link to it from everywhere
-            </h1>
-            <p class="feature-text">
-              Add your unique Hirepage URL to your website, your platforms, your email signature, and more. Then use
-              your QR code to drive your offline traffic online.
-            </p>
-            <b-btn pill variant="default" size="lg" class="main-btn">
-              Get Started for Free
-            </b-btn>
-          </b-col>
-          <b-col order-md="1" cols="auto" class="feature-card mr-5">
-            <b-img
-              src="/landing-examples.png"
-              class="slack-chat mr-4"
-              fluid
-              alt="Page Example Screenshots"/>
-          </b-col>
-        </b-row>
+        <common-questions/>
       </b-container>
     </div>
 
@@ -273,6 +254,10 @@
     border-left: none !important;
   }
 
+  .feature-section {
+    padding: 200px 0;
+  }
+
 
   .svg-background1 {
     background-color: #549DFF;
@@ -284,7 +269,7 @@
 
 
   .svg-background-personalize {
-    background-color: rgb(120, 0, 22);
+    background-color: #88364d;;
 
     /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");*/
     /*background-image: url("https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80");*/
@@ -328,7 +313,6 @@
     box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
     border-radius: 44px;
     z-index: 10;
-    margin: 200px 0;
   }
 
   .feature-title {
