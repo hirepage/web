@@ -60,7 +60,7 @@
           </b-col>
           <b-col class="text-right">
             <b-img
-              src="/landing-examples.png"
+              src="/notsogoodprofile.png"
               class="slack-chat mr-4"
               fluid
               alt="Page Example Screenshots"/>

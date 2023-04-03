@@ -10,16 +10,20 @@
             answer: 'You will receive an email with all the info collected. Then you can reply to the lead from that email.'
           },
           {
-            title: 'How can I promote my page?',
+            title: 'How should I send potential clients to my page?',
             answer: 'Website links, QR codes, twitter profile, email signatures'
           },
           {
-            title: 'Will Hirepage always be free?',
+            title: 'Will my page look good everywhere?',
             answer: 'The current version of Hirepage will stay free. We are working on adding premium features that you will be able to pay for if you want'
           },
           {
             title: 'Will Hirepage always be free?',
             answer: 'The current version of Hirepage will stay free. We are working on adding premium features that you will be able to pay for if you want'
+          },
+          {
+            title: 'Can you add an icon link for ...?',
+            answer: 'Yep! Send me an email at dylan@hire.page and I will add is as soon as possible.'
           }
         ]
       }
