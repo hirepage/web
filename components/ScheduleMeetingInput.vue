@@ -1,6 +1,6 @@
 <script>
   import moment from 'moment'
-  import ScheduleMeetingModal from '@/components/modals/ScheduleMeetingModal'
+  import ScheduleMeetingModal from '@/components/scheduler/ScheduleMeetingModal'
 
   export default {
     name: 'ScheduleMeetingInput',

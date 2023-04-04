@@ -1,6 +1,6 @@
 <script>
-  import DatePicker from '@/components/DatePicker'
-  import TimeSelector from '@/components/TimeSelector'
+  import DatePicker from '@/components/scheduler/DatePicker'
+  import TimeSelector from '@/components/scheduler/TimeSelector'
 
   export default {
     components: {
@@ -48,7 +48,3 @@
     </b-row>
   </b-modal>
 </template>
-
-<style scoped>
-
-</style>
