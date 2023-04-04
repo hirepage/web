@@ -23,7 +23,7 @@
         Loved by programmers, marketers, designers, artists, and small businesses
       </h1>
       <b-row align-h="center">
-        <b-col v-for="user in users" cols="auto">
+        <b-col v-for="user in users" :key="user.avatarUrl" cols="auto">
           <b-img
             :src="user.avatarUrl"
             fluid

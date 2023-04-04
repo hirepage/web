@@ -71,7 +71,7 @@
     methods: {
       getAvailability () {
         this.calendar = null
-        this.$api.user.getCalendar(this.$route.params.username, this.timezone, this.month, 30).then(calendar => {
+        this.$api.user.getCalendar(this.$store.state.blocks, this.timezone, this.month, 30).then(calendar => {
           this.calendar = calendar
         }).catch(console.error)
       },

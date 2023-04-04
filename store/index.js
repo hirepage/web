@@ -13,6 +13,9 @@ export const mutations = {
   SET_USER (state, user) {
     state.user = user
   },
+  SET_BLOCKS (state, blocks) {
+    state.blocks = blocks
+  },
   RESET (state) {
     state.auth = null
     state.user = null
