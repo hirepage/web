@@ -1,9 +1,9 @@
 function head () {
-  const title = 'Hirepage'
-  const description = 'Dynamic contact pages for freelancers, consultants, and small businesses'
-  const socialImageUrl = 'https://hire.page/landing-examples-padded.png'
+  const title = 'CoolWall'
+  const description = 'Never get bored of your wallpaper again'
+  const socialImageUrl = 'https://images.wallpaperscraft.com/image/single/stars_sky_space_113629_1280x720.jpg'
   return {
-    title: `Hirepage - ${description}`,
+    title: `CoolWall - ${description}`,
     script: [],
     meta: [
       {
@@ -11,7 +11,7 @@ function head () {
       },
       {
         name: 'robots',
-        content: process.env.WEB_URL === 'https://hire.page' ? 'all' : 'noindex'
+        content: process.env.WEB_URL === 'https://coolwallpapers.app' ? 'all' : 'noindex'
       },
       {
         name: 'viewport',
@@ -25,7 +25,7 @@ function head () {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'Dynamic contact page, Dynamic contact pages, hirepage, hire page, contact page consulting, contact page freelancing, contact form consulting, contact form freelancing, link in bio freelance, link in bio consultant'
+        content: 'chill wallpapers, cool wallpapers, chill backgrounds, cute wallpapers for teens, cute wallpapers for computer, cute wallpapers for girls aesthetic, cute wallpapers, cute backgrounds'
       },
       {
         hid: 'og:title',
@@ -55,7 +55,7 @@ function head () {
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: 'Hirepage'
+        content: 'CoolWall'
       },
       {
         hid: 'twitter:title',
@@ -70,7 +70,7 @@ function head () {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@hiredotpage'
+        content: '@coolwallapp'
       },
       {
         hid: 'twitter:card',
@@ -85,7 +85,7 @@ function head () {
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'Hirepage Logo'
+        content: 'CoolWall Logo'
       }
     ]
   }

@@ -5,80 +5,138 @@
   import CommonQuestions from '@/components/landing/CommonQuestions'
   import FeatureSections from '@/components/landing/FeatureSections'
 
-
   export default {
-    components: { InfoHeader, InfoFooter, SocialProof, CommonQuestions, FeatureSections },
+    components: { InfoHeader, InfoFooter, CommonQuestions },
     data () {
       return {
-        username: ''
+        username: '',
+        index: 0,
+        wallpapers: [
+          'https://images.wallpaperscraft.com/image/single/black_light_dark_73356_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/space_sky_stars_79233_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/lamp_outlet_idea_120422_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/board_black_line_55220_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/pieces_chess_boards_68430_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/cube_fire_dark_36536_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/guy_anime_computer_96990_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/light_sky_stars_85555_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/drawing_surreal_colorful_62135_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/dragon_classical_light_16050_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/pier_dock_sea_118549_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/forest_fog_trees_126479_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/bmw_headlights_lights_137326_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/stars_sky_space_113629_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/girl_umbrella_anime_141156_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/dark_black_and_white_abstract_76353_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/bmw_e90_deep_concave_94623_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/form_green_shadow_85047_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/ball_flight_plant_91681_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/trolley_stop_city_119292_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/starry_sky_night_trees_118760_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/house_fairy_tale_art_101615_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/beach_ocean_sand_95633_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/stars_milky_way_space_116893_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/white_background_dents_69592_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/boat_mountains_lake_135258_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/galaxy_nebula_blurring_65152_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/black_background_red_color_9844_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/magic_ball_library_63093_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/planet_clouds_light_94996_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/astronaut_spacesuit_reflection_144426_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/deer_art_vector_134088_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/lion_art_vector_122213_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/minimalism_sky_clouds_95458_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/lawn_forest_mountains_144578_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/light_bulb_drawing_vector_130581_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/lion_art_colorful_122044_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/city_vector_panorama_119914_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/starry_sky_night_tree_117028_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/forest_trees_mountains_146485_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/wolf_starry_sky_tree_118496_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/landscape_mountains_art_140515_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/cat_art_tree_118866_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/minimalism_origami_japan_74405_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/tree_planet_stars_117068_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/pyramids_starry_sky_night_161840_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/parrot_vector_drawing_95908_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/hexagons_shape_connections_125136_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/cyclist_starry_sky_silhouette_118161_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/cartoon_texture_cat_94395_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/night_water_lighthouse_74439_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/mountains_sunset_art_146043_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/art_trees_drawing_100903_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/mountains_moon_landscape_119869_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/owl_bird_freddy_krueger_93919_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/ufos_aliens_cow_93569_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/phoenix_bird_art_140086_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/mountains_river_sun_143529_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/mclaren_p1_minimalism_98755_1440x900.jpg',
+          'https://images.wallpaperscraft.com/image/single/wolf_minimalism_art_115878_1440x900.jpg',
+          'https://i.redd.it/mud4c7wp4tva1.jpg',
+          'https://preview.redd.it/y85fa34s8pva1.jpg?width=3840&format=pjpg&auto=webp&v=enabled&s=93d88713a11aea510ea46b76c5c44f2dcdb6dfef',
+          'https://external-preview.redd.it/4dKw1SCbbiQHxjS1Pr0lcFF5dj2_ZXb1BhyXJ2yllYo.jpg?auto=webp&v=enabled&s=a88014c9b265058bd56dc79e18dd4883260b5084',
+          'https://external-preview.redd.it/yBxjj3hH5Ztf_5NHJVRfHphTRKUiXzNYJzm1KGUFZ-4.jpg?auto=webp&v=enabled&s=4f9227d73e65de26bee53eb09ef1f1e7a199462d'
+        ]
+      }
+    },
+    computed: {
+      wallpaperStyle () {
+        return `background-image: url(${this.wallpapers[this.index]});`
       }
     },
     methods: {
       claimUsername () {
         this.$router.push(this.username ? `/register?username=${this.username}` : '/register')
       }
+    },
+    created () {
+      setInterval(() => {
+        this.index++
+        this.index %= this.wallpapers.length
+      },5000)
     }
   }
 </script>
 
 <template>
   <div>
-    <div ref="topColor" class="top-color svg-background1">
-      <info-header fixed hide-border/>
+    <div ref="topColor" class="top-color svg-background1" :style="wallpaperStyle">
+      <!--      <info-header fixed hide-border/>-->
       <b-container class="top-container">
         <b-row align-v="center" align-h="start">
-          <b-col md="6" xl="6" class="main-text-wrapper">
+          <b-col md="6" xl="6" class="main-text-wrapper ">
             <h1 class="main-title">
-              Win more clients with a dynamic contact page
+              Never get bored of your wallpaper again
             </h1>
             <div class="feature-text mt-2 pb-3">
-              Grow your freelance business with a high converting contact page. Claim your free page and
-              started in two minutes.
+              Coolwall is a Mac app that gives you new desktop wallpapers on-demand and learns which ones you’ll like
+              over
+              time.
             </div>
             <b-form @submit.prevent="claimUsername">
-              <b-input-group
+              <b-form-input
+                ref="usernameInput"
+                v-model="username"
                 size="lg"
-                prepend="hire.page/"
-                class="username-input-group"
-                @click="$refs.usernameInput.focus()">
-                <b-form-input
-                  ref="usernameInput"
-                  v-model="username"
-                  maxlength="64"
-                  placeholder="yourname"/>
-              </b-input-group>
+                maxlength="64"
+                type="email"
+                name="email"
+                placeholder="your-name@email.com"/>
             </b-form>
             <b-btn
               ref="claimBtn"
               size="lg"
-              variant="warning"
+              variant="primary"
               pill
               class="main-btn mt-3"
               @click="claimUsername">
-              Claim your page
+              Join the Waitlist
             </b-btn>
-          </b-col>
-          <b-col class="text-right">
-            <b-img
-              src="/landing-examples.png"
-              class="slack-chat mr-4"
-              fluid
-              alt="Page Example Screenshots"/>
           </b-col>
         </b-row>
       </b-container>
     </div>
-
-    <social-proof/>
-
-    <feature-sections v-if="features"/>
-
-    <div style="padding: 0; padding-bottom: 250px;" class="svg-background-share">
-      <b-container>
-        <common-questions/>
-      </b-container>
-    </div>
-    <info-footer/>
+    <!--    <info-footer/>-->
   </div>
 </template>
 
@@ -91,7 +149,7 @@
   .top-container {
     padding-top: 148px;
     padding-bottom: 78px;
-    color: white;
+    /*color: white;*/
   }
 
   .main-title {
@@ -114,6 +172,10 @@
 
   .main-text-wrapper {
     margin-bottom: 3rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 24px;
+    padding: 44px;
+    color: white;
   }
 
   .slack-chat {
@@ -128,7 +190,7 @@
     }
 
     .main-title {
-      font-size: 64px;
+      font-size: 56px;
     }
 
     .landing-text {
@@ -173,10 +235,11 @@
 
 
   .svg-background1 {
-    background-color: #549DFF;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(126,720,394)'%3E%3Cstop offset='0' stop-color='%23549DFF'/%3E%3Cstop offset='1' stop-color='%2323549D'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.03'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-color: black;
+    /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(126,720,394)'%3E%3Cstop offset='0' stop-color='%23549DFF'/%3E%3Cstop offset='1' stop-color='%2323549D'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.03'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");*/
     background-attachment: fixed;
     background-size: cover;
+    background-position: top;
     /* background by SVGBackgrounds.com */
   }
 
