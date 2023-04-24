@@ -34,32 +34,20 @@ jobs:
           name: Build application
           command: yarn build
       - run:
-          name: Deploy application
-          command: yarn deploy
+          name: Delete .nojekyll
+          command: rm /home/circleci/repo/dist/.nojekyll
       - run:
-          name: Upload static
-          command: aws s3 sync /home/circleci/repo/.nuxt/dist/client s3://cdn.otechie.com/web/<< parameters.stage >>/_nuxt --delete --acl public-read
-    #    - run:
-    #        name: Set release commits
-    #        command: ./node_modules/.bin/sentry-cli releases set-commits ${CIRCLE_SHA1} --auto
-    #    - run:
-    #        name: Finalize release
-    #        command: ./node_modules/.bin/sentry-cli releases finalize ${CIRCLE_SHA1}
+          name: Upload to bucket
+          command: aws s3 sync /home/circleci/repo/dist/ s3://coolwallpapers.app --delete --acl public-read
 
 workflows:
   version: 2
   workflow:
     jobs:
       - deploy:
-          context: production
-          filters:
-            branches:
-              only: main
-          stage: 'production'
-      - deploy:
           context: development
           filters:
             branches:
               only:
-                - dev
+                - coolwall
           stage: 'development'

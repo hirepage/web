@@ -1,6 +1,5 @@
 require('dotenv').config()
 const axios = require('axios')
-const favicon = require('./faviconDescription')
 const head = require('./head')
 
 const modules = [
@@ -8,7 +7,6 @@ const modules = [
   '@nuxtjs/dotenv',
   '@nuxtjs/sitemap',
   '@nuxtjs/toast',
-  'nuxt-rfg-icon',
   '@nuxtjs/axios',
   'bootstrap-vue/nuxt',
   'vue2-editor/nuxt'
@@ -24,12 +22,10 @@ const plugins = [
   { src: '~/plugins/gtag' }
 ]
 
-if (process.env.WEB_URL === 'https://hire.page') {
-  // plugins.push({ src: '~/plugins/inspectlet', mode: 'client' })
-}
-
 module.exports = {
-  ssr: true,
+  static: true,
+  target: 'static',
+  ssr: false,
   head: head(),
   loading: {
     color: '#549DFF'
@@ -40,17 +36,6 @@ module.exports = {
   css: [
     '@/assets/main.css'
   ],
-  sentry: {
-    dsn: process.env.SENTRY_DSN_WEB,
-    publishRelease: false,
-    config: {
-      environment: process.env.API_URL === 'https://api.hire.page' ? 'production' : 'development',
-      release: process.env.CIRCLE_SHA1
-    }
-    // clientIntegrations: {
-    //   TryCatch: { eventTarget: false }
-    // }
-  },
   axios: {
     progress: false,
     baseURL: process.env.API_URL
@@ -60,12 +45,6 @@ module.exports = {
     duration: 2000,
     theme: 'toasted-primary',
     singleton: false
-  },
-  'rfg-icon': {
-    static: true,
-    staticPath: '/_favicons/',
-    masterPicture: 'https://hire.page/favicon.png',
-    rfg: favicon
   },
   sitemap: {
     path: '/sitemap.xml',
@@ -78,12 +57,7 @@ module.exports = {
       '/reset',
       '/password',
       '/admin/**'
-    ],
-    routes: () => {
-      return axios.get(`${process.env.API_URL}/user/username`).then(res => {
-        return res.data.map(u => `/${u}`)
-      })
-    }
+    ]
   },
   dev: false,
   build: {
