@@ -38,7 +38,7 @@ jobs:
 #          command: rm /home/circleci/repo/dist/.nojekyll
       - run:
           name: Upload to bucket
-          command: aws s3 sync /home/circleci/repo/dist/ s3://coolwallpapers.app --delete --acl public-read
+          command: aws s3 sync /home/circleci/repo/dist/ s3://www.coolwallpapers.app --delete --acl public-read
 
 workflows:
   version: 2
