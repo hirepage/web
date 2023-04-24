@@ -63,7 +63,6 @@ module.exports = {
   build: {
     analyze: false,
     cssSourceMap: false,
-    publicPath: process.env.DOMAIN === 'localhost' || process.env.NODE_ENV === 'test' ? undefined : `https://cdn.otechie.com/web/${process.env.STAGE}/_nuxt/`,
     extend (config, ctx) {
       if (process.env.NODE_ENV === 'local' && ctx.isClient) {
         config.module.rules.push({
