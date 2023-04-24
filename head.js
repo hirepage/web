@@ -11,7 +11,7 @@ function head () {
       },
       {
         name: 'robots',
-        content: process.env.WEB_URL === 'https://coolwallpapers.app' ? 'all' : 'noindex'
+        content: 'all'
       },
       {
         name: 'viewport',

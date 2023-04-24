@@ -44,7 +44,6 @@ module.exports = [
   '/wallpapers/parrot_vector_drawing_95908_1440x900.jpg',
   '/wallpapers/hexagons_shape_connections_125136_1440x900.jpg',
   '/wallpapers/cyclist_starry_sky_silhouette_118161_1440x900.jpg',
-  '/wallpapers/cartoon_texture_cat_94395_1440x900.jpg',
   '/wallpapers/night_water_lighthouse_74439_1440x900.jpg',
   '/wallpapers/mountains_sunset_art_146043_1440x900.jpg',
   '/wallpapers/art_trees_drawing_100903_1440x900.jpg',
