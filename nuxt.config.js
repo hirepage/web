@@ -7,10 +7,6 @@ const modules = [
   'bootstrap-vue/nuxt'
 ]
 
-if (process.env.LOCAL !== 'true') {
-  modules.push('@nuxtjs/sentry')
-}
-
 const plugins = [
   { src: '~/plugins/fontAwesome' },
   { src: '~/plugins/gtag' }
