@@ -1,5 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "com.otechie.android",
-    "sha256_cert_fingerprints": ["7B:25:F5:E1:4C:AE:98:71:29:3A:AA:EF:DF:23:B6:D5:BA:6F:97:1A:8F:82:46:44:5C:FB:D1:62:15:B0:3D:DE"] }
-}]

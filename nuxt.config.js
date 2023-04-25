@@ -1,15 +1,10 @@
 require('dotenv').config()
-const axios = require('axios')
 const head = require('./head')
 
 const modules = [
-  'cookie-universal-nuxt',
   '@nuxtjs/dotenv',
   '@nuxtjs/sitemap',
-  '@nuxtjs/toast',
-  '@nuxtjs/axios',
-  'bootstrap-vue/nuxt',
-  'vue2-editor/nuxt'
+  'bootstrap-vue/nuxt'
 ]
 
 if (process.env.LOCAL !== 'true') {
@@ -18,7 +13,6 @@ if (process.env.LOCAL !== 'true') {
 
 const plugins = [
   { src: '~/plugins/fontAwesome' },
-  { src: '~/plugins/api' },
   { src: '~/plugins/gtag' }
 ]
 
