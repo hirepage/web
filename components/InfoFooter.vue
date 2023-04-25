@@ -60,7 +60,7 @@
             order-md="0"
             class="mb-4 center-mobile">
             <p style="">
-              © 2023 CoolWallpapers
+              © CoolWallpapers
             </p>
           </b-col>
         </b-row>

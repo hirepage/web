@@ -1,5 +1,5 @@
 module.exports = [
-  '/wallpapers/black_light_dark_73356_1440x900.jpg',
+  '/wallpapers/at-at-crashed.png',
   '/wallpapers/space_sky_stars_79233_1440x900.jpg',
   '/wallpapers/lamp_outlet_idea_120422_1440x900.jpg',
   '/wallpapers/pieces_chess_boards_68430_1440x900.jpg',

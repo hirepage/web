@@ -17,11 +17,6 @@
         return `background-image: url(${this.wallpapers[this.index]});`
       }
     },
-    methods: {
-      claimUsername () {
-        this.$router.push(this.username ? `/register?username=${this.username}` : '/register')
-      }
-    },
     created () {
       setInterval(() => {
         this.index++
@@ -40,10 +35,13 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Never get bored of your wallpaper again
+<!--              Never get bored of your wallpaper again-->
+<!--              Endless wallpapers, curated for you-->
+<!--              Discover your favorite wallpapers-->
+              Like Spotify for wallpapers
             </h1>
             <div class="feature-text mt-2 pb-3">
-              CoolWallpapers uses machine learning to find and download desktop backgrounds that you'll love.
+              A background image downloader that evolves with your tastes. Sit back and enjoy.
             </div>
             <form class="launchlist-form" action="https://getlaunchlist.com/s/LaZga1" method="POST">
               <b-form-input
