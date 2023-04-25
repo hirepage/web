@@ -38,16 +38,10 @@ module.exports = {
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: process.env.WEB_URL,
+    hostname: 'https://www.coolwallpapers.app',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: false,
-    exclude: [
-      '/forgot',
-      '/reset',
-      '/password',
-      '/admin/**'
-    ]
+    generate: false
   },
   dev: false,
   build: {
