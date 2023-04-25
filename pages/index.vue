@@ -38,12 +38,12 @@
       <!--      <info-header fixed hide-border/>-->
       <b-container class="top-container">
         <b-row align-v="center" align-h="start">
-          <b-col md="6" xl="6" class="main-text-wrapper ">
+          <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
               Never get bored of your wallpaper again
             </h1>
             <div class="feature-text mt-2 pb-3">
-              CoolWall uses machine learning to find and download desktop backgrounds that you'll love.
+              CoolWallpapers uses machine learning to find and download desktop backgrounds that you'll love.
             </div>
             <form class="launchlist-form" action="https://getlaunchlist.com/s/LaZga1" method="POST">
               <b-form-input

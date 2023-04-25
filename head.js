@@ -1,9 +1,9 @@
 function head () {
-  const title = 'CoolWall'
+  const title = 'CoolWallpapers'
   const description = 'Never get bored of your wallpaper again'
   const socialImageUrl = 'https://images.wallpaperscraft.com/image/single/stars_sky_space_113629_1280x720.jpg'
   return {
-    title: `CoolWall - ${description}`,
+    title: `CoolWallpapers - ${description}`,
     script: [],
     meta: [
       {
@@ -55,7 +55,7 @@ function head () {
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: 'CoolWall'
+        content: 'CoolWallpapers'
       },
       {
         hid: 'twitter:title',
@@ -85,7 +85,7 @@ function head () {
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'CoolWall Logo'
+        content: 'CoolWallpapers Logo'
       }
     ]
   }
