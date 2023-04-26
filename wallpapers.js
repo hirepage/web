@@ -1,4 +1,8 @@
 module.exports = [
+  '/wallpapers/blue-ombre-background-1920-x-1080-wokjc06fcolqukpv.jpg',
+  'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/68648464-a431-418a-b022-383316668523/df2whw4-8cd41cae-d0fe-4562-82e3-cfacb4717132.jpg/v1/fill/w_1192,h_670,q_70,strp/altus_by_jaesern_df2whw4-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvNjg2NDg0NjQtYTQzMS00MThhLWIwMjItMzgzMzE2NjY4NTIzXC9kZjJ3aHc0LThjZDQxY2FlLWQwZmUtNDU2Mi04MmUzLWNmYWNiNDcxNzEzMi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.5hxOimsSiI4rhgRDsCUHd9KYQdU4Xf2z_sssmGMc02o',
+  'https://wallpapers.com/images/file/venusaur-toad-like-face-srbbz9hvf4uba7nr.jpg',
+  'wallpapers/blue-ombre-background-1920-x-1080-wokjc06fcolqukpv.jpg',
   '/wallpapers/at-at-crashed.png',
   '/wallpapers/space_sky_stars_79233_1440x900.jpg',
   '/wallpapers/lamp_outlet_idea_120422_1440x900.jpg',

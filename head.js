@@ -1,9 +1,9 @@
 function head () {
   const title = 'CoolWallpapers'
-  const description = 'Never get bored of your wallpaper again'
+  const description = 'A desktop wallpaper downloader that evolves with your tastes. Sit back and enjoy.'
   const socialImageUrl = 'https://images.wallpaperscraft.com/image/single/stars_sky_space_113629_1280x720.jpg'
   return {
-    title: `CoolWallpapers - ${description}`,
+    title: `CoolWallpapers - Never get bored of your wallpaper again`,
     script: [],
     meta: [
       {

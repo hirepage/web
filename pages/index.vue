@@ -21,7 +21,6 @@
       setInterval(() => {
         this.index++
         this.index %= this.wallpapers.length
-        console.log(this.wallpapers[this.index])
       }, 5000)
     }
   }
@@ -30,18 +29,14 @@
 <template>
   <div>
     <div ref="topColor" class="top-color svg-background1" :style="wallpaperStyle">
-      <!--      <info-header fixed hide-border/>-->
       <b-container class="top-container">
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-<!--              Never get bored of your wallpaper again-->
-<!--              Endless wallpapers, curated for you-->
-<!--              Discover your favorite wallpapers-->
-              Like Spotify for wallpapers
+              Never get bored of your wallpaper again
             </h1>
             <div class="feature-text mt-2 pb-3">
-              A background image downloader that evolves with your tastes. Sit back and enjoy.
+              A desktop wallpaper downloader that evolves with your tastes. Sit back and enjoy.
             </div>
             <form class="launchlist-form" action="https://getlaunchlist.com/s/LaZga1" method="POST">
               <b-form-input
@@ -53,15 +48,16 @@
                 type="email"
                 name="email"
                 placeholder="yourname@email.com"/>
+              <b-btn
+                size="lg"
+                variant="primary"
+                pill
+                type="submit"
+                class="main-btn mt-3">
+                Join the Waitlist
+              </b-btn>
             </form>
-            <b-btn
-              size="lg"
-              variant="primary"
-              pill
-              type="submit"
-              class="main-btn mt-3">
-              Join the Waitlist
-            </b-btn>
+
           </b-col>
         </b-row>
       </b-container>
