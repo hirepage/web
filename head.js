@@ -1,9 +1,9 @@
 function head () {
-  const title = 'CoolWallpapers'
-  const description = 'A desktop wallpaper downloader that evolves with your tastes. Sit back and enjoy.'
+  const title = 'Jeri'
+  const description = 'Show your users with the content and products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.'
   const socialImageUrl = 'https://images.wallpaperscraft.com/image/single/stars_sky_space_113629_1280x720.jpg'
   return {
-    title: `CoolWallpapers - Never get bored of your wallpaper again`,
+    title: `Jeri - Personalization engine as a service`,
     script: [],
     meta: [
       {
@@ -25,7 +25,7 @@ function head () {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'chill wallpapers, cool wallpapers, chill backgrounds, cute wallpapers for teens, cute wallpapers for computer, cute wallpapers for girls aesthetic, cute wallpapers, cute backgrounds'
+        content: 'personalization engine, content personalization engine, product personalization engine, recommendation system, personalization engine solution, recommendation engine, recommendation system'
       },
       {
         hid: 'og:title',

@@ -11,19 +11,19 @@
             <div class="form-group social-icons">
               <div class="social-icon">
                 <a
-                  href="https://www.facebook.com/coolwallapp"
+                  href="https://www.linkedin.com/company/11532459/admin/"
                   target="_blank"
-                  title="Facebook Pae">
+                  title="LinkedIn Page">
                   <font-awesome-icon
                     size="lg"
                     width="42.5"
                     height="35"
-                    :icon="['fab', 'facebook']"/>
+                    :icon="['fab', 'linkedin']"/>
                 </a>
               </div>
               <div class="social-icon">
                 <a
-                  href="https://twitter.com/coolwallapp"
+                  href="https://twitter.com/getjeri"
                   target="_blank"
                   title="Twitter Profile">
                   <font-awesome-icon
@@ -35,7 +35,7 @@
               </div>
               <div class="social-icon">
                 <a
-                  href="mailto:coolwall@@otechie.com"
+                  href="mailto:jeri@@otechie.com"
                   title="Contact Email">
                   <font-awesome-icon
                     style="margin-top: 0px;"
@@ -47,7 +47,7 @@
               </div>
             </div>
           </b-col>
-          <b-col order-md="1" class="text-center mb-4">
+          <b-col order-md="1" class="text-center mb-4 d-none d-md-block">
 <!--            <nuxt-link to="/privacy" class="bottom-link mr-3">-->
 <!--              <span>Privacy Policy</span>-->
 <!--            </nuxt-link>-->
@@ -60,7 +60,7 @@
             order-md="0"
             class="mb-4 center-mobile">
             <p style="">
-              © CoolWallpapers
+              © 2023 Jeri AI
             </p>
           </b-col>
         </b-row>
