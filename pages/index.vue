@@ -58,7 +58,7 @@
                 pill
                 type="submit"
                 class="main-btn mt-3">
-                Join waitlist
+                Request Access
               </b-btn>
 <!--            </form>-->
 
