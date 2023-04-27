@@ -57,11 +57,10 @@
                 variant="warning"
                 pill
                 type="submit"
-                class="main-btn mt-3">
+                class="main-btn mt-0">
                 Request Access
               </b-btn>
 <!--            </form>-->
-
           </b-col>
         </b-row>
       </b-container>
