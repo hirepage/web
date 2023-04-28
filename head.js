@@ -68,7 +68,7 @@ function head () {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@hiredotpage'
+        content: '@getjeri'
       },
       {
         hid: 'twitter:card',
