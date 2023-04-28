@@ -28,32 +28,32 @@ function head () {
       },
       {
         hid: 'og:title',
-        name: 'og:title',
+        property: 'og:title',
         content: title
       },
       {
         hid: 'og:description',
-        name: 'og:description',
+        property: 'og:description',
         content: description
       },
       {
         hid: 'og:type',
-        name: 'og:type',
+        property: 'og:type',
         content: 'website'
       },
       {
         hid: 'og:url',
-        name: 'og:url',
+        property: 'og:url',
         content: 'https://www.jeri.ai'
       },
       {
         hid: 'og:image',
-        name: 'og:image',
+        property: 'og:image',
         content: socialImageUrl
       },
       {
         hid: 'og:site_name',
-        name: 'og:site_name',
+        property: 'og:site_name',
         content: 'Jeri AI'
       },
       {
