@@ -283,6 +283,4 @@
       display: block;
     }
   }
-
-
 </style>
