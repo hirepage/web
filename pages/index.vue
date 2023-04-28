@@ -26,27 +26,27 @@
               Jeri makes it easy to show your users with the content and
               products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.
             </p>
-<!--            <form class="launchlist-form" action="https://getlaunchlist.com/s/LaZga1" method="POST">-->
-<!--              <b-form-input-->
-<!--                autofocus-->
-<!--                ref="usernameInput"-->
-<!--                v-model="username"-->
-<!--                size="lg"-->
-<!--                maxlength="64"-->
-<!--                type="email"-->
-<!--                name="email"-->
-<!--                placeholder="your-name@company.com"/>-->
+            <!--            <form class="launchlist-form" action="https://getlaunchlist.com/s/LaZga1" method="POST">-->
+            <!--              <b-form-input-->
+            <!--                autofocus-->
+            <!--                ref="usernameInput"-->
+            <!--                v-model="username"-->
+            <!--                size="lg"-->
+            <!--                maxlength="64"-->
+            <!--                type="email"-->
+            <!--                name="email"-->
+            <!--                placeholder="your-name@company.com"/>-->
 
-              <b-btn
-                to="/join"
-                size="lg"
-                variant="warning"
-                pill
-                type="submit"
-                class="main-btn mt-0">
-                Request Access
-              </b-btn>
-<!--            </form>-->
+            <b-btn
+              to="/join"
+              size="lg"
+              variant="warning"
+              pill
+              type="submit"
+              class="main-btn mt-0">
+              Request Access
+            </b-btn>
+            <!--            </form>-->
           </b-col>
         </b-row>
       </b-container>
