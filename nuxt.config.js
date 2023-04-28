@@ -15,7 +15,7 @@ const plugins = [
 module.exports = {
   static: true,
   target: 'static',
-  ssr: false,
+  // ssr: false,
   head: head(),
   loading: {
     color: '#549DFF'
