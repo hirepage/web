@@ -1,5 +1,6 @@
 function head () {
   const title = 'Jeri AI'
+  const substitle = 'Personalization engine as a service'
   const description = 'Personalization engine as a service. Show your users with the content and products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.'
   const socialImageUrl = 'https://cdn.otechie.com/attachments/u1sdNpVBb/image.png'
   return {
@@ -29,7 +30,7 @@ function head () {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: title
+        content: substitle
       },
       {
         hid: 'og:description',
@@ -59,7 +60,7 @@ function head () {
       {
         hid: 'twitter:title',
         name: 'twitter:title',
-        content: title
+        content: substitle
       },
       {
         hid: 'twitter:description',
