@@ -49,5 +49,5 @@ workflows:
           filters:
             branches:
               only:
-                - jeri
+                - main
           stage: 'development'
