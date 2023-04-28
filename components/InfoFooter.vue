@@ -23,7 +23,7 @@
               </div>
               <div class="social-icon">
                 <a
-                  href="https://twitter.com/hirepage_"
+                  href="https://twitter.com/hiredotpage"
                   target="_blank"
                   title="Twitter Profile">
                   <font-awesome-icon

@@ -43,10 +43,13 @@
       align-h="center"
       align-v="center"
       style="height: 100%;"
-      class="mr-2 ml-2"
+      class="profile-row"
       no-gutters>
       <b-col
         class="card-col" cols="auto">
+        <div :style="backgroundStyle" class="mobile-bg">
+        </div>
+
         <b-btn
           v-b-modal.sharePageModal
           class="share-btn"
@@ -99,10 +102,15 @@
           <markdown-text :text="user.about" class="mt-4"/>
 
           <page-form :user="user"/>
+          <div class="w-100 text-center mt-5 mb-5 d-md-none">
+            <a href="/" class="hirepage-link" style="color: inherit; opacity: 0.7;">
+              Powered by Hirepage
+            </a>
+          </div>
         </div>
       </b-col>
     </b-row>
-    <div class="text-center w-100 mt-5">
+    <div class="powered-by-wrapper">
       <a href="/" class="hirepage-link">
         Powered by Hirepage
       </a>
@@ -112,6 +120,10 @@
 
 <style scoped>
 
+  .profile-row {
+    /*margin: 0 0.5rem;*/
+  }
+
   .darken-end {
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
     position: absolute;
@@ -119,10 +131,6 @@
     right: 0;
     left: 0;
     height: 500px;
-  }
-
-  .profile-wrapper {
-    padding: 0 0 48px 0;
   }
 
   .profile-title {
@@ -136,20 +144,16 @@
   .form-label {
     text-transform: capitalize;
     font-size: 13px;
-    /*letter-spacing: 2px;*/
     font-weight: 500;
   }
 
   .logo-img {
-    /*border: 4px solid white;*/
     border-radius: 50%;
     background-color: white;
-    /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+    border: 4px solid white;
   }
 
   .logo-wrapper {
-    /*position: absolute;*/
-    /*top: -48px;*/
     left: 0;
     right: 0;
     text-align: center;
@@ -166,30 +170,20 @@
     left: 0;
     right: 0;
     height: 100vh;
-  }
-
-  .setup-cell {
-    /*background-color: white;*/
-    border-radius: 20px;
-    /*border: 1px solid rgba(0, 0, 0, 0.125);*/
-    padding: 24px;
-    padding-top: 56px;
-    position: relative;
-  }
-
-  .color-bg {
     display: none;
   }
 
-  .setup-col {
-    background-color: white;
+  .setup-cell {
+    border-radius: 20px;
+    padding: 24px;
+    padding-top: 0px;
     position: relative;
   }
 
   .share-btn {
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 12px;
+    right: 12px;
     height: 40px;
     width: 40px;
     z-index: 500;
@@ -197,7 +191,6 @@
 
   .social-links {
     margin: auto;
-    /*width: 100%;*/
     max-width: 160px;
     display: flex;
     justify-content: center;
@@ -229,18 +222,65 @@
   }
 
   .card-col {
-    width: 650px;
     max-width: 100%;
     background-color: white;
-    box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
-    border-radius: 44px;
-    margin-top: 20px;
     z-index: 10;
   }
 
-  @media (min-width: 992px) {
+  .powered-by-wrapper {
+    display: none;
+  }
+
+  .mobile-bg {
+    height: 150px;
+    margin-bottom: -60px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (min-width: 768px) {
+    .card-col {
+      width: 650px;
+    }
+
+    .share-btn {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      height: 40px;
+      width: 40px;
+      z-index: 500;
+    }
+
+    .setup-cell {
+      padding-top: 64px;
+    }
+
+    .mobile-bg {
+      display: none;
+    }
+
     .card-col {
       margin-top: 48px;
+      border-radius: 44px;
+      box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
+    }
+
+    .powered-by-wrapper {
+      display: block;
+      width: 100%;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .profile-wrapper {
+      padding: 0 0 48px 0;
+    }
+
+    .background-wrapper {
+      display: block;
     }
   }
 
