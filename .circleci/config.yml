@@ -32,22 +32,34 @@ jobs:
             - node_modules
       - run:
           name: Build application
-          command: yarn generate
+          command: yarn build
       - run:
-          name: Copy sitemap
-          command: cp /home/circleci/repo/dist/sitemap.xml /home/circleci/repo/dist/sitemap_index.xml
+          name: Deploy application
+          command: yarn deploy
       - run:
-          name: Upload to bucket
-          command: aws s3 sync /home/circleci/repo/dist/ s3://www.jeri.ai --delete --acl public-read
+          name: Upload static
+          command: aws s3 sync /home/circleci/repo/.nuxt/dist/client s3://cdn.otechie.com/web/<< parameters.stage >>/_nuxt --delete --acl public-read
+    #    - run:
+    #        name: Set release commits
+    #        command: ./node_modules/.bin/sentry-cli releases set-commits ${CIRCLE_SHA1} --auto
+    #    - run:
+    #        name: Finalize release
+    #        command: ./node_modules/.bin/sentry-cli releases finalize ${CIRCLE_SHA1}
 
 workflows:
   version: 2
   workflow:
     jobs:
       - deploy:
+          context: production
+          filters:
+            branches:
+              only: main
+          stage: 'production'
+      - deploy:
           context: development
           filters:
             branches:
               only:
-                - main
+                - dev
           stage: 'development'
