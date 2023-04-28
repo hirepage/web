@@ -1,10 +1,14 @@
 function head () {
-  const title = 'Jeri'
-  const description = 'Show your users with the content and products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.'
-  const socialImageUrl = 'https://images.wallpaperscraft.com/image/single/stars_sky_space_113629_1280x720.jpg'
+  const title = 'Jeri AI'
+  const description = 'Personalization engine as a service. Show your users with the content and products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.'
+  const socialImageUrl = 'https://cdn.otechie.com/attachments/u1sdNpVBb/image.png'
   return {
-    title: `Jeri - Personalization engine as a service`,
+    title: 'Jeri AI - Personalization engine as a service',
     script: [],
+    link: [{
+      rel: 'canonical',
+      href: 'https://www.jeri.ai'
+    }],
     meta: [
       {
         'charset': 'utf-8'
@@ -21,11 +25,6 @@ function head () {
         hid: 'description',
         name: 'description',
         content: description
-      },
-      {
-        hid: 'keywords',
-        name: 'keywords',
-        content: 'personalization engine, content personalization engine, product personalization engine, recommendation system, personalization engine solution, recommendation engine, recommendation system'
       },
       {
         hid: 'og:title',
@@ -45,7 +44,7 @@ function head () {
       {
         hid: 'og:url',
         name: 'og:url',
-        content: 'https://hire.page'
+        content: 'https://www.jeri.ai'
       },
       {
         hid: 'og:image',
@@ -55,7 +54,7 @@ function head () {
       {
         hid: 'og:site_name',
         name: 'og:site_name',
-        content: 'CoolWallpapers'
+        content: 'Jeri AI'
       },
       {
         hid: 'twitter:title',
@@ -70,7 +69,7 @@ function head () {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@coolwallapp'
+        content: '@getjeri'
       },
       {
         hid: 'twitter:card',
@@ -85,7 +84,7 @@ function head () {
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'CoolWallpapers Logo'
+        content: 'Jeri AI Logo'
       }
     ]
   }
