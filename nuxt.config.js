@@ -38,7 +38,7 @@ module.exports = {
   },
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://www.coolwallpapers.app',
+    hostname: 'https://www.jeri.ai',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
     generate: false
