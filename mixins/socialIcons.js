@@ -134,7 +134,6 @@ export default {
     },
     getUrl (link) {
       const icon = find(icons, { id: link.icon })
-      console.log('getUrl', icon, link)
       if (!icon) {
         return '#'
       } else if (link.icon === 'WHATSAPP') {
