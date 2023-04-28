@@ -1,27 +1,13 @@
 <script>
   import InfoFooter from '@/components/InfoFooter'
   import InfoHeader from '@/components/InfoHeader'
-  import wallpapers from '@/wallpapers'
-  import { shuffle } from 'lodash'
 
   export default {
     components: { InfoFooter, InfoHeader },
-    data () {
-      return {
-        username: '',
-        index: 0
-      }
-    },
     computed: {
       wallpaperStyle () {
         return ''
       }
-    },
-    created () {
-      // setInterval(() => {
-      //   this.index++
-      //   this.index %= this.wallpapers.length
-      // }, 5000)
     }
   }
 </script>

@@ -17,7 +17,7 @@
                   <font-awesome-icon
                     size="lg"
                     width="42.5"
-                    height="35"
+                    height="21"
                     :icon="['fab', 'linkedin']"/>
                 </a>
               </div>
@@ -29,7 +29,7 @@
                   <font-awesome-icon
                     size="lg"
                     width="42.5"
-                    height="35"
+                    height="21"
                     :icon="['fab', 'twitter']"/>
                 </a>
               </div>
@@ -41,7 +41,7 @@
                     style="margin-top: 0px;"
                     size="lg"
                     width="42.5"
-                    height="35"
+                    height="21"
                     :icon="['fas', 'envelope']"/>
                 </a>
               </div>
