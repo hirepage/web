@@ -10,7 +10,7 @@
     },
     computed: {
       previewUrl () {
-        return this.$store.state.user ? `/${this.$store.state.user.username}` : null
+        return  '/notsogood' // this.$store.state.user ? `/${this.$store.state.user.username}` : null
       }
     },
     created () {
