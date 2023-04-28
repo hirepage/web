@@ -59,9 +59,9 @@
             md="auto"
             order-md="0"
             class="mb-4 center-mobile">
-            <p style="">
-              © CoolWallpapers
-            </p>
+            <a href="https://www.jeri.ai" class="bottom-link ml-3">
+              <span>© Jeri AI</span>
+            </a>
           </b-col>
         </b-row>
       </footer>
