@@ -1,20 +1,17 @@
 function head () {
-  const substitle = 'Personalization Engine as a Service'
-  const socialImageUrl = 'https://cdn.otechie.com/attachments/u1sdNpVBb/image.png'
+  const title = 'Hirepage'
+  const description = 'Contact form builder for freelancers, consultants, and small businesses'
+  const socialImageUrl = 'https://hire.page/landing-examples-padded.png'
   return {
-    title: 'Personalization Engine as a Service | Jeri AI',
+    title: `Hirepage - ${description}`,
     script: [],
-    link: [{
-      rel: 'canonical',
-      href: 'https://www.jeri.ai'
-    }],
     meta: [
       {
         'charset': 'utf-8'
       },
       {
         name: 'robots',
-        content: 'all'
+        content: process.env.WEB_URL === 'https://hire.page' ? 'all' : 'noindex'
       },
       {
         name: 'viewport',
@@ -23,47 +20,52 @@ function head () {
       {
         hid: 'description',
         name: 'description',
-        content: 'Personalization engine as a service. Show your users with the content and products that they want with an easy to use API.'
+        content: description
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'hirepage, hire page, contact page consulting, contact page freelancing, contact form consulting, contact form freelancing, link in bio freelance, link in bio consultant'
       },
       {
         hid: 'og:title',
-        property: 'og:title',
-        content: substitle
+        name: 'og:title',
+        content: title
       },
       {
         hid: 'og:description',
-        property: 'og:description',
-        content: 'Show your users with the content and products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.'
+        name: 'og:description',
+        content: description
       },
       {
         hid: 'og:type',
-        property: 'og:type',
+        name: 'og:type',
         content: 'website'
       },
       {
         hid: 'og:url',
-        property: 'og:url',
-        content: 'https://www.jeri.ai'
+        name: 'og:url',
+        content: 'https://hire.page'
       },
       {
         hid: 'og:image',
-        property: 'og:image',
+        name: 'og:image',
         content: socialImageUrl
       },
       {
         hid: 'og:site_name',
-        property: 'og:site_name',
-        content: 'Jeri AI'
+        name: 'og:site_name',
+        content: 'Hirepage'
       },
       {
         hid: 'twitter:title',
-        name: 'twitter:title',
-        content: substitle
+        name: 'og:title',
+        content: title
       },
       {
         hid: 'twitter:description',
         name: 'twitter:description',
-        content: 'Show your users with the content and products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.'
+        content: description
       },
       {
         hid: 'twitter:site',
@@ -83,7 +85,7 @@ function head () {
       {
         hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
-        content: 'Jeri AI Logo'
+        content: 'Hirepage Logo'
       }
     ]
   }

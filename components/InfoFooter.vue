@@ -11,57 +11,69 @@
             <div class="form-group social-icons">
               <div class="social-icon">
                 <a
-                  href="https://www.linkedin.com/company/11532459/admin/"
+                  href="https://www.facebook.com/hirepageapp"
                   target="_blank"
-                  title="LinkedIn Page">
+                  title="Facebook Pae">
                   <font-awesome-icon
                     size="lg"
                     width="42.5"
-                    height="21"
-                    :icon="['fab', 'linkedin']"/>
+                    height="35"
+                    :icon="['fab', 'facebook']"/>
                 </a>
               </div>
               <div class="social-icon">
                 <a
-                  href="https://twitter.com/getjeri"
+                  href="https://twitter.com/hiredotpage"
                   target="_blank"
                   title="Twitter Profile">
                   <font-awesome-icon
                     size="lg"
                     width="42.5"
-                    height="21"
+                    height="35"
                     :icon="['fab', 'twitter']"/>
                 </a>
               </div>
               <div class="social-icon">
                 <a
-                  href="mailto:jeri@@otechie.com"
+                  href="https://www.linkedin.com/company/hirepage"
+                  target="_blank"
+                  title="LinkedIn Profile">
+                  <font-awesome-icon
+                    size="lg"
+                    width="42.5"
+                    height="35"
+                    :icon="['fab', 'linkedin']"/>
+                </a>
+              </div>
+              <div class="social-icon">
+                <a
+                  href="mailto:dylan@hire.page"
                   title="Contact Email">
                   <font-awesome-icon
                     style="margin-top: 0px;"
                     size="lg"
                     width="42.5"
-                    height="21"
+                    height="35"
                     :icon="['fas', 'envelope']"/>
                 </a>
               </div>
             </div>
           </b-col>
-          <b-col order-md="1" class="text-center mb-4 d-none d-md-block">
-<!--            <nuxt-link to="/privacy" class="bottom-link mr-3">-->
-<!--              <span>Privacy Policy</span>-->
-<!--            </nuxt-link>-->
-<!--            <nuxt-link to="/terms" class="bottom-link ml-3">-->
-<!--              <span>Terms of Use</span>-->
-<!--            </nuxt-link>-->
+          <b-col order-md="1" class="text-center mb-4">
+            <nuxt-link to="/privacy" class="bottom-link mr-3">
+              Privacy Policy
+            </nuxt-link>
+            <nuxt-link to="/terms" class="bottom-link ml-3">
+              Terms of Use
+            </nuxt-link>
           </b-col>
           <b-col
             md="auto"
             order-md="0"
             class="mb-4 center-mobile">
-            <p style="">
-              © 2023 Jeri AI
-            </p>
+            <a href="https://www.jeri.ai" class="bottom-link ml-3">
+              <span>© Jeri AI</span>
+            </a>
           </b-col>
         </b-row>
       </footer>
@@ -73,31 +85,21 @@
 
 
   .hirepage-footer {
-    color: white;
+    color: #3a3a3a;
+    background-color: white;
+    border-top: solid #ececec 1px;
     font-size: 17px;
-    /*padding: 46px 15px 64px 15px;*/
-    bottom: 0;
-    right: 0;
-    left: 0;
-    position: absolute;
-    /*margin: 12px 24px 0 24px;*/
-    /*border-radius: 40px 40px 0 0 ;*/
-    /*padding: 0;*/
-    z-index: 100;
-    /*background-color: white;*/
-    /*border: 1px solid #ececec;*/
+    padding: 46px 15px 64px 15px;
   }
 
   @media (min-width: 767px) {
     .hirepage-footer {
-      /*padding: 64px 0;*/
+      padding: 64px 0;
     }
   }
 
   .hirepage-footer a, .dark-link {
-    color: white;
-    /*opacity: 0.7;*/
-    /*color: white;*/
+    color: #3a3a3a;
   }
 
   .social-icons {

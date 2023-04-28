@@ -1,0 +1,44 @@
+service: web
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: ${env:STAGE}
+  region: us-east-1
+  memorySize: 2048
+  environment:
+    DOMAIN: ${env:DOMAIN}
+    WEB_URL: ${env:WEB_URL}
+    API_URL: ${env:API_URL}
+    STAGE: ${env:STAGE}
+
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource: '*'
+
+functions:
+  nuxt:
+    handler: index.nuxt
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}
+    warmup:
+      enabled: true
+      concurrency: 3
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-apigw-binary
+  - serverless-plugin-warmup
+  - serverless-domain-manager
+
+custom:
+  warmup:
+    prewarm: true
+  apigwBinary:
+    types:
+      - '*/*'
+  customDomain:
+    domainName: ${env:DOMAIN}
+    createRoute53Record: true

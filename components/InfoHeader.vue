@@ -22,9 +22,9 @@
     computed: {
       headerStyle () {
         const bg = this.dark ? 'background-color: transparent; color: white;' : ''
-        // const border = (!this.hideBorder || this.scrolled) && !this.dark ? 'border-bottom: solid #ececec 1px;' : ''
+        const border = (!this.hideBorder || this.scrolled) && !this.dark ? 'border-bottom: solid #ececec 1px;' : ''
         const position = this.fixed ? 'position: fixed; top:0; right: 0; left: 0;' : ''
-        return bg + position
+        return bg + border + position
       }
     },
     created () {
@@ -48,17 +48,17 @@
     <b-container>
       <b-navbar-brand to="/" style="text-decoration: none; font-weight: 400; font-size: 20px">
         <b-row no-gutters align-v="center">
-<!--          <b-col>-->
-<!--            <b-img src="/favicon.png" height="26"/>-->
-<!--          </b-col>-->
-          <b-col class="pt-1 text-white semi-bold">
-            Jeri AI
+          <b-col>
+            <b-img src="/favicon.png" height="26"/>
+          </b-col>
+          <b-col class="pl-2 pt-1">
+            Hirepage
           </b-col>
         </b-row>
       </b-navbar-brand>
 
       <b-navbar-nav
-        class="ml-auto d-none"
+        class="ml-auto"
         left>
         <div>
           <b-navbar-nav>
@@ -78,12 +78,9 @@
 <style scoped>
 
   .hirepage-header {
-    margin: 12px 24px 0 24px;
-    border-radius: 40px;
     padding: 0;
     z-index: 100;
-    /*background-color: white;*/
-    /*border: 1px solid #ececec;*/
+    background-color: white;
   }
 
   .navbar-brand {
