@@ -33,9 +33,9 @@ jobs:
       - run:
           name: Build application
           command: yarn generate
-#      - run:
-#          name: Delete .nojekyll
-#          command: rm /home/circleci/repo/dist/.nojekyll
+      - run:
+          name: Copy sitemap
+          command: cp /home/circleci/repo/dist/sitemap.xml /home/circleci/repo/dist/sitemap_index.xml
       - run:
           name: Upload to bucket
           command: aws s3 sync /home/circleci/repo/dist/ s3://www.jeri.ai --delete --acl public-read
