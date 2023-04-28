@@ -58,7 +58,7 @@ function head () {
       },
       {
         hid: 'twitter:title',
-        name: 'og:title',
+        name: 'twitter:title',
         content: title
       },
       {
