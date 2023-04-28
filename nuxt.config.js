@@ -40,7 +40,8 @@ module.exports = {
     hostname: 'https://www.jeri.ai',
     cacheTime: 1000 * 60 * 15,
     gzip: true,
-    generate: false
+    generate: false,
+    exclude: ['/join']
   },
   dev: false,
   build: {
