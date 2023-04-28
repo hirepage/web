@@ -23,7 +23,7 @@ function head () {
       {
         hid: 'description',
         name: 'description',
-        content: 'Personalization engine as a service. Show your users with the content and products that they want.'
+        content: 'Personalization engine as a service. Show your users with the content and products that they want with an easy to use API.'
       },
       {
         hid: 'og:title',

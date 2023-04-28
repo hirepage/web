@@ -22,10 +22,10 @@
             <h1 class="main-title">
               Personalization Engine as a Service
             </h1>
-            <div class="feature-text mt-2 pb-3">
+            <p class="feature-text mt-2 pb-3">
               Jeri makes it easy to show your users with the content and
               products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.
-            </div>
+            </p>
 <!--            <form class="launchlist-form" action="https://getlaunchlist.com/s/LaZga1" method="POST">-->
 <!--              <b-form-input-->
 <!--                autofocus-->
@@ -160,65 +160,12 @@
     /* background by SVGBackgrounds.com */
   }
 
-
-  .svg-background-personalize {
-    background-color: #88364d;;
-
-    /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");*/
-    /*background-image: url("https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80");*/
-    background-attachment: fixed;
-    background-size: cover;
-    color: #3a3a3a;
-    /* background by SVGBackgrounds.com */
-  }
-
-  .svg-background-meetings {
-    background-color: #031957;
-    /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 60'%3E%3Cg %3E%3Crect fill='%2317CC82' width='11' height='11'/%3E%3Crect fill='%2319ca80' x='10' width='11' height='11'/%3E%3Crect fill='%231ac77e' y='10' width='11' height='11'/%3E%3Crect fill='%231bc57b' x='20' width='11' height='11'/%3E%3Crect fill='%231cc279' x='10' y='10' width='11' height='11'/%3E%3Crect fill='%231dc077' y='20' width='11' height='11'/%3E%3Crect fill='%231ebd75' x='30' width='11' height='11'/%3E%3Crect fill='%231fbb73' x='20' y='10' width='11' height='11'/%3E%3Crect fill='%231fb871' x='10' y='20' width='11' height='11'/%3E%3Crect fill='%2320b66f' y='30' width='11' height='11'/%3E%3Crect fill='%2320b36d' x='40' width='11' height='11'/%3E%3Crect fill='%2321b16b' x='30' y='10' width='11' height='11'/%3E%3Crect fill='%2321ae69' x='20' y='20' width='11' height='11'/%3E%3Crect fill='%2322ac67' x='10' y='30' width='11' height='11'/%3E%3Crect fill='%2322aa65' y='40' width='11' height='11'/%3E%3Crect fill='%2322a763' x='50' width='11' height='11'/%3E%3Crect fill='%2322a561' x='40' y='10' width='11' height='11'/%3E%3Crect fill='%2323a25f' x='30' y='20' width='11' height='11'/%3E%3Crect fill='%2323a05d' x='20' y='30' width='11' height='11'/%3E%3Crect fill='%23239e5b' x='10' y='40' width='11' height='11'/%3E%3Crect fill='%23239b59' y='50' width='11' height='11'/%3E%3Crect fill='%23239957' x='60' width='11' height='11'/%3E%3Crect fill='%23239755' x='50' y='10' width='11' height='11'/%3E%3Crect fill='%23239453' x='40' y='20' width='11' height='11'/%3E%3Crect fill='%23229251' x='30' y='30' width='11' height='11'/%3E%3Crect fill='%23228f4f' x='20' y='40' width='11' height='11'/%3E%3Crect fill='%23228d4d' x='10' y='50' width='11' height='11'/%3E%3Crect fill='%23228b4c' x='70' width='11' height='11'/%3E%3Crect fill='%2322894a' x='60' y='10' width='11' height='11'/%3E%3Crect fill='%23218648' x='50' y='20' width='11' height='11'/%3E%3Crect fill='%23218446' x='40' y='30' width='11' height='11'/%3E%3Crect fill='%23218244' x='30' y='40' width='11' height='11'/%3E%3Crect fill='%23217f43' x='20' y='50' width='11' height='11'/%3E%3Crect fill='%23207d41' x='80' width='11' height='11'/%3E%3Crect fill='%23207b3f' x='70' y='10' width='11' height='11'/%3E%3Crect fill='%231f793d' x='60' y='20' width='11' height='11'/%3E%3Crect fill='%231f763c' x='50' y='30' width='11' height='11'/%3E%3Crect fill='%231f743a' x='40' y='40' width='11' height='11'/%3E%3Crect fill='%231e7238' x='30' y='50' width='11' height='11'/%3E%3Crect fill='%231e7037' x='90' width='11' height='11'/%3E%3Crect fill='%231d6d35' x='80' y='10' width='11' height='11'/%3E%3Crect fill='%231d6b33' x='70' y='20' width='11' height='11'/%3E%3Crect fill='%231c6932' x='60' y='30' width='11' height='11'/%3E%3Crect fill='%231c6730' x='50' y='40' width='11' height='11'/%3E%3Crect fill='%231b652e' x='40' y='50' width='11' height='11'/%3E%3Crect fill='%231a622d' x='90' y='10' width='11' height='11'/%3E%3Crect fill='%231a602b' x='80' y='20' width='11' height='11'/%3E%3Crect fill='%23195e2a' x='70' y='30' width='11' height='11'/%3E%3Crect fill='%23195c28' x='60' y='40' width='11' height='11'/%3E%3Crect fill='%23185a27' x='50' y='50' width='11' height='11'/%3E%3Crect fill='%23175825' x='90' y='20' width='11' height='11'/%3E%3Crect fill='%23175624' x='80' y='30' width='11' height='11'/%3E%3Crect fill='%23165322' x='70' y='40' width='11' height='11'/%3E%3Crect fill='%23155121' x='60' y='50' width='11' height='11'/%3E%3Crect fill='%23154f1f' x='90' y='30' width='11' height='11'/%3E%3Crect fill='%23144d1e' x='80' y='40' width='11' height='11'/%3E%3Crect fill='%23134b1c' x='70' y='50' width='11' height='11'/%3E%3Crect fill='%2313491b' x='90' y='40' width='11' height='11'/%3E%3Crect fill='%23124719' x='80' y='50' width='11' height='11'/%3E%3Crect fill='%23114518' x='90' y='50' width='11' height='11'/%3E%3C/g%3E%3C/svg%3E");*/
-    background-attachment: fixed;
-    background-size: cover;
-    /* background by SVGBackgrounds.com */
-  }
-
-
-  .svg-background-collect {
-    background-color: #ff7700;
-    background-color: #b34b56;
-    background-color: #0f935d;
-    /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");*/
-    background-attachment: fixed;
-    background-size: cover;
-    /* background by SVGBackgrounds.com */
-  }
-
-  .svg-background-share {
-    background-color: #330033;
-    background-attachment: fixed;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
-    /* background by SVGBackgrounds.com */
-  }
-
-  .feature-card {
-    padding: 16px;
-    /*width: 1000px;*/
-    /*max-width: 100%;*/
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 25%) 0rem 1.75rem 3.125rem 0.25rem;
-    border-radius: 44px;
-    z-index: 10;
-  }
-
-  .feature-title {
-    font-weight: bold;
-    font-size: 36px;
-    position: relative;
-    font-size: 56px;
-  }
-
   .feature-text {
+    font-weight: normal;
     font-size: 22px;
     padding-bottom: 16px;
     opacity: 0.7;
+    line-height: 1.5;
   }
 
 </style>
