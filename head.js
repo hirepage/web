@@ -3,7 +3,7 @@ function head () {
   const description = 'Personalization engine as a service. Show your users with the content and products that they want. Developer-friendly, fully managed, and easily scalable without any hassle.'
   const socialImageUrl = 'https://cdn.otechie.com/attachments/u1sdNpVBb/image.png'
   return {
-    title: 'Jeri AI - Personalization engine as a service',
+    title: 'Jeri AI - Personalization Engine as a Service',
     script: [],
     link: [{
       rel: 'canonical',

@@ -34,7 +34,7 @@
         <b-row align-v="center" align-h="start">
           <b-col md="6" xl="6" class="main-text-wrapper">
             <h1 class="main-title">
-              Personalization engine as a service
+              Personalization Engine as a Service
             </h1>
             <div class="feature-text mt-2 pb-3">
               Jeri makes it easy to show your users with the content and
