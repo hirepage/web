@@ -1,4 +1,5 @@
 require('dotenv').config()
+const axios = require('axios')
 const favicon = require('./faviconDescription')
 const head = require('./head')
 
@@ -73,14 +74,16 @@ module.exports = {
     gzip: true,
     generate: false,
     exclude: [
-      '/setup',
+      '/forgot',
       '/reset',
       '/password',
-      '/join',
-      '/unsubscribe',
-      '/redirect/**',
-      '/connect/**'
-    ]
+      '/admin/**'
+    ],
+    routes: () => {
+      return axios.get(`${process.env.API_URL}/user/username`).then(res => {
+        return res.data.map(u => `/${u}`)
+      })
+    }
   },
   dev: false,
   build: {
