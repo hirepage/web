@@ -42,7 +42,12 @@ export default app => ({
   },
   resetPassword (data) {
     return app.$axios.$post('/user/password', data).then(auth => {
-      app.$api.auth.setAuth(auth)
+      app.store.commit('SET_USER', user)
+    })
+  },
+  connectQuickbooks (data) {
+    return app.$axios.$post('/user/quickbooks', data).then(user => {
+      app.store.commit('SET_USER', user)
     })
   },
   addLink (data) {

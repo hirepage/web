@@ -10,7 +10,7 @@
     data () {
       return {
         username: this.$store.state.user.username,
-        email:  this.$store.state.user.email
+        email: this.$store.state.user.email
       }
     },
     computed: {
@@ -22,6 +22,9 @@
       },
       user () {
         return this.$store.state.user
+      },
+      quickbooksUrl () {
+        return `${process.env.API_URL}/user/quickbooks`
       }
     },
     methods: {
@@ -44,24 +47,30 @@
     <h2>
       Settings
     </h2>
-    <b-card>
-      <username-input :username.sync="username" />
+    <b-card-group>
+      <b-card>
+        <username-input :username.sync="username"/>
 
-      <b-form-group>
-        <label>
-          Email
-        </label>
-        <b-form-input
-          v-model="email"
-          maxlength="64"/>
-        <p v-if="user && !user.emailConfirmed" class="help-block with-errors">
-          Please check your email to confirm your email
-        </p>
-      </b-form-group>
+        <b-form-group>
+          <label>
+            Email
+          </label>
+          <b-form-input
+            v-model="email"
+            maxlength="64"/>
+          <p v-if="user && !user.emailConfirmed" class="help-block with-errors">
+            Please check your email to confirm your email
+          </p>
+        </b-form-group>
 
-      <loading-button variant="primary" :disabled="!enabled" @click="save">
-        Save
-      </loading-button>
-    </b-card>
+        <loading-button variant="primary" :disabled="!enabled" @click="save">
+          Save
+        </loading-button>
+      </b-card>
+    </b-card-group>
+
+    <b-btn variant="success" to="/admin/quickbooks">
+      Connect Quickbooks
+    </b-btn>
   </div>
 </template>
