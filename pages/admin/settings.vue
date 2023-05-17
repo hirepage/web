@@ -37,6 +37,13 @@
         }).catch(err => {
           this.$toast.error('Error updating settings')
         }).finally(done)
+      },
+      disconnectQuickbooks (done) {
+        this.$api.user.disconnectQuickbooks().then(user => {
+          this.$toast.success('Quickbooks disconnected')
+        }).catch(err => {
+          this.$toast.error('Error disconnecting Quickbooks, please try again')
+        }).finally(done)
       }
     }
   }
@@ -69,7 +76,11 @@
       </b-card>
     </b-card-group>
 
-    <b-btn variant="success" to="/admin/quickbooks">
+
+    <loading-button v-if="user.quickbooks" variant="default" @click="disconnectQuickbooks">
+      Disconnect Quickbooks
+    </loading-button>
+    <b-btn v-else variant="success" to="/admin/quickbooks">
       Connect Quickbooks
     </b-btn>
   </div>

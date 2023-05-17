@@ -12,7 +12,7 @@
         this.$router.replace('/admin/settings')
       }).catch(err => {
         this.$toast.error('Error connecting QuickBooks, please try again')
-        this.$router.replace('/admin/zsettings')
+        this.$router.replace('/admin/settings')
       })
     }
   }

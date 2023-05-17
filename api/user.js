@@ -50,6 +50,11 @@ export default app => ({
       app.store.commit('SET_USER', user)
     })
   },
+  disconnectQuickbooks (data) {
+    return app.$axios.$delete('/user/quickbooks', data).then(user => {
+      app.store.commit('SET_USER', user)
+    })
+  },
   addLink (data) {
     return app.$axios.$post('/user/link', data).then(user => {
       app.store.commit('SET_USER', user)
