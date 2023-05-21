@@ -18,20 +18,17 @@
     "deploy": "sls deploy",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "offline": "sls offline start --skipCacheInvalidation",
+    "offline": "sls offline start",
     "test": "ava --verbose",
     "precommit": "yarn lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "merge": "git checkout main; git merge dev; git push; git checkout dev"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "6.1.1",
-    "@fortawesome/free-brands-svg-icons": "6.1.1",
-    "@fortawesome/free-regular-svg-icons": "6.1.1",
-    "@fortawesome/free-solid-svg-icons": "6.1.1",
-    "@fortawesome/pro-light-svg-icons": "^6.2.0",
-    "@fortawesome/pro-regular-svg-icons": "^6.1.1",
-    "@fortawesome/pro-solid-svg-icons": "^6.1.1",
+    "@fortawesome/fontawesome-svg-core": "6.1.2",
+    "@fortawesome/free-brands-svg-icons": "6.1.2",
+    "@fortawesome/free-regular-svg-icons": "6.1.2",
+    "@fortawesome/free-solid-svg-icons": "6.1.2",
     "@fortawesome/vue-fontawesome": "2.0.6",
     "@nuxtjs/axios": "5.13.6",
     "@nuxtjs/dotenv": "1.4.1",
@@ -77,6 +74,7 @@
     "nuxt": "2.15.8",
     "serverless-domain-manager": "3.3.2",
     "serverless-dotenv-plugin": "2.1.1",
+    "serverless-offline": "^12.0.4",
     "serverless-plugin-warmup": "4.9.0"
   }
 }

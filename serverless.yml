@@ -1,5 +1,5 @@
 service: web
-
+useDotenv: true
 provider:
   name: aws
   runtime: nodejs14.x
@@ -11,6 +11,7 @@ provider:
     WEB_URL: ${env:WEB_URL}
     API_URL: ${env:API_URL}
     STAGE: ${env:STAGE}
+    SUBDOMAIN: ${env:SUBDOMAIN}
 
   iamRoleStatements:
     - Effect: 'Allow'
@@ -32,6 +33,7 @@ plugins:
   - serverless-apigw-binary
   - serverless-plugin-warmup
   - serverless-domain-manager
+  - serverless-offline
 
 custom:
   warmup:
@@ -40,5 +42,5 @@ custom:
     types:
       - '*/*'
   customDomain:
-    domainName: dopecto.hire.page
-    createRoute53Record: false
+    domainName: ${env:DOMAIN}
+    createRoute53Record: true

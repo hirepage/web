@@ -28,9 +28,12 @@ const handler = sls(nuxt.render, {
 module.exports.nuxt = async function (event, context) {
   /** Immediate response for WarmUp plugin */
   if (event.source === 'serverless-plugin-warmup') {
-    console.log('WarmUp - Lambda is warm!');
-    return 'Lambda is warm!';
+    console.log('WarmUp - Lambda is warm!')
+    return 'Lambda is warm!'
   }
+  const hostHeader = event.headers.Host || event.headers.host
+  console.log('======== hostHeader', hostHeader)
+  process.env.SUBDOMAIN = 'dopecto'
   if (!isReady) {
     await readyPromise
   }

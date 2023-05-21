@@ -1,24 +1,24 @@
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {
-  faMessageBot,
-  faVideoCircle,
-  faShieldCheck,
-  faWavePulse,
-  faCircleHeart,
-  faArrowUpRightFromSquare
-} from '@fortawesome/pro-solid-svg-icons'
-import {
-  faBoltLightning,
-  faCommentDollar,
-  faFileInvoiceDollar,
-  faInboxIn,
-  faPhone,
-  faLink,
-  faCalendarLines
-} from '@fortawesome/pro-regular-svg-icons'
-import { faArrowUpFromSquare } from '@fortawesome/pro-light-svg-icons'
+// import {
+//   faMessageBot,
+//   faVideoCircle,
+//   faShieldCheck,
+//   faWavePulse,
+//   faCircleHeart,
+//   faArrowUpRightFromSquare
+// } from '@fortawesome/pro-solid-svg-icons'
+// import {
+//   faBoltLightning,
+//   faCommentDollar,
+//   faFileInvoiceDollar,
+//   faInboxIn,
+//   faPhone,
+//   faLink,
+//   faCalendarLines
+// } from '@fortawesome/pro-regular-svg-icons'
+// import { faArrowUpFromSquare } from '@fortawesome/pro-light-svg-icons'
 
 import { faCopy, faEdit, faSmile, faHeart, faAddressCard, faComments } from '@fortawesome/free-regular-svg-icons'
 
@@ -66,7 +66,8 @@ import {
   faUndo,
   faVideo,
   faRobot,
-  faCamera
+  faCamera,
+  faUpA
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -84,7 +85,7 @@ library.add(
   faGithub,
   faUsers,
   faCheck,
-  faLink,
+  // faLink,
   faChevronDown,
   faChevronUp,
   faUser,
@@ -108,24 +109,24 @@ library.add(
   faLock,
   faUndo,
   faYoutube,
-  faMessageBot,
-  faVideoCircle,
-  faShieldCheck,
-  faWavePulse,
+  // faMessageBot,
+  // faVideoCircle,
+  // faShieldCheck,
+  // faWavePulse,
   faSmile,
-  faBoltLightning,
+  // faBoltLightning,
   faHeart,
-  faCircleHeart,
-  faCommentDollar,
+  // faCircleHeart,
+  // faCommentDollar,
   faAddressCard,
-  faFileInvoiceDollar,
-  faInboxIn,
+  // faFileInvoiceDollar,
+  // faInboxIn,
   faComments,
-  faArrowUpFromSquare,
-  faArrowUpRightFromSquare,
-  faPhone,
-  faLink,
-  faCalendarLines,
+  // faArrowUpFromSquare,
+  // faArrowUpRightFromSquare,
+  // faPhone,
+  // faLink,
+  // faCalendarLines,
   faStackOverflow,
   faRedditAlien,
   faDribbble,

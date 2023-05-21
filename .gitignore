@@ -21,3 +21,4 @@ static/sw.js
 /.env.production
 /.env.development
 /.nyc_output/
+yarn-error.log

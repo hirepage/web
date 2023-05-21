@@ -77,7 +77,7 @@
                 </b-col>
                 <b-col cols="auto" class="pr-2 semi-bold">
                   <font-awesome-icon
-                    v-if="getIcon(s.icon)"ContactFormEditor
+                    v-if="getIcon(s.icon)"
                     size="lg"
                     width="42.5"
                     height="18"

@@ -13,6 +13,9 @@
       claimUsername () {
         this.$router.push(this.username ? `/register?username=${this.username}` : '/register')
       }
+    },
+    created () {
+      console.log('=== username', process.env.SUBDOMAIN)
     }
   }
 </script>
