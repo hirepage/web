@@ -40,5 +40,5 @@ custom:
     types:
       - '*/*'
   customDomain:
-    domainName: ${env:DOMAIN}
-    createRoute53Record: true
+    domainName: dopecto.hire.page
+    createRoute53Record: false

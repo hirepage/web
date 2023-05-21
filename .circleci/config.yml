@@ -54,6 +54,12 @@ workflows:
           context: production
           filters:
             branches:
+              only: dopecto
+          stage: 'dopecto'
+      - deploy:
+          context: production
+          filters:
+            branches:
               only: main
           stage: 'production'
       - deploy:
