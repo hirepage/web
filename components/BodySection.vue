@@ -6,7 +6,8 @@
         customToolbar: [
           [{ header: '1' }],
           ['bold', 'italic', 'underline'],
-          [{ list: 'ordered' }, { list: 'bullet' }]
+          [{ list: 'ordered' }, { list: 'bullet' }],
+          ['image', 'link']
         ]
       }
     },

@@ -312,6 +312,16 @@ p {
   margin: 4px 0;
 }
 
+.showdown img {
+  width: 25%;
+  height: 116px;
+  /*margin: 20px;*/
+  padding: 20px;
+  object-fit: contain;
+  /*border: 1px solid rgba(0, 0, 0, 0.125);*/
+  /*border-radius: 12px;*/
+}
+
 @media (min-device-width: 768px) {
   .d-iframe-md-block {
     display: block !important;

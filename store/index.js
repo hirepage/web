@@ -24,10 +24,8 @@ export const mutations = {
 
 export const actions = {
   nuxtServerInit ({ commit }, { req }) {
-    console.log('nuxtServerInit')
     const host = req.headers.host
     const subdomain = host ? host.split('.')[0] : null
-    console.log('== middleware/subdomain.js', subdomain)
     commit('SET_SUBDOMAIN', subdomain)
   },
   updatePreview () {
