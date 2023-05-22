@@ -2,7 +2,8 @@ import cookie from 'cookie'
 
 export const state = () => ({
   auth: null,
-  user: null
+  user: null,
+  subdomain: null
 })
 
 export const mutations = {
@@ -12,6 +13,9 @@ export const mutations = {
   SET_USER (state, user) {
     state.user = user
   },
+  SET_SUBDOMAIN (state, subdomain) {
+    state.subdomain = subdomain
+  },
   RESET (state) {
     state.auth = null
     state.user = null
@@ -19,14 +23,14 @@ export const mutations = {
 }
 
 export const actions = {
-  nuxtServerInit ({ commit }, { req, app }) {
-    // if (req.headers.cookie) {
-    //   const token = cookie.parse(req.headers.cookie).auth
-    //   commit('SET_AUTH', token)
-    //   app.$axios.setHeader('Authorization', token)
-    // }
+  nuxtServerInit ({ commit }, { req }) {
+    console.log('nuxtServerInit')
+    const host = req.headers.host
+    const subdomain = host ? host.split('.')[0] : null
+    console.log('== middleware/subdomain.js', subdomain)
+    commit('SET_SUBDOMAIN', subdomain)
   },
-  updatePreview() {
+  updatePreview () {
     if (!process.client) {
       return
     }

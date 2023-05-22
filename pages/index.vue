@@ -15,15 +15,17 @@
       const username = first(process.env.SUBDOMAIN.split('.'))
       console.log('=== username', process.env.SUBDOMAIN, username)
     },
-    asyncData ({ params, app, error }) {
-      const username = first(process.env.SUBDOMAIN.split('.'))
-      console.log('=== username', process.env.SUBDOMAIN, username)
-      if (process.env.SUBDOMAIN) {
+    asyncData ({ app, error }) {
+      // const username = first(process.env.SUBDOMAIN.split/**/('.'))
+      console.log('=== username', app.store.subdomain)
+      if (app.store.subdomain) {
         return app.$api.user.getUser(username).then(user => {
           return { user }
         }).catch(err => {
-          error(err)
+          return { user: null }
         })
+      } else {
+        return { user: null }
       }
     },
     methods: {
