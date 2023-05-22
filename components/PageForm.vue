@@ -41,13 +41,36 @@
           console.error(err)
           this.$toast.error('Error sending message')
         }).finally(done)
+      },
+      openCalendly () {
+        const color = this.user.btnColor.replace('#','')
+        const url = `${this.user.calendlyUrl}?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=${color}`
+        console.log('this.user.calendlyUrl ', url)
+        window.Calendly.initPopupWidget({ url })
+        return false
       }
     }
   }
 </script>
 
 <template>
-  <div v-if="lead">
+  <div v-if="user.calendlyUrl" class="text-center mt-3">
+    <!-- Calendly link widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <b-btn
+      pill
+      size="xl"
+      variant="primary"
+      :style="`background-color: ${user.btnColor} !important; color: ${user.btnTextColor} !important;`"
+      class="colored-btn mb-4"
+      style="width: 350px; max-width: 100%;"
+      @click="openCalendly">
+      Book Free Consultation
+    </b-btn>
+  </div>
+
+  <div v-else-if="lead">
     <b-alert show variant="success" class="mt-4">
       <div class="my-3">
         <h3 class="alert-heading">

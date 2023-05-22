@@ -22,11 +22,8 @@
       </b-dd-header>
       <b-dd-item :href="`https://hire.page/${ $store.state.user.username }`" target="_blank">
         Open Page
-        <font-awesome-icon
-          size="sm"
-          :icon="['fas', 'arrow-up-right-from-square']"
-          width="24"
-          height="24"/>
+        <b-img src="/arrow-up-from-square-light.svg" height="12" width="12" style="margin-bottom: 2px;"/>
+
       </b-dd-item>
       <b-dd-divider/>
       <b-dd-item to="/admin">
@@ -48,3 +45,5 @@
     </b-list-group>
   </b-dd>
 </template>
+<script setup>
+</script>

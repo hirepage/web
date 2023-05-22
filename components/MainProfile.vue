@@ -99,6 +99,9 @@
           <markdown-text :text="user.about" class="mt-4"/>
 
           <page-form :user="user"/>
+
+
+
           <div class="w-100 text-center mt-5 mb-5 d-md-none">
             <a href="/" class="hirepage-link" style="color: inherit; opacity: 0.7;">
               Powered by Hirepage
