@@ -32,7 +32,7 @@ export const actions = {
   },
   updatePreview () {
     if (!process.client) {
-      return
+      returnr
     }
     document.getElementsByClassName('preview-iframe')[0].contentWindow.location.reload()
   }

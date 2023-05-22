@@ -17,9 +17,9 @@
     },
     asyncData ({ app, error }) {
       // const username = first(process.env.SUBDOMAIN.split/**/('.'))
-      console.log('=== username', app.store.subdomain)
-      if (app.store.subdomain) {
-        return app.$api.user.getUser(username).then(user => {
+      console.log('=== username', app.store.state.subdomain)
+      if (app.store.state.subdomain) {
+        return app.$api.user.getUser(app.store.state.subdomain).then(user => {
           return { user }
         }).catch(err => {
           return { user: null }
