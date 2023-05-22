@@ -1,27 +1,38 @@
 <script>
+  import { first } from 'lodash'
   import InfoFooter from '@/components/InfoFooter'
   import InfoHeader from '@/components/InfoHeader'
+  import MainProfile from '~/components/MainProfile.vue'
 
   export default {
-    components: { InfoHeader, InfoFooter },
+    components: { MainProfile, InfoHeader, InfoFooter },
     data () {
       return {
         username: ''
+      }
+    },
+    asyncData ({ params, app, error }) {
+      const username = first(process.env.SUBDOMAIN.split('.'))
+      console.log('=== username', process.env.SUBDOMAIN, username)
+      if (process.env.SUBDOMAIN) {
+        return app.$api.user.getUser(username).then(user => {
+          return { user }
+        }).catch(err => {
+          error(err)
+        })
       }
     },
     methods: {
       claimUsername () {
         this.$router.push(this.username ? `/register?username=${this.username}` : '/register')
       }
-    },
-    created () {
-      console.log('=== username', process.env.SUBDOMAIN)
     }
   }
 </script>
 
 <template>
-  <div>
+  <main-profile v-if="user" :user="user"/>
+  <div v-else>
     <div ref="topColor" class="top-color">
       <info-header fixed hide-border/>
       <b-container class="top-container">

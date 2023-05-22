@@ -33,7 +33,6 @@ plugins:
   - serverless-apigw-binary
   - serverless-plugin-warmup
   - serverless-domain-manager
-  - serverless-offline
 
 custom:
   warmup:
