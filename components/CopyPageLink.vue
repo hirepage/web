@@ -43,11 +43,7 @@
     pill
     data-clipboard-action="copy"
     :data-clipboard-text="shareUrl">
-    <font-awesome-icon
-      class="concern-icon"
-      height="12"
-      width="12"
-      :icon="['fal', 'arrow-up-from-square']"/>
+    <b-img src="/arrow-up-from-square-light.svg" height="12" width="12" style="margin-bottom: 2px;"/>
   </b-btn>
 </template>
 

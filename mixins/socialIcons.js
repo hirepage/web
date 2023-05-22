@@ -52,7 +52,7 @@ const icons = [{
   placeholder: '555-666-7777'
 }, {
   id: 'WEBSITE',
-  iconSet: 'far',
+  iconSet: 'fas',
   icon: 'link',
   name: 'Website',
   placeholder: 'https://your-site.com'

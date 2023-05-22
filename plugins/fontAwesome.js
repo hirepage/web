@@ -67,7 +67,8 @@ import {
   faVideo,
   faRobot,
   faCamera,
-  faUpA
+  faLink,
+  faArrowUpRightFromSquare
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -122,7 +123,7 @@ library.add(
   // faFileInvoiceDollar,
   // faInboxIn,
   faComments,
-  // faArrowUpFromSquare,
+  faArrowUpRightFromSquare,
   // faArrowUpRightFromSquare,
   // faPhone,
   // faLink,
@@ -133,7 +134,8 @@ library.add(
   faBehance,
   faEtsy,
   faPaypal,
-  faWhatsapp
+  faWhatsapp,
+  faLink
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

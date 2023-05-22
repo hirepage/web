@@ -48,9 +48,7 @@
           pill
           variant="default"
           class="mr-3">
-          <font-awesome-icon
-            class="mr-1"
-            :icon="['fal', 'arrow-up-from-square']"/>
+          <b-img src="/arrow-up-from-square-light.svg" height="12" width="12" style="margin-bottom: 2px;"/>
           Share
         </b-btn>
         <settings-dropdown/>
