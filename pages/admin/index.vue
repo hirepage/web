@@ -20,7 +20,6 @@
         color: this.$store.state.user.btnColor,
         backgroundColor: this.$store.state.user.backgroundColor,
         bio: this.$store.state.user.bio,
-        about: this.$store.state.user.about,
         avatarUrl: this.$store.state.user.avatarUrl,
         backgroundType: this.$store.state.user.backgroundType,
         backgroundImageUrl: this.$store.state.user.backgroundImageUrl
@@ -46,7 +45,6 @@
           btnColor: this.color,
           backgroundColor: this.backgroundColor,
           bio: this.bio,
-          about: this.about,
           avatarUrl: this.avatarUrl,
           backgroundType: this.backgroundType,
           backgroundImageUrl: this.backgroundImageUrl
