@@ -33,7 +33,6 @@ module.exports.nuxt = async function (event, context) {
   }
   const hostHeader = event.headers.Host || event.headers.host
   console.log('======== hostHeader', hostHeader)
-  process.env.SUBDOMAIN = hostHeader
   if (!isReady) {
     await readyPromise
   }

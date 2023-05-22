@@ -12,8 +12,7 @@
       }
     },
     created () {
-      const username = first(process.env.SUBDOMAIN.split('.'))
-      console.log('=== username', process.env.SUBDOMAIN, username)
+      console.log('=== username', app.store.state.subdomain)
     },
     asyncData ({ app, error }) {
       // const username = first(process.env.SUBDOMAIN.split/**/('.'))
