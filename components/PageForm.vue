@@ -54,7 +54,7 @@
 </script>
 
 <template>
-  <div v-if="user.calendlyUrl" class="text-center mt-3">
+  <div v-if="user.calendlyUrl" class="text-center mt-4">
     <!-- Calendly link widget begin -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>

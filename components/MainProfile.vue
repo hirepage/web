@@ -236,8 +236,8 @@
     margin-bottom: -60px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    //background-position: center;
+    background-size: contain;
   }
 
   @media (min-width: 768px) {
