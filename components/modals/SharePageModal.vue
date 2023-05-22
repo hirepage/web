@@ -49,24 +49,29 @@
     },
     computed: {
       title () {
-        return this.self ? 'Share your Hirepage' : 'Share this Hirepage'
+        return this.self ? 'Share your page' : 'Share this page'
       },
       subtitle () {
         if (this.self) {
           return 'Get more clients by sharing and adding your link to your profiles.'
         } else {
-          return `Help ${this.user.title} get more clients by sharing their Hirepage.`
+          return `Help ${this.user.title} get more clients by sharing their contact page.`
         }
       },
       body () {
         if (this.self) {
-          return `I've just finished setting up my Hirepage - check it out here ${this.pageUrl}`
+          return `I've just finished setting up my contact page - check it out here ${this.pageUrl}`
         } else {
-          return `Check out this Hirepage! - ${this.pageUrl}`
+          return `Check out this page! - ${this.pageUrl}`
         }
       },
       pageUrl () {
-        return `${process.env.WEB_URL}/${this.user.username}`
+        return process.client ? window.location.href : `${process.env.WEB_URL}/${this.user.username}`
+      },
+      cleanPageUrl () {
+        const url = new URL(this.pageUrl)
+        const urlString = url.hostname + url.pathname
+        return urlString.endsWith('/') ? urlString.slice(0, -1) : urlString
       },
       platforms () {
         return [{
@@ -92,7 +97,7 @@
         }, {
           name: 'Share via Email',
           image: '/socials/email.svg',
-          url: `mailto:?subject=Check out my Hirepage!&body=${this.body}`
+          url: `mailto:?subject=Check out my contact page!&body=${this.body}`
         }]
       }
     }
@@ -120,10 +125,10 @@
             <b-row align-v="center" no-gutters class="flex-nowrap">
               <b-col cols="auto" class="pr-2 semi-bold" style="width:36px;">
                 <b-img :src="user.avatarUrl" width="24" height="24" rounded/>
-<!--                <b-img src="/favicon.png" width="24" height="24"/>-->
               </b-col>
               <b-col>
-                hire.page/{{ user.username }}
+                {{ cleanPageUrl }}
+                <!--                hire.page/{{ user.username }}-->
               </b-col>
               <b-col style="" cols="auto">
                 <span v-if="copied" class="success-text">
@@ -144,14 +149,14 @@
                 <b-img src="/favicon.png" width="24" height="24"/>
               </b-col>
               <b-col>
-                Open your Hirepage
+                Open your page
               </b-col>
               <b-col style="opacity: 0.7" cols="auto" class="">
-<!--                <font-awesome-icon-->
-<!--                  icon="chevron-right"-->
-<!--                  size="sm"-->
-<!--                  width="24"-->
-<!--                  height="24"/>-->
+                <!--                <font-awesome-icon-->
+                <!--                  icon="chevron-right"-->
+                <!--                  size="sm"-->
+                <!--                  width="24"-->
+                <!--                  height="24"/>-->
                 <font-awesome-icon
                   size="sm"
                   :icon="['fas', 'arrow-up-right-from-square']"

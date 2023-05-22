@@ -11,7 +11,7 @@ function head () {
       },
       {
         name: 'robots',
-        content: process.env.WEB_URL === 'https://hire.page' ? 'all' : 'noindex'
+        content: process.env.WEB_URL === 'https://dev.hire.page' ? 'noindex' : 'all'
       },
       {
         name: 'viewport',
