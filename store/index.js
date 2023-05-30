@@ -25,12 +25,20 @@ export const mutations = {
 export const actions = {
   nuxtServerInit ({ commit }, { req }) {
     const host = req.headers.host
-    const subdomain = host ? host.split('.')[0] : null
+    let subdomain
+    if (!host || host === 'hire.page' || host === 'dev.hire.page') {
+      subdomain = null
+    } else if (host.includes('hire.page')) {
+      subdomain = host.split('.')[0]
+    } else {
+      subdomain = host
+    }
+    console.log('===== host', host, subdomain)
     commit('SET_SUBDOMAIN', subdomain)
   },
   updatePreview () {
     if (!process.client) {
-      returnr
+      return
     }
     document.getElementsByClassName('preview-iframe')[0].contentWindow.location.reload()
   }
