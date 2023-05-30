@@ -80,10 +80,10 @@ export default {
       return get(this.user, 'avatarUrl')
     },
     metaDescription () {
-      return get(this.user, 'bio')
+      return get(this.user, 'about')
     },
     metaTitle() {
-      return `${get(this.user, 'title')} | Hirepage`
+      return `${get(this.user, 'bio')} | ${get(this.user, 'title')}`
     }
   }
 }
