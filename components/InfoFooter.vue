@@ -71,8 +71,8 @@
             md="auto"
             order-md="0"
             class="mb-4 center-mobile">
-            <a href="https://www.jeri.ai" class="bottom-link ml-3">
-              <span>© Otechie, Inc</span>
+            <a href="https://dylanwight.com" class="bottom-link ml-3">
+              <span>© Dylan Wight</span>
             </a>
           </b-col>
         </b-row>
