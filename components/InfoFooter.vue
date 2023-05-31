@@ -48,19 +48,21 @@
             </div>
           </b-col>
           <b-col order-md="1" class="text-center mb-4">
-<!--            <nuxt-link to="/privacy" class="bottom-link mr-3">-->
-<!--              <span>Privacy Policy</span>-->
-<!--            </nuxt-link>-->
-<!--            <nuxt-link to="/terms" class="bottom-link ml-3">-->
-<!--              <span>Terms of Use</span>-->
-<!--            </nuxt-link>-->
+            <!--            <nuxt-link to="/privacy" class="bottom-link mr-3">-->
+            <!--              <span>Privacy Policy</span>-->
+            <!--            </nuxt-link>-->
+            <!--            <nuxt-link to="/terms" class="bottom-link ml-3">-->
+            <!--              <span>Terms of Use</span>-->
+            <!--            </nuxt-link>-->
           </b-col>
           <b-col
             md="auto"
             order-md="0"
             class="mb-4 center-mobile">
             <p style="">
-              © CoolWallpapers
+              <a href="https://dylanwight.com">
+                © Dylan Wight
+              </a>
             </p>
           </b-col>
         </b-row>
