@@ -59,11 +59,9 @@
             md="auto"
             order-md="0"
             class="mb-4 center-mobile">
-            <p style="">
-              <a href="https://dylanwight.com">
-                © Dylan Wight
-              </a>
-            </p>
+            <a href="https://dylanwight.com" class="bottom-link ml-3">
+              <span>© Dylan Wight</span>
+            </a>
           </b-col>
         </b-row>
       </footer>
