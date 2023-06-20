@@ -8,13 +8,21 @@
     computed: {
       videos () {
         return [
+          'https://www.loom.com/embed/e970b2b1b2bb4ac2bd8dcdc4676d3fcd',
+          'https://www.loom.com/embed/0f2e2144c213465994888714454a2e80',
           'https://www.loom.com/embed/d86f34d1bad54b7397401a06e2d9a8cd',
-          'https://www.loom.com/embed/d86f34d1bad54b7397401a06e2d9a8cd',
-          'https://www.loom.com/embed/d86f34d1bad54b7397401a06e2d9a8cd',
-          'https://www.loom.com/embed/d86f34d1bad54b7397401a06e2d9a8cd',
+          'https://www.loom.com/embed/92ae1d8675f54ff8a814813200421fdc',
           'https://www.loom.com/embed/d86f34d1bad54b7397401a06e2d9a8cd',
           'https://www.loom.com/embed/d86f34d1bad54b7397401a06e2d9a8cd',
           'https://www.loom.com/embed/d86f34d1bad54b7397401a06e2d9a8cd'
+        ]
+      },
+      thumbnails () {
+        return [
+          'https://cdn.loom.com/sessions/thumbnails/e970b2b1b2bb4ac2bd8dcdc4676d3fcd-00001.gif',
+          'https://cdn.loom.com/sessions/thumbnails/0f2e2144c213465994888714454a2e80-00001.gif',
+          'https://cdn.loom.com/sessions/thumbnails/d86f34d1bad54b7397401a06e2d9a8cd-00001.gif',
+          'https://cdn.loom.com/sessions/thumbnails/92ae1d8675f54ff8a814813200421fdc-00001.gif',
         ]
       }
     },
@@ -90,14 +98,15 @@
           <b-row
             md="3"
             cols="6"
-            v-for="video in videos"
-            :key="video" class="my-2">
+            v-for="thumbnail in thumbnails"
+            :key="thumbnail" class="my-2">
             <b-col cols="6">
-              <div style="position: relative; padding-bottom: 62.5%; height: 0; border-radius: 12px; overflow: clip">
-                <iframe :src="video" frameborder="0"
-                        webkitallowfullscreen mozallowfullscreen allowfullscreen
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-              </div>
+<!--              <div style="position: relative; padding-bottom: 62.5%; height: 0; border-radius: 12px; overflow: clip">-->
+<!--&lt;!&ndash;                <iframe :src="video" frameborder="0"&ndash;&gt;-->
+<!--&lt;!&ndash;                        webkitallowfullscreen mozallowfullscreen allowfullscreen&ndash;&gt;-->
+<!--&lt;!&ndash;                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>&ndash;&gt;-->
+<!--              </div>-->
+              <b-img rounded :src="thumbnail"/>
             </b-col>
             <b-col cols="6">
               <h4>
