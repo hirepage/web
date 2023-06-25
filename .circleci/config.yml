@@ -38,7 +38,7 @@ jobs:
           command: yarn deploy
       - run:
           name: Upload static
-          command: aws s3 sync /home/circleci/repo/.nuxt/dist/client s3://cdn.otechie.com/web/<< parameters.stage >>/_nuxt --delete --acl public-read
+          command: aws s3 sync /home/circleci/repo/.nuxt/dist/client s3://cdn.otechie.com/hirepage/<< parameters.stage >>/_nuxt --delete --acl public-read
     #    - run:
     #        name: Set release commits
     #        command: ./node_modules/.bin/sentry-cli releases set-commits ${CIRCLE_SHA1} --auto
