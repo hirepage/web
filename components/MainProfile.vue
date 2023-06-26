@@ -103,17 +103,17 @@
 
 
           <div class="w-100 text-center mt-5 mb-5 d-md-none">
-            <a href="/" class="hirepage-link" style="color: inherit; opacity: 0.7;">
-              Powered by Hirepage
-            </a>
+<!--            <a href="/" class="hirepage-link" style="color: inherit; opacity: 0.7;">-->
+<!--              Powered by Hirepage-->
+<!--            </a>-->
           </div>
         </div>
       </b-col>
     </b-row>
     <div class="powered-by-wrapper">
-      <a href="https://hire.page" target="_blank" class="hirepage-link">
-        Powered by Hirepage
-      </a>
+<!--      <a href="https://hire.page" target="_blank" class="hirepage-link">-->
+<!--        Powered by Hirepage-->
+<!--      </a>-->
     </div>
   </div>
 </template>
