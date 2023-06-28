@@ -69,7 +69,7 @@
       Book Free Consultation
     </b-btn>
   </div>
-  <div v-else-if="user.resumeUrl" class="text-center mt-3">
+  <div v-else-if="user.resumeUrl" class="text-center mt-4">
     <b-btn
       pill
       size="xl"
