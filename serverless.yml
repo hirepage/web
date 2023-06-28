@@ -25,9 +25,9 @@ functions:
     events:
       - http: ANY /
       - http: ANY /{proxy+}
-    warmup:
-      enabled: true
-      concurrency: 3
+#    warmup:
+#      enabled: true
+#      concurrency: 3
 plugins:
   - serverless-dotenv-plugin
   - serverless-apigw-binary
