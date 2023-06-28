@@ -43,7 +43,7 @@
         }).finally(done)
       },
       openCalendly () {
-        const color = this.user.btnColor.replace('#','')
+        const color = this.user.btnColor.replace('#', '')
         const url = `${this.user.calendlyUrl}?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=${color}`
         console.log('this.user.calendlyUrl ', url)
         window.Calendly.initPopupWidget({ url })
@@ -67,6 +67,19 @@
       style="width: 350px; max-width: 100%;"
       @click="openCalendly">
       Book Free Consultation
+    </b-btn>
+  </div>
+  <div v-else-if="user.resumeUrl" class="text-center mt-3">
+    <b-btn
+      pill
+      size="xl"
+      variant="primary"
+      :style="`background-color: ${user.btnColor} !important; color: ${user.btnTextColor} !important;`"
+      class="colored-btn mb-4"
+      style="width: 350px; max-width: 100%;"
+      :href="user.resumeUrl"
+      target="_blank">
+      Download Resume
     </b-btn>
   </div>
 
