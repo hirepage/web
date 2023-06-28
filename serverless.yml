@@ -36,7 +36,10 @@ plugins:
 
 custom:
   warmup:
-    prewarm: true
+    default:
+      prewarm: true
+      enabled: true
+      concurrency: 3
   apigwBinary:
     types:
       - '*/*'
