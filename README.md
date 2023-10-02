@@ -1,6 +1,6 @@
 # Hirepage Frontend
 
-Designed to give a short, professional landing page and contact form builder for freelancers and consultants.
+A professional landing page and contact form builder for freelancers and consultants
 
 View it live at https://hire.page
 
