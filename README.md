@@ -1,22 +1,11 @@
-# ssr
+# Hirepage Frontend
 
-> My super-excellent Nuxt.js project
+Designed to give a short, professional landing page and contact form builder for freelancers and consultants.
 
-## Build Setup
+View it live at https://hire.page
 
-``` bash
-# install dependencies
-$ yarn install
+Built with Vue, Nuxt, and Bootstrap
 
-# serve with hot reload at localhost:3000
-$ yarn run dev
+<img width="1440" alt="image" src="https://github.com/hirepage/web/assets/16690226/5b6859e3-daef-44b9-86bd-69a22482dba4">
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
 
-# generate static project
-$ yarn run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
